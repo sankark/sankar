@@ -1,0 +1,13 @@
+{application,exat,
+             [{mod,{exat,[]}},
+              {vsn,"1.5.0"},
+              {applications,[kernel,stdlib,xmerl,seresye,misultin]},
+              {description,"erlang eXperimental Agent Tool"},
+              {registered,[]},
+              {modules,[acl,aclscan,aclscanner,agent,ams,envelope,
+                        eresye_ontology,eresye_ontology_resolver,exat,
+                        exat_app,exat_server,exat_sup,fipa_ontology_sl_codec,
+                        fipa_semantics_simple,http_server,logger,match_lib,
+                        media_type,mtp,mtp_utils,ontology,ontology_service,
+                        semantics,simple_pingagent,simple_pingeragent,sl,
+                        sl_parser]}]}.

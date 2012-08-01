@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://www.wfmc.org/2002/XPDL1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="newpkg" Name="newpkg" xsi:schemaLocation="http://www.wfmc.org/2002/XPDL1.0 http://wfmc.org/standards/docs/TC-1025_schema_10_xpdl.xsd">
+    <PackageHeader>
+        <XPDLVersion>
+            1.0
+        </XPDLVersion>
+        <Vendor>
+            Together
+        </Vendor>
+        <Created>
+            2008-05-15 13:10:17
+        </Created>
+    </PackageHeader>
+    <TypeDeclarations>
+        <TypeDeclaration Id="newpkg_td1">
+            <UnionType>
+                <Member>
+                    <BasicType Type="STRING"/>
+                </Member>
+            </UnionType>
+        </TypeDeclaration>
+    </TypeDeclarations>
+    <WorkflowProcesses>
+        <WorkflowProcess Id="proceso-punto-de-cuenta" Name="Proceso de Punto de Cuenta">
+            <ProcessHeader>
+                <Created>
+                    2008-05-15 13:10:32
+                </Created>
+            </ProcessHeader>
+            <FormalParameters>
+                <FormalParameter Id="proceso-punto-de-cuenta_fp1" Mode="IN">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                </FormalParameter>
+            </FormalParameters>
+            <Participants>
+                <Participant Id="coordinador-de-presupuesto" Name="Coordinador de Presupuesto">
+                    <ParticipantType Type="ROLE"/>
+                </Participant>
+                <Participant Id="proceso-punto-de-cuenta_par1">
+                    <ParticipantType Type="ROLE"/>
+                </Participant>
+            </Participants>
+            <Activities>
+                <Activity Id="proceso-punto-de-cuenta_act1">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>
+                        coordinador-de-presupuesto
+                    </Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Join Type="XOR"/>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="coordinador-de-presupuesto"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="473,45"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="coor-verif-pdc" Name="Verificación de Punto de Cuenta">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>
+                        coordinador-de-presupuesto
+                    </Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="proceso-punto-de-cuenta_tra2"/>
+                                    <TransitionRef Id="proceso-punto-de-cuenta_tra1"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="coordinador-de-presupuesto"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="253,37"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="proceso-punto-de-cuenta_act3">
+                    <Implementation>
+                        <No/>
+                    </Implementation>
+                    <Performer>
+                        proceso-punto-de-cuenta_par1
+                    </Performer>
+                    <TransitionRestrictions>
+                        <TransitionRestriction>
+                            <Split Type="XOR">
+                                <TransitionRefs>
+                                    <TransitionRef Id="proceso-punto-de-cuenta_tra5"/>
+                                    <TransitionRef Id="proceso-punto-de-cuenta_tra3"/>
+                                </TransitionRefs>
+                            </Split>
+                        </TransitionRestriction>
+                    </TransitionRestrictions>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="proceso-punto-de-cuenta_par1"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="315,50"/>
+                    </ExtendedAttributes>
+                </Activity>
+                <Activity Id="proceso-punto-de-cuenta_act2">
+                    <Route/>
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_PARTICIPANT_ID" Value="proceso-punto-de-cuenta_par1"/>
+                        <ExtendedAttribute Name="JaWE_GRAPH_OFFSET" Value="487,65"/>
+                    </ExtendedAttributes>
+                </Activity>
+            </Activities>
+            <Transitions>
+                <Transition From="coor-verif-pdc" Id="proceso-punto-de-cuenta_tra1" To="proceso-punto-de-cuenta_act1">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_SPLINE"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="proceso-punto-de-cuenta_act3" Id="proceso-punto-de-cuenta_tra3" To="proceso-punto-de-cuenta_act1">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_SPLINE"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="coor-verif-pdc" Id="proceso-punto-de-cuenta_tra2" Name="Enviar al Analista" To="proceso-punto-de-cuenta_act3">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_SPLINE"/>
+                    </ExtendedAttributes>
+                </Transition>
+                <Transition From="proceso-punto-de-cuenta_act3" Id="proceso-punto-de-cuenta_tra5" To="proceso-punto-de-cuenta_act2">
+                    <ExtendedAttributes>
+                        <ExtendedAttribute Name="JaWE_GRAPH_TRANSITION_STYLE" Value="NO_ROUTING_SPLINE"/>
+                    </ExtendedAttributes>
+                </Transition>
+            </Transitions>
+            <ExtendedAttributes>
+                <ExtendedAttribute Name="JaWE_GRAPH_END_OF_WORKFLOW" Value="JaWE_GRAPH_PARTICIPANT_ID=coordinador-de-presupuesto,CONNECTING_ACTIVITY_ID=proceso-punto-de-cuenta_act1,X_OFFSET=690,Y_OFFSET=56,JaWE_GRAPH_TRANSITION_STYLE=SIMPLE_ROUTING_BEZIER,TYPE=END_DEFAULT"/>
+                <ExtendedAttribute Name="JaWE_GRAPH_START_OF_WORKFLOW" Value="JaWE_GRAPH_PARTICIPANT_ID=coordinador-de-presupuesto,CONNECTING_ACTIVITY_ID=coor-verif-pdc,X_OFFSET=93,Y_OFFSET=88,JaWE_GRAPH_TRANSITION_STYLE=SIMPLE_ROUTING_BEZIER,TYPE=START_DEFAULT"/>
+                <ExtendedAttribute Name="JaWE_GRAPH_WORKFLOW_PARTICIPANT_ORDER" Value="coordinador-de-presupuesto;proceso-punto-de-cuenta_par1"/>
+                <ExtendedAttribute Name="JaWE_GRAPH_END_OF_WORKFLOW" Value="JaWE_GRAPH_PARTICIPANT_ID=proceso-punto-de-cuenta_par1,CONNECTING_ACTIVITY_ID=proceso-punto-de-cuenta_act2,X_OFFSET=657,Y_OFFSET=65,JaWE_GRAPH_TRANSITION_STYLE=NO_ROUTING_ORTHOGONAL,TYPE=END_DEFAULT"/>
+            </ExtendedAttributes>
+        </WorkflowProcess>
+    </WorkflowProcesses>
+    <ExtendedAttributes>
+        <ExtendedAttribute Name="EDITING_TOOL" Value="JPEd - JaWE based Process Editor"/>
+        <ExtendedAttribute Name="EDITING_TOOL_VERSION" Value="2.0-2(4?)-C-20061018-0838"/>
+    </ExtendedAttributes>
+</Package>

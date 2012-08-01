@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for SwingSet2 Demo Application -->
+<jnlp
+  spec="1.5+"
+  codebase="/admin/"
+  href="jped.jnlp">
+  <information>
+    <title>Editor de Procesos</title>
+    <vendor>http://www.jped.org/</vendor>
+    <homepage href="docs/help.html"/>
+    <description>JaWE based Process Editor</description>
+    <description kind="short">XPDL Process Editor for ErlFlow.</description>
+    <icon href="images/swingset2.jpg"/>
+    <icon kind="splash" href="images/splash.gif"/>
+    <offline-allowed/> 
+    <association mime-type="application-x/xpdl-file" extensions="xpdl">
+    <shortcut online="false">
+      <desktop/>
+      <menu submenu="My Corporation Apps"/>
+    </shortcut>
+  </information>
+  <security>
+      <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.4.2+" java-vm-args="-esa -Xnoclassgc"/>
+    <jar href="lib/jped.jar"/>
+  </resources>
+  <application-desc main-class="SwingSet2"/>
+</jnlp> 
+

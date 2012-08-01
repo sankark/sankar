@@ -1,0 +1,19 @@
+%
+%
+%
+
+-ontology (wine_ontology).
+
+class ( wine ) ->
+{ name = [ string , mandatory , nodefault],
+color = [ string , mandatory , nodefault],
+flavor = [ string , mandatory , nodefault],
+grape = [ set_of (wine_grape), mandatory , nodefault],
+sugar = [ string , mandatory , nodefault]};
+
+class ('red-wine ') -> is_a( wine ),
+{ color = [ string , mandatory , default ( red )] };
+
+class ('agent-identifier') ->
+  {name = [string, mandatory],
+   addresses = [sequence_of (string), mandatory]};

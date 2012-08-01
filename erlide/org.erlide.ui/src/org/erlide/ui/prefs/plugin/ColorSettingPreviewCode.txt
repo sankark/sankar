@@ -1,0 +1,17 @@
+%% Test module
+%% @doc edoc <b>stuff</b>
+-module(test).
+-export([a/1, b/0]).
+-define(X, super).
+-record(state, {name}).
+
+a(Z) -> % TODO fix this
+    Z#state.name.
+
+b(X, 16#cafe) ->
+    case X of
+        $A ->
+            $", "ABC\012\"hello~nthere";
+        _ ->
+            a(?X);
+    end.

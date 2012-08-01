@@ -1,0 +1,8 @@
+%%-*- mode: erlang -*-
+{erl_opts, [warnings_as_errors]}.
+{cover_enabled, true}.
+{edoc_opts, [{preprocess, true}]}.
+
+{deps, [
+        {riak_pb, ".*", {git, "git://github.com/basho/riak_pb", "master"}}
+       ]}.

@@ -1,0 +1,8 @@
+{% extends "!layout.html" %}
+{% block sidebar1 %}{{ sidebar() }}{% endblock %}
+{% block sidebar2 %}{% endblock %}
+
+{% block rootrellink %}
+ <li><a href="http://discoproject.org/">Disco Project</a> &raquo;</li>
+ {{ super() }}
+{% endblock %}

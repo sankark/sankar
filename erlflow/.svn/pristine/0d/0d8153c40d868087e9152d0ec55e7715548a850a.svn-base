@@ -1,0 +1,23 @@
+html {
+    background-color: #dfb8df;
+}
+
+em#yahoolabel {
+    text-indent: -6em;
+    display: block;
+    background: url() center center no-repeat;
+    width: 2em;
+    overflow: hidden;
+}
+
+#filemenu.visible .yuimenuitemlabel, #editmenu.visible .yuimenuitemlabel {
+
+* zoom:
+    1;
+}
+
+#filemenu.visible .yuimenu .yuimenuitemlabel {
+
+* zoom:normal;
+}
+

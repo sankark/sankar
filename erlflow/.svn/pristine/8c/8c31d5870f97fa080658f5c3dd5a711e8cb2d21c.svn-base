@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Erlflow 1.0</title>
+        <style>
+            body {
+                visibility: hidden;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="/build/fonts/fonts-min.css" />
+        <link rel="stylesheet" type="text/css" href= "/build/treeview/assets/skins/sam/treeview.css">
+        <link rel="stylesheet" type="text/css" href="/build/button/assets/skins/sam/button.css" />
+        <link rel="stylesheet" type="text/css" href="/build/container/assets/skins/sam/container.css" />
+        <script type="text/javascript" src="/build/utilities/utilities.js">
+        </script>
+        <script type="text/javascript" src="/build/button/button-min.js">
+        </script>
+        <script type="text/javascript" src="/build/container/container-min.js">
+        </script>
+        <script type="text/javascript" src= "/build/yahoo/yahoo-min.js">
+        </script>
+        <script type="text/javascript" src= "/build/event/event-min.js">
+        </script>
+        <script type="text/javascript" src= "/build/connection/connection-min.js">
+        </script>
+        <script type="text/javascript" src= "/build/treeview/treeview-min.js">
+        </script>
+		<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/cookie/cookie-beta-min.js"></script> 
+        <script src="/build/json/json-min.js">
+        </script>
+    </head>
+    <body class="yui-skin-sam">
+        <style>
+            #example {
+                height: 30em;
+            }
+            
+            label {
+                display: block;
+                float: left;
+                width: 45%;
+                clear: left;
+            }
+            
+            .clear {
+                clear: both;
+            }
+            
+            #resp {
+                margin: 10px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                background: #fff;
+            }
+            
+            #resp li {
+                font-family: monospace
+            }
+        </style>
+        <style type="text/css">
+            #processesDiv {
+                border: thin;
+                border-color: #000000;
+                background: #fff;
+                margin-top: 1em;
+                padding: 1em;
+                min-height: 7em;
+            }
+        </style>
+        <div id="top1">
+            <div id="top_wrap">
+                <div id="logo">
+                </div>
+                <div id="info">
+                    <strong><div id="username_caption"></div></strong>
+                    <span class="links"><a href="#" id="close_session">Cerrar Sesi&oacute;n</a>, <a href="/admin">Administrar</a></span>
+                </div>
+                <div id="searchBox">
+                    Buscar:<input type="text" size="25" id="query" value="Buscar casos o documentos..."><input type="button" id="search" value="Buscar">
+                </div>
+            </div>
+        </div>
+        <div id="left1">
+            <div id="folder_top">
+                <div class="wrap">
+                    <div id="check_buttons">
+                    </div>
+                </div>
+            </div>
+            <div id="folder_list">
+                <div class="wrap">
+                    <ul>
+                        <li class="inbox selected">
+                            <em></em>
+                            <a href="#">Casos Pendientes</a>
+                        </li>
+                        <li class="sent">
+                            <em></em>
+                            <a href="#">Casos Realizadas</a>
+                        </li>
+                        <li class="drafts">
+                            <em></em>
+                            <a href="#">Documentos</a>
+                        </li>
+                        <li class="spam">
+                            <em></em>
+                            <a href="#">Problemas</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="contacts">
+                            <em></em>
+                            <a href="#" target="_blank">Participantes</a>
+                        </li>
+                        <li class="calendar">
+                            <em></em>
+                            <a href="#">Calendario</a>
+                        </li>
+                        <li class="notepad">
+                            <em></em>
+                            <a href="#" target="_blank">Notas</a>
+                        </li>
+                    </ul>
+                    <div id="calBox">
+                        <span class="icon"></span>
+                        <em>05/28/2008</em>
+                    </div>
+                    <div id="calContainer">
+                        <div id="cal">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="composeViewEl">
+        </div>
+        <div id="new_case">
+            <div class="hd">
+                Iniciar caso
+            </div>
+            <div class="bd">
+                <form method="POST" action="#">
+                    <label for="firstname">
+                    </label>
+                    <table width="100%" border="0" cellspacing="15">
+                        <tr>
+                            <td>
+                                <div align="left">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign=middle>
+                                <div>
+                                    <img src="/assets/css/process.png" alt="">&nbsp;&nbsp; Tipo de Caso:
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="processesDiv">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>
+                        &nbsp;
+                    </p>
+                    <p>
+                        &nbsp; 
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div id="login_dialog">
+            <div class="hd">
+                Iniciar sesi&oacute;n
+            </div>
+            <div class="bd">
+                <form method="POST" action="#">
+                    <label for="username">
+                        Nombre de Usuario:
+                    </label>
+                    <input type="textbox" name="username" />
+                    <label for="password">
+                        Contrase–a:
+                    </label>
+                    <input type="password" name="password" />
+                    <p>
+                        &nbsp;
+                    </p>
+                    <p>
+                        &nbsp; 
+                    </p>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="/build/yuiloader/yuiloader-beta-min.js">
+        </script>
+        </script>
+        <script type="text/javascript" src="/assets/js/main.js">
+        </script>
+    </body>
+</html>

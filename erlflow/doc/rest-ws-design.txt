@@ -1,0 +1,84 @@
+Here is the definition of the REST interface semantics.
+
+For querying erlflow you must use the url path specified in etc/yaws.conf in appmods variable. In advance we're going to use http://[server]/erlflow as root address for all REST commands.
+
+REST commands
+-------------
+
+NETS command
+------------
+
+Uri: 		/nets
+Description: 	Query about the status of all nets loaded in erlflow.
+HTTP commands: 	[GET]
+Returns: 	Array with uri paths of all nets available.
+
+NET command
+-----------
+
+Uri: 		/net/[net_id]
+Description:	Query about the status of a net.
+HTTP commands:  [GET]
+Returns:	Key/value hash with the status of the net.
+
+PLACES command
+-------------
+
+Uri: 		/net/[net_id]/places
+Description:	Query about places in net. 
+HTTP commands:  [GET]
+Returns:	Array with uri paths of all places in net.
+
+PLACE command
+-------------
+
+Uri: 		/net/[net_id]/place/[place_id]
+Description:	Query information about a place in net. 
+HTTP commands:  [GET]
+Returns:	Key/value hash with place information.
+
+TRANSITIONS command
+-------------------
+
+Uri: 		/net/[net_id]/transitions
+Description:	Query information about transitions in net. 
+HTTP commands:  [GET]
+Returns:	Array with uri paths of all transitions in net.
+
+TRANSITION command
+------------------
+
+Uri: 		/net/[net_id]/transition/[transition_id]
+Description:	Query information about a transition in net. 
+HTTP commands:  [GET]
+Returns:	Key/value hash with transition information.
+
+NEXTS command
+---------------
+
+Uri 1: 		/net/[net_id]/transition/[transition_id]?nexts
+Uri 2: 		/net/[net_id]/place/[place_id]?nexts
+Description:	Query information about all target of from a node in net. 
+HTTP commands:  [GET]
+Returns:	Array with uri paths of all target nodes of a node in net.
+
+PREVIOUS command
+----------------
+
+Uri 1: 		/net/[net_id]/transition/[transition_id]?previous
+Uri 2: 		/net/[net_id]/place/[place_id]?previous
+Description:	Query information about all sources of from a node in net. 
+HTTP commands:  [GET]
+Returns:	Array with uri paths of all sources nodes of a node in net.
+
+RESOURCES command
+-----------------
+
+Uri 1:		/net/[net_id]?participants
+Uri 2:		/net/[net_id]/transition/[transition_id]?participants
+Uri 3:		/net/[net_id]/place/[place_id]/nexts?participants
+Uri 4:		/net/[net_id]/place/[place_id]/previous?participants
+Description:	Query information about all participants in a process's transition. 
+HTTP commands:  [GET]
+Returns:	Array with uri paths of all sources nodes of a node in net.
+

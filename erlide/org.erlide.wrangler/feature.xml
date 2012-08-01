@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.erlide.wrangler"
+      label="Wrangler Feature"
+      version="0.10.3.qualifier"
+      provider-name="UKC">
+
+   <description>
+      This feature provides the integration of the Wrangler refactoring
+tool.
+   </description>
+
+   <copyright>
+      Copyright (c) 2004-2010 Gyorgy Orosz, Simon Thompson, Huiqing Li, 
+Erlide team and others.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License
+v1.0 which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License - v 1.0 
+is available from http://www.eclipse.org/legal/epl-v10.html
+   </license>
+
+   <url>
+      <discovery label="Graphviz update site" url="http://abstratt.com/update"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.help"/>
+      <import plugin="org.eclipse.core.runtime" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ltk.core.refactoring" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ltk.ui.refactoring"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.erlide.jinterface"/>
+      <import plugin="org.erlide.core"/>
+      <import plugin="org.erlide.ui"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.3.102" match="greaterOrEqual"/>
+      <import plugin="org.erlide.wrangler.core" version="0.8.5" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.filesystem" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.debug.core" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.erlide.libs" version="1.2.3" match="greaterOrEqual"/>
+      <import plugin="org.erlide.wrangler.refactoring" version="0.9.0" match="greaterOrEqual"/>
+      <import plugin="com.abstratt.graphviz.ui"/>
+   </requires>
+
+   <plugin
+         id="org.erlide.wrangler.help"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.erlide.wrangler.refactoring"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.erlide.wrangler.refactoring.duplicatedcode"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.erlide.wrangler.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.erlide.wrangler.refactoring.codeinspection"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+</feature>

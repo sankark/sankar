@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bienvenido</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="/assets/css/layout.css" type="text/css">
+    <script src="/assets/js/json.js"></script>
+    <script src="/assets/js/couch.js"></script>
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/browse.js"></script>
+    <script>
+
+    </script>
+  </head>
+  <body>
+    <h1>
+    	<strong>Casos Pendientes</strong>
+		<strong>Documentos</strong>
+		<strong>1</strong>
+	</h1>
+    <ul id="toolbar"></ul>
+
+    <div id="list"></div>
+
+  </body>
+</html>

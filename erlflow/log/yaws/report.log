@@ -1,0 +1,74 @@
+
+=INFO REPORT==== 27-Jul-2012::11:51:35 ===
+Ctlfile : c:/Users/ADMINI~1/AppData/Local/Temp/2/yaws/erlflow/CTL
+
+=INFO REPORT==== 27-Jul-2012::11:51:35 ===
+Yaws: Listening to 0.0.0.0:8085 for <1> virtual servers:
+ - http://localhost:8085 under c:/ErlangTools/erlflow/ebin/../public
+
+=INFO REPORT==== 27-Jul-2012::11:51:35 ===
+    application: ecouch
+    exited: {bad_return,
+                {{ecouch,start,[normal,{"127.0.0.1","5984"}]},
+                 {'EXIT',
+                     {undef,
+                         [{ecouch,start,[normal,{"127.0.0.1","5984"}],[]},
+                          {application_master,start_it_old,4,
+                              [{file,"application_master.erl"},
+                               {line,274}]}]}}}}
+    type: temporary
+
+=ERROR REPORT==== 27-Jul-2012::11:52:50 ===
+Can't parse multipart if get a 'GET'
+=ERROR REPORT==== 27-Jul-2012::11:52:50 ===
+
+
+ERROR erlang  code  crashed:
+ File: c:/ErlangTools/erlflow/ebin/../public/upload.yaws:1
+Reason: {{case_clause,[]},
+         [{m1,multipart,2,
+              [{file,"c:/Users/ADMINI~1/AppData/Local/Temp/2/yaws/erlflow/m1.erl"},
+               {line,31}]},
+          {yaws_server,deliver_dyn_part,8,[]},
+          {yaws_server,aloop,3,[]},
+          {yaws_server,acceptor0,2,[]},
+          {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+Req: {http_request,'GET',{abs_path,"/upload.yaws"},{1,1}}
+Stack: [{m1,multipart,2,
+            [{file,"c:/Users/ADMINI~1/AppData/Local/Temp/2/yaws/erlflow/m1.erl"},
+             {line,31}]},
+        {yaws_server,deliver_dyn_part,8,[]},
+        {yaws_server,aloop,3,[]},
+        {yaws_server,acceptor0,2,[]},
+        {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]
+
+=ERROR REPORT==== 27-Jul-2012::11:53:42 ===
+
+
+ERROR erlang  code  crashed:
+ File: appmod:0
+Reason: {{badmatch,{error,enoent}},
+         [{pdefsmod,showfile,1,
+                    [{file,"c:/ERLANG~1/erlflow/ebin/../src/pdefsmod.erl"},
+                     {line,14}]},
+          {pdefsmod,out,1,
+                    [{file,"c:/ERLANG~1/erlflow/ebin/../src/pdefsmod.erl"},
+                     {line,8}]},
+          {yaws_server,deliver_dyn_part,8,[]},
+          {yaws_server,aloop,3,[]},
+          {yaws_server,acceptor0,2,[]},
+          {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+Req: {http_request,'GET',{abs_path,"/pdefs"},{1,1}}
+Stack: [{pdefsmod,showfile,1,
+                  [{file,"c:/ERLANG~1/erlflow/ebin/../src/pdefsmod.erl"},
+                   {line,14}]},
+        {pdefsmod,out,1,
+                  [{file,"c:/ERLANG~1/erlflow/ebin/../src/pdefsmod.erl"},
+                   {line,8}]},
+        {yaws_server,deliver_dyn_part,8,[]},
+        {yaws_server,aloop,3,[]},
+        {yaws_server,acceptor0,2,[]},
+        {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]
+
+=INFO REPORT==== 27-Jul-2012::12:19:52 ===
+stop_ready([], <0.105.0>)
