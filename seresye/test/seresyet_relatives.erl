@@ -8,14 +8,20 @@
 %%% license distributed with this project or
 %%% http://www.opensource.org/licenses/bsd-license.php
 -module (seresyet_relatives).
-
+-behavior(gen_server).
 -export([father/3, grandfather/3, grandmother/3,
          mother/3, brother/4, sister/4]).
-
+-export([start_link/0]).
+-export([init/1, handle_call/3, handle_cast/2, 
+         handle_info/2, terminate/2, code_change/3]).
 -include_lib("eunit/include/eunit.hrl").
 
 -rules([mother, father, brother, sister, grandfather,
         grandmother]).
+
+
+start_link() -> 
+    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
 %%
 %% if (X is female) and (X is Y's parent) then (X is Y's mother)
@@ -75,13 +81,25 @@ grandmother (Engine, {mother, X, Y}, {parent, Y, Z}) ->
                                     [{grandmother, X, Z}
                                      | seresye_engine:get_client_state(Engine)]).
 
+init([]) -> 
+    {ok, []}.
+
+handle_call(_Call, _From, State) -> 
+    {noreply, State}.
+handle_cast(_Cast, State) -> 
+    {noreply, State}.
+handle_info(_Info, State) -> 
+    {noreply, State}.
+terminate(_Reason, _State) -> ok.
+code_change(_OldVsn, State, _Extra) -> 
+    {ok, State}.
 
 rules_test() ->
     Engine0 = seresye_engine:new([]),
     Engine2 =  seresye_engine:add_rules(Engine0, ?MODULE),
 
     Engine3 = seresye_engine:assert (Engine2,
-                                     [{male, kanagu},
+                                     [[{male, kanagu}],
                                       {male, sankar},
                                       {female, valar},
                                       {female, rupa},
@@ -95,6 +113,7 @@ rules_test() ->
                                      
 
     InternalState = seresye_engine:get_client_state(Engine3),
+	io:format("~p",[InternalState]),
 
     ?assertMatch(true,
                  lists:member({mother,valar,sankar}, InternalState)),
