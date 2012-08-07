@@ -47,4 +47,4 @@ io:format("mod name ~p",[?MODULE]),
                                                {ok, world},{ssda},
                                                #sample_record { a = 10, b = 50}]),
 State = seresye_engine:get_client_state(Engine1),
-	io:format("Result ~n~p",[State]).
+	io:format("Result ~n~p",[Engine1]).

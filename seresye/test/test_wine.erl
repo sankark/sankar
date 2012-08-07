@@ -21,7 +21,7 @@
 %%
 %% Local Functions
 %%
-my_rule ( Engine , # wine {} = W) ->
+my_rule ( Engine , # wine {name=} = W) ->
 	seresye_engine:set_client_state(Engine,
                                     [rulewine | seresye_engine:get_client_state(Engine)]);
 my_rule ( Engine , W) ->

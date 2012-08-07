@@ -50,9 +50,17 @@ init([]) ->
 %% Description: Handling call messages
 %%--------------------------------------------------------------------
 handle_call({compile_rules,Module}, _From, State) -> 
+	Dest="C:/ErlangTools/seresye/ebin/",
+	  FileName = filename:basename(Module),
+    DirName = filename:dirname(Module),
     io:format("state: ~p~n", [code:get_path()]),
-	compile:file(Module),
-	%code:load_file(Module),
+	{ok,ModName,Binary}=compile:file(Module,[binary]),
+	{ok, File}=file:open(Dest ++ FileName ++ ".beam",[write]),
+	file:write(File,Binary),
+	%io:format(File, "~p", [Binary]),
+    file:close(File),
+	code:purge(rules_compiler),
+	code:load_file(rules_compiler),
     {reply, ok, State+1};
 
 handle_call(_Call, _From, State) -> 
