@@ -7,7 +7,7 @@
 %%% license distributed with this project or
 %%% http://www.opensource.org/licenses/bsd-license.php
 -module(seresye).
-
+-behavior(gen_server).
 %%====================================================================
 %% External exports
 %%====================================================================
@@ -94,7 +94,7 @@ serialize(Name) ->
 %%% gen_server callbacks
 %%%===================================================================
 start_link() ->
-    gen_server:start_link(?MODULE, [], []).
+    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
 start_link(Name) when is_atom(Name) ->
     gen_server:start_link({local, Name}, ?MODULE, [], []);

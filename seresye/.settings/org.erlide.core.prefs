@@ -3,4 +3,4 @@ compiler/i=C\:\\erl5.9.1\\lib\\amqp_client-2.8.2\\include,C\:\\erl5.9.1\\lib\\ra
 eclipse.preferences.version=1
 include_dirs=deps/erlsom/include;include;deps/parse_trans/include
 output_dir=ebin
-source_dirs=deps/erlsom/examples/book_store;deps/erlsom/examples/complex_form;deps/erlsom/src;test;deps/parse_trans/src;deps/erlware_commons/src;deps/edown/src;src
+source_dirs=src/rules;deps/erlsom/examples/book_store;deps/erlsom/examples/complex_form;deps/erlsom/src;test;deps/parse_trans/src;deps/erlware_commons/src;deps/edown/src;src

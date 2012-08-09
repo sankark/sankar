@@ -19,12 +19,10 @@
 %%%===================================================================
 
 start(_StartType, _StartArgs) ->
-    case seresye_sup:start_link() of
-        {ok, Pid} ->
-            {ok, Pid};
-        Error ->
-            Error
-                end.
+    seresye_sup:start_link(),
+	seresye:start(default),
+	rules_compiler:start_link(),
+	rules_compiler:start().
 
 stop(_State) ->
     ok.

@@ -51,7 +51,7 @@ compile(FileName, _Options) ->
     %%io:format ("~p~n", [NewClasses]),
     IsAHierarchy = generate_hierarchy_tree([], Classes,
                                            Classes),
-	atom_
+
     %%io:format ("~p~n", [IsAHierarchy]),
     FatherOfHierarchy = reverse_hierarchy_tree([],
                                                IsAHierarchy, IsAHierarchy),

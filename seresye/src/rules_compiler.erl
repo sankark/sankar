@@ -7,18 +7,27 @@
 -export([start_link/0, compile_rules/1]).
 
 -export([init/1, handle_call/3, handle_cast/2, 
-         handle_info/2, terminate/2, code_change/3]).
+         handle_info/2, terminate/2, code_change/3,start/0]).
+-record(state, {sup}).
+
 
 %%====================================================================
 %% API
 %%====================================================================
+
+start_link() ->
+   gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
+	
 %%--------------------------------------------------------------------
 %% Function: start_link() -> {ok,Pid} | ignore | {error,Error}
 %% Description: Starts the server
 %%--------------------------------------------------------------------
-start_link() -> 
-    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []). 
+start_link(Name) when is_atom(Name) -> 
+    gen_server:start_link({local, Name}, ?MODULE, [], []). 
 
+
+start() ->
+    seresye_sup:start_compiler().
 %%--------------------------------------------------------------------
 %% Function: print_state() -> ok
 %% Description: Prints the current state to std output
@@ -53,15 +62,15 @@ handle_call({compile_rules,Module}, _From, State) ->
 	Dest="C:/ErlangTools/seresye/ebin/",
 	  FileName = filename:basename(Module),
     DirName = filename:dirname(Module),
-    io:format("state: ~p~n", [code:get_path()]),
-	{ok,ModName,Binary}=compile:file(Module,[binary]),
+    %io:format("state: ~p~n", [code:get_path()]),
+	{ok,ModName,Binary}=compile:file(Module,[binary,debug_info]),
 	{ok, File}=file:open(Dest ++ FileName ++ ".beam",[write]),
 	file:write(File,Binary),
 	%io:format(File, "~p", [Binary]),
     file:close(File),
 	code:purge(rules_compiler),
 	code:load_file(rules_compiler),
-    {reply, ok, State+1};
+    {reply, ok,State+1};
 
 handle_call(_Call, _From, State) -> 
     {noreply, State}.
