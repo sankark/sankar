@@ -1,0 +1,74 @@
+/* z.menuedit.js
+----------------------------------------------------------
+
+@author Marc Worrell <marc@worrell.nl>
+
+Copyright 2011 Marc Worrell
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+ 
+http://www.apache.org/licenses/LICENSE-2.0
+ 
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+---------------------------------------------------------- */
+
+ul.tree-list {
+    padding: 0; margin: 0;
+}
+ul.tree-list li.placeholder {
+    background: #aaa;
+    border-radius: 4px;
+}
+
+ul.tree-list li {
+    list-style-type: none;
+    display: block;
+    line-height: 34px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+ul.tree-list li img.grippy {
+    cursor: move;
+    padding-right: 2px;
+}
+
+ul.tree-list li div {
+    border: 1px solid #E0E0E0;
+    margin-bottom: -1px;
+    position: relative;
+    padding: 0 8px;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #f5f5f5 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#f5f5f5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f5f5f5 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#f5f5f5 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#f5f5f5 50%); /* IE10+ */
+    background: linear-gradient(top, #ffffff 0%,#f5f5f5 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+    border-radius: 4px;
+}
+
+.menu-edit a {
+    float: right;
+}
+
+ul.tree-list .btn-group {
+    margin-left: 6px;
+    margin-top: 3px;
+}
+
+#menu-editor .widget-header {
+    height: 28px;
+}
+    #menu-editor .widget-header .btn-group {
+        margin-right: 12px;
+    }

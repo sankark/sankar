@@ -1,0 +1,42 @@
+% Zotonic site configuration for default.
+[
+    % This site is enabled or not.
+    {enabled, true},
+
+    % Atomic hostname, MUST be equal to the directory name of this site.
+    {host, default2},
+
+    % Hostname on which this site runs
+    {hostname, "127.0.0.1:8000"},
+
+    % Aliases which should redirect to the primary hostname
+    %{hostalias, "www.example.com"},
+    %{hostalias, "example.com"},
+
+    % PostgreSQL database connection
+    {dbhost, "127.0.0.1"},
+     {dbport, 5433},
+    {dbuser, "zotonic"},
+    {dbpassword, "zotonic"},
+    {dbdatabase, "zotonic"},
+    {dbschema, "public"},
+
+    % Depcache settings, maximum size in mbs
+    {depcache_memory_max, 100},
+
+    % Password for the 'admin' user.
+    {admin_password, "sankar"},
+
+    % What skeleton site this site is based on; for installing the initial data.
+    {skeleton, blog},
+ 
+    %% Specific options
+
+    %% Title of your site
+    {title, <<"Your first blog">>},
+    %% Subtitle
+    {subtitle, <<"built with Zotonic, the Erlang CMS.">>},
+
+    %% Page length
+    {pagelen, 5}
+].

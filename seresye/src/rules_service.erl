@@ -37,6 +37,12 @@ add_rule(RuleName,Pattern,Arity,Cond,Action)->
 %%
 %% Local Functions
 %%
+add_rule(RuleName,Pattern,Cond,Action)->
+	{ok,Tokens,_EndLine} = erl_scan:string(Pattern ++ "."),
+    {ok,AbsForm} = erl_parse:parse_exprs(Tokens),
+	Arity=length(AbsForm),
+	add_rule(RuleName,Pattern,Arity+1,Cond,Action).
 
 test()->
-	add_rule("test","{test,test},{test2,X}",3,"X>10","seresye_engine:assert([{test3,test3}])").
+	
+	add_rule("test2","{test,test},{test2,X}","X>10","seresye_engine:assert([{test3,test3}])").

@@ -1,0 +1,796 @@
+==============================
+ make deps
+==============================
+------------------------------
+ make dh_date
+------------------------------
+Leaving Directory: .\deps\dh_date
+------------------------------
+ make gen_smtp
+------------------------------
+==> gen_smtp (get-deps)
+==> gen_smtp (compile)
+Leaving Directory: .\deps\gen_smtp
+------------------------------
+ make iconv
+------------------------------
+==> iconv (get-deps)
+==> iconv (compile)
+Compiling c_src/iconv_drv.c
+ERROR: compile failed while processing C:/zotonic-update/deps/iconv: {'EXIT',{enoent,[{erlang,open_port,
+                         [{spawn,"cc -c  -g -Wall -fPIC  -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include  c_src/iconv_drv.c -o c_src/iconv_drv.o"},
+                          [{env,[{"ALLUSERSPROFILE","C:\\ProgramData"},
+                                 {"APPDATA",
+                                  "C:\\Users\\Administrator\\AppData\\Roaming"},
+                                 {"CC","cc"},
+                                 {"CC_TEMPLATE",
+                                  "cc -c $CFLAGS -g -Wall -fPIC  -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include  $PORT_IN_FILES -o $PORT_OUT_FILE"},
+                                 {"CLIENTNAME","PC203517"},
+                                 {"COMPUTERNAME","IP-0AC3A650"},
+                                 {"CXX","c++"},
+                                 {"CXX_TEMPLATE",
+                                  "c++ -c $CXXFLAGS -g -Wall -fPIC  -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include  $PORT_IN_FILES -o $PORT_OUT_FILE"},
+                                 {"ComSpec","C:\\Windows\\system32\\cmd.exe"},
+                                 {"CommonProgramFiles",
+                                  "C:\\Program Files\\Common Files"},
+                                 {"DEPS","!DEPS! .\\deps\\z_logger"},
+                                 {"DFSTRACINGON","FALSE"},
+                                 {"DRV_CFLAGS",
+                                  "-g -Wall -fPIC  -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include "},
+                                 {"DRV_LDFLAGS",
+                                  "-shared  -Lc:/ERL59~1.1/lib/erl_interface-3.7.7/lib -lerl_interface -lei"},
+                                 {"EBIN_DIR",".\\ebin"},
+                                 {"EBIN_DIR "," \"..\\ebin\""},
+                                 {"ERLANG_ARCH","32"},
+                                 {"ERLANG_HOME","C:\\erl5.9.1"},
+                                 {"ERLANG_TARGET","R15B01-win32-32"},
+                                 {"ERL_CFLAGS",
+                                  " -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include "},
+                                 {"ERL_CONSOLE_MODE","tty:ccc"},
+                                 {"ERL_EI_LIBDIR",
+                                  "c:/ERL59~1.1/lib/erl_interface-3.7.7/lib"},
+                                 {"ERL_LDFLAGS",
+                                  " -Lc:/ERL59~1.1/lib/erl_interface-3.7.7/lib -lerl_interface -lei"},
+                                 {"FP_NO_HOST_CHECK","NO"},
+                                 {"HOMEDRIVE","C:"},
+                                 {"HOMEPATH","\\Users\\Administrator"},
+                                 {"JAVA_HOME",
+                                  "C:\\Program Files\\Java\\jdk1.6.0_21"},
+                                 {"LINK_TEMPLATE",
+                                  "cc $PORT_IN_FILES $LDFLAGS -shared  -Lc:/ERL59~1.1/lib/erl_interface-3.7.7/lib -lerl_interface -lei -o $PORT_OUT_FILE"},
+                                 {"LOCALAPPDATA",
+                                  "C:\\Users\\Administrator\\AppData\\Local"},
+                                 {"LOGONSERVER","\\\\IP-0AC3A650"},
+                                 {"OPENSSL_CONF",
+                                  "C:\\OpenSSL-Win32\\bin\\openssl.cfg"},
+                                 {"OS","Windows_NT"},
+                                 {"PATHEXT",
+                                  ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW"},
+                                 {"PROCESSOR_ARCHITECTURE","x86"},
+                                 {"PROCESSOR_IDENTIFIER",
+                                  "x86 Family 6 Model 23 Stepping 10, GenuineIntel"},
+                                 {"PROCESSOR_LEVEL","6"},
+                                 {"PROCESSOR_REVISION","170a"},
+                                 {"PROMPT","$P$G"},
+                                 {"PSModulePath",
+                                  "C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\"},
+                                 {"PUBLIC","C:\\Users\\Public"},
+                                 {"Path",
+                                  "C:\\ERL59~1.1\\ERTS-5~1.1\\bin;C:\\ERL59~1.1\\bin;C:\\erl5.9.1\\erts-5.9.1\\bin;C:\\Program Files\\Yaws-1.90\\bin;C:\\Erlang\\ImageMagick-6.7.6-7-Q16-windows\\ImageMagick-6.7.6-7;C:\\Ruby193\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\erl5.9.1\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Erlang\\springsource\\apache-maven-3.0.3\\bin;C:\\Python27;C:\\Erlang\\rebar"},
+                                 {"ProgramData","C:\\ProgramData"},
+                                 {"ProgramFiles","C:\\Program Files"},
+                                 {"SESSIONNAME","RDP-Tcp#0"},
+                                 {"SystemDrive","C:"},
+                                 {"SystemRoot","C:\\Windows"},
+                                 {"TEMP",
+                                  "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2"},
+                                 {"TMP",
+                                  "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2"},
+                                 {"TRACE_FORMAT_SEARCH_PATH",
+                                  "\\\\winseqfe\\release\\Windows6.0\\lh_sp2rtm\\6002.18005.090410-1830\\x86fre\\symbols.pri\\TraceFormat"},
+                                 {"USERDOMAIN","IP-0AC3A650"},
+                                 {"USERNAME","Administrator"},
+                                 {"USERPROFILE","C:\\Users\\Administrator"},
+                                 {"erl","erl"},
+                                 {"erlc","erlc"},
+                                 {"escript","\"escript.exe\""},
+                                 {"windir","C:\\Windows"}]},
+                           exit_status,
+                           {line,16384},
+                           use_stdio,stderr_to_stdout,hide]],
+                         []},
+                 {rebar_utils,sh,2,[]},
+                 {rebar_port_compiler,compile_each,5,[]},
+                 {rebar_port_compiler,compile,2,[]},
+                 {rebar_core,run_modules,4,[]},
+                 {rebar_core,execute,4,[]},
+                 {rebar_core,process_dir,4,[]},
+                 {rebar_core,process_commands,2,[]}]}}
+Leaving Directory: .\deps\iconv
+------------------------------
+ make lager
+------------------------------
+==> lager (get-deps)
+==> lager (compile)
+Leaving Directory: .\deps\lager
+------------------------------
+ make mochiweb
+------------------------------
+==> mochiweb (get-deps)
+==> mochiweb (compile)
+Leaving Directory: .\deps\mochiweb
+------------------------------
+ make ua_classifier
+------------------------------
+==> ua_classifier (get-deps)
+==> ua_classifier (compile)
+Compiling c_src/dclass/dclass_client.c
+ERROR: compile failed while processing C:/zotonic-update/deps/ua_classifier: {'EXIT',{enoent,[{erlang,open_port,
+                         [{spawn,"cc -c  -O3 -Wall -fPIC -g -Wall -fPIC  -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include  c_src/dclass/dclass_client.c -o c_src/dclass/dclass_client.o"},
+                          [{env,[{"ALLUSERSPROFILE","C:\\ProgramData"},
+                                 {"APPDATA",
+                                  "C:\\Users\\Administrator\\AppData\\Roaming"},
+                                 {"CC","cc"},
+                                 {"CC_TEMPLATE",
+                                  "cc -c  -O3 -Wall -fPIC -g -Wall -fPIC  -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include  $PORT_IN_FILES -o $PORT_OUT_FILE"},
+                                 {"CFLAGS"," -O3 -Wall -fPIC"},
+                                 {"CLIENTNAME","PC203517"},
+                                 {"COMPUTERNAME","IP-0AC3A650"},
+                                 {"CXX","c++"},
+                                 {"CXX_TEMPLATE",
+                                  "c++ -c $CXXFLAGS -g -Wall -fPIC  -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include  $PORT_IN_FILES -o $PORT_OUT_FILE"},
+                                 {"ComSpec","C:\\Windows\\system32\\cmd.exe"},
+                                 {"CommonProgramFiles",
+                                  "C:\\Program Files\\Common Files"},
+                                 {"DEPS","!DEPS! .\\deps\\z_logger"},
+                                 {"DFSTRACINGON","FALSE"},
+                                 {"DRV_CFLAGS",
+                                  "-g -Wall -fPIC  -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include "},
+                                 {"DRV_LDFLAGS",
+                                  "-shared  -Lc:/ERL59~1.1/lib/erl_interface-3.7.7/lib -lerl_interface -lei"},
+                                 {"EBIN_DIR",".\\ebin"},
+                                 {"EBIN_DIR "," \"..\\ebin\""},
+                                 {"ERLANG_ARCH","32"},
+                                 {"ERLANG_HOME","C:\\erl5.9.1"},
+                                 {"ERLANG_TARGET","R15B01-win32-32"},
+                                 {"ERL_CFLAGS",
+                                  " -Ic:/ERL59~1.1/lib/erl_interface-3.7.7/include -Ic:/ERL59~1.1/erts-5.9.1/include "},
+                                 {"ERL_CONSOLE_MODE","tty:ccc"},
+                                 {"ERL_EI_LIBDIR",
+                                  "c:/ERL59~1.1/lib/erl_interface-3.7.7/lib"},
+                                 {"ERL_LDFLAGS",
+                                  " -Lc:/ERL59~1.1/lib/erl_interface-3.7.7/lib -lerl_interface -lei"},
+                                 {"FP_NO_HOST_CHECK","NO"},
+                                 {"HOMEDRIVE","C:"},
+                                 {"HOMEPATH","\\Users\\Administrator"},
+                                 {"JAVA_HOME",
+                                  "C:\\Program Files\\Java\\jdk1.6.0_21"},
+                                 {"LINK_TEMPLATE",
+                                  "cc $PORT_IN_FILES $LDFLAGS -shared  -Lc:/ERL59~1.1/lib/erl_interface-3.7.7/lib -lerl_interface -lei -o $PORT_OUT_FILE"},
+                                 {"LOCALAPPDATA",
+                                  "C:\\Users\\Administrator\\AppData\\Local"},
+                                 {"LOGONSERVER","\\\\IP-0AC3A650"},
+                                 {"OPENSSL_CONF",
+                                  "C:\\OpenSSL-Win32\\bin\\openssl.cfg"},
+                                 {"OS","Windows_NT"},
+                                 {"PATHEXT",
+                                  ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW"},
+                                 {"PROCESSOR_ARCHITECTURE","x86"},
+                                 {"PROCESSOR_IDENTIFIER",
+                                  "x86 Family 6 Model 23 Stepping 10, GenuineIntel"},
+                                 {"PROCESSOR_LEVEL","6"},
+                                 {"PROCESSOR_REVISION","170a"},
+                                 {"PROMPT","$P$G"},
+                                 {"PSModulePath",
+                                  "C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\"},
+                                 {"PUBLIC","C:\\Users\\Public"},
+                                 {"Path",
+                                  "C:\\ERL59~1.1\\ERTS-5~1.1\\bin;C:\\ERL59~1.1\\bin;C:\\erl5.9.1\\erts-5.9.1\\bin;C:\\Program Files\\Yaws-1.90\\bin;C:\\Erlang\\ImageMagick-6.7.6-7-Q16-windows\\ImageMagick-6.7.6-7;C:\\Ruby193\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\erl5.9.1\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Erlang\\springsource\\apache-maven-3.0.3\\bin;C:\\Python27;C:\\Erlang\\rebar"},
+                                 {"ProgramData","C:\\ProgramData"},
+                                 {"ProgramFiles","C:\\Program Files"},
+                                 {"SESSIONNAME","RDP-Tcp#0"},
+                                 {"SystemDrive","C:"},
+                                 {"SystemRoot","C:\\Windows"},
+                                 {"TEMP",
+                                  "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2"},
+                                 {"TMP",
+                                  "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2"},
+                                 {"TRACE_FORMAT_SEARCH_PATH",
+                                  "\\\\winseqfe\\release\\Windows6.0\\lh_sp2rtm\\6002.18005.090410-1830\\x86fre\\symbols.pri\\TraceFormat"},
+                                 {"USERDOMAIN","IP-0AC3A650"},
+                                 {"USERNAME","Administrator"},
+                                 {"USERPROFILE","C:\\Users\\Administrator"},
+                                 {"erl","erl"},
+                                 {"erlc","erlc"},
+                                 {"escript","\"escript.exe\""},
+                                 {"windir","C:\\Windows"}]},
+                           exit_status,
+                           {line,16384},
+                           use_stdio,stderr_to_stdout,hide]],
+                         []},
+                 {rebar_utils,sh,2,[]},
+                 {rebar_port_compiler,compile_each,5,[]},
+                 {rebar_port_compiler,compile,2,[]},
+                 {rebar_core,run_modules,4,[]},
+                 {rebar_core,execute,4,[]},
+                 {rebar_core,process_dir,4,[]},
+                 {rebar_core,process_commands,2,[]}]}}
+Leaving Directory: .\deps\ua_classifier
+------------------------------
+ make webzmachine
+------------------------------
+==> webzmachine (get-deps)
+==> webzmachine (compile)
+Leaving Directory: .\deps\webzmachine
+------------------------------
+ make z_logger
+------------------------------
+Leaving Directory: .\deps\z_logger
+------------------------------
+ make erlang-oauth
+------------------------------
+.\src\oauth.app
+        1 file(s) copied.
+Leaving Directory: .\modules\mod_oauth\deps\erlang-oauth
+==============================
+ make zotonic
+------------------------------
+Recompile: src/zotonic_sup
+Recompile: src/zotonic_deps
+Recompile: src/zotonic_app
+Recompile: src/zotonic
+Recompile: src/behaviours/gen_scomp
+Recompile: src/behaviours/gen_model
+Recompile: src/tests/erlydtl_unittests
+Recompile: src/tests/erlydtl_functional_tests
+Recompile: src/tests/erlydtl_example_variable_storage
+Recompile: src/tests/erlydtl_dateformat_tests
+Recompile: src/support/z_xml
+Recompile: src/support/z_webmachine_error_handler
+Recompile: src/support/z_validation
+Recompile: src/support/z_utils
+Recompile: src/support/z_user_agent
+Recompile: src/support/z_url
+Recompile: src/support/z_tracer
+Recompile: src/support/z_toposort
+Recompile: src/support/z_template
+Recompile: src/support/z_tempfile
+Recompile: src/support/z_tags
+Recompile: src/support/z_supervisor_named
+Recompile: src/support/z_supervisor
+Recompile: src/support/z_string
+Recompile: src/support/z_sites_manager
+Recompile: src/support/z_sites_dispatcher
+Recompile: src/support/z_site_sup
+Recompile: src/support/z_site_startup
+Recompile: src/support/z_session_page
+Recompile: src/support/z_session_manager
+Recompile: src/support/z_session
+Recompile: src/support/z_service
+Recompile: src/support/z_search
+Recompile: src/support/z_script
+Recompile: src/support/z_scomp
+Recompile: src/support/z_render
+Recompile: src/support/z_quoted_printable
+Recompile: src/support/z_pivot_rsc
+Recompile: src/support/z_path
+Recompile: src/support/z_parse_multipart
+Recompile: src/support/z_notifier
+Recompile: src/support/z_module_manager
+Recompile: src/support/z_module_indexer
+Recompile: src/support/z_module_dummy
+Recompile: src/support/z_memo
+Recompile: src/support/z_mediaclass
+Recompile: src/support/z_media_tag
+Recompile: src/support/z_media_preview_server
+Recompile: src/support/z_media_preview
+Recompile: src/support/z_media_identify
+Recompile: src/support/z_media_archive
+Recompile: src/support/z_lib_include
+Recompile: src/support/z_json
+Recompile: src/support/z_ids
+Recompile: src/support/z_html
+Recompile: src/support/z_expression
+Recompile: src/support/z_dropbox
+Recompile: src/support/z_dispatcher
+Recompile: src/support/z_depcache
+Recompile: src/support/z_datetime
+Recompile: src/support/z_datamodel
+Recompile: src/support/z_convert
+Recompile: src/support/z_context
+Recompile: src/support/z_config
+Recompile: src/support/z_auth
+Recompile: src/support/z_acl
+Recompile: src/support/z
+Recompile: src/smtp/z_email_server
+Recompile: src/smtp/z_email_receive_server
+src/smtp/z_email_receive_server.erl:24: Warning: behaviour gen_smtp_server_session undefined
+Recompile: src/smtp/z_email_receive
+Recompile: src/smtp/z_email_embed
+Recompile: src/smtp/z_email
+Recompile: src/smtp/rfc2047
+Recompile: src/models/m_site
+Recompile: src/models/m_session
+Recompile: src/models/m_search
+Recompile: src/models/m_rsc_update
+Recompile: src/models/m_rsc_import
+Recompile: src/models/m_rsc_export
+Recompile: src/models/m_rsc
+Recompile: src/models/m_req
+Recompile: src/models/m_predicate
+Recompile: src/models/m_persistent
+Recompile: src/models/m_page
+Recompile: src/models/m_notifier
+Recompile: src/models/m_modules
+Recompile: src/models/m_media
+Recompile: src/models/m_identity
+Recompile: src/models/m_edge
+Recompile: src/models/m_config
+Recompile: src/models/m_category
+src/models/m_category.erl:500: Warning: ambiguous call of overridden auto-imported BIF max/2
+ - use erlang:max/2 or "-compile({no_auto_import,[max/2]})." to resolve name clash
+Recompile: src/models/m_acl
+Recompile: src/markdown/z_markdown
+Recompile: src/markdown/z_html2markdown
+src/markdown/z_html2markdown.erl:234: Warning: function escape_html_comment/2 is unused
+Recompile: src/markdown/markdown
+Recompile: src/install/z_installer
+Recompile: src/install/z_install_defaultdata
+Recompile: src/install/z_install_data
+Recompile: src/install/z_install
+Recompile: src/i18n/z_trans_server
+Recompile: src/i18n/z_trans
+Recompile: src/i18n/z_gettext_compile
+Recompile: src/i18n/z_gettext
+Recompile: src/i18n/iso639
+Recompile: src/erlydtl/erlydtl_scanner
+Recompile: src/erlydtl/erlydtl_runtime
+Recompile: src/erlydtl/erlydtl_parser
+Recompile: src/erlydtl/erlydtl_operators
+Recompile: src/erlydtl/erlydtl_deps
+Recompile: src/erlydtl/erlydtl_dateformat
+Recompile: src/erlydtl/erlydtl_compiler
+Recompile: src/erlydtl/erlydtl
+Recompile: src/base64url/base64url
+Recompile: src/tests/erlydtl/erlydtl_tests_init
+Recompile: src/support/tests/z_utils_tests
+Recompile: src/support/tests/z_string_tests
+Recompile: src/support/tests/z_notifier_tests
+Recompile: src/support/tests/z_media_preview_tests
+Recompile: src/support/tests/z_lib_include_tests
+Recompile: src/support/tests/z_html_tests
+Recompile: src/support/tests/z_dispatcher_tests
+Recompile: src/support/tests/z_depcache_tests
+Recompile: src/support/tests/z_datetime_tests
+Recompile: src/support/tests/z_convert_tests
+Recompile: src/models/tests/m_rsc_tests
+Recompile: src/models/tests/m_rsc_import_tests
+Recompile: src/dbdrivers/postgresql/z_db
+Recompile: src/dbdrivers/postgresql/test/pgsql_tests
+Recompile: src/dbdrivers/postgresql/test/pgsql_pool_tests
+Recompile: src/dbdrivers/postgresql/epgsql_pool/pgsql_pool
+Recompile: src/dbdrivers/postgresql/epgsql_pool/epgsql_pool
+Recompile: src/dbdrivers/postgresql/epgsql/pgsql_types
+Recompile: src/dbdrivers/postgresql/epgsql/pgsql_datetime
+Recompile: src/dbdrivers/postgresql/epgsql/pgsql_connection
+Recompile: src/dbdrivers/postgresql/epgsql/pgsql_binary
+Recompile: src/dbdrivers/postgresql/epgsql/pgsql
+Recompile: modules/mod_video_embed/mod_video_embed
+Recompile: modules/mod_twitter/mod_twitter
+Recompile: modules/mod_translation/mod_translation
+Recompile: modules/mod_tkvstore/mod_tkvstore
+Recompile: modules/mod_survey/mod_survey
+Recompile: modules/mod_signup/mod_signup
+Recompile: modules/mod_signal/z_connect
+Recompile: modules/mod_signal/mod_signal
+Recompile: modules/mod_seo_sitemap/mod_seo_sitemap
+Recompile: modules/mod_seo_google/mod_seo_google
+Recompile: modules/mod_seo/mod_seo
+Recompile: modules/mod_search/mod_search
+Recompile: modules/mod_oembed/mod_oembed
+Recompile: modules/mod_oauth/mod_oauth
+Recompile: modules/mod_menu/mod_menu
+Recompile: modules/mod_mailinglist/mod_mailinglist
+Recompile: modules/mod_logging/mod_logging
+Recompile: modules/mod_l10n/mod_l10n
+Recompile: modules/mod_import_wordpress/mod_import_wordpress
+Recompile: modules/mod_import_csv/mod_import_csv
+modules/mod_import_csv/mod_import_csv.erl:116: Warning: ambiguous call of overridden auto-imported BIF min/2
+ - use erlang:min/2 or "-compile({no_auto_import,[min/2]})." to resolve name clash
+Recompile: modules/mod_geomap/mod_geomap
+Recompile: modules/mod_facebook/mod_facebook
+Recompile: modules/mod_email_relay/mod_email_relay
+Recompile: modules/mod_email_receive/mod_email_receive
+Recompile: modules/mod_development/z_filewatcher_inotify
+Recompile: modules/mod_development/z_code_reloader
+Recompile: modules/mod_development/mod_development
+Recompile: modules/mod_contact/mod_contact
+Recompile: modules/mod_comment/mod_comment
+Recompile: modules/mod_bootstrap/mod_bootstrap
+Recompile: modules/mod_base_site/mod_base_site
+Recompile: modules/mod_base/mod_base
+Recompile: modules/mod_backup/mod_backup
+Recompile: modules/mod_authentication/mod_authentication
+Recompile: modules/mod_atom_feed/mod_atom_feed
+Recompile: modules/mod_atom/mod_atom
+Recompile: modules/mod_atom/atom_convert
+Recompile: modules/mod_admin_predicate/mod_admin_predicate
+Recompile: modules/mod_admin_modules/mod_admin_modules
+Recompile: modules/mod_admin_identity/mod_admin_identity
+Recompile: modules/mod_admin_config/mod_admin_config
+Recompile: modules/mod_admin_category/mod_admin_category
+Recompile: modules/mod_admin/mod_admin
+Recompile: modules/mod_acl_simple_roles/mod_acl_simple_roles
+Recompile: modules/mod_acl_adminonly/mod_acl_adminonly
+Recompile: modules/mod_twitter/support/oauth_twitter_client
+Recompile: modules/mod_twitter/resources/resource_twitter_redirect
+Recompile: modules/mod_twitter/resources/resource_twitter_authorize
+Recompile: modules/mod_twitter/filters/filter_twitter
+Recompile: modules/mod_translation/support/translation_scan
+Recompile: modules/mod_translation/support/translation_po
+Recompile: modules/mod_translation/scomps/scomp_translation_admin_translation_statistics
+Recompile: modules/mod_translation/resources/resource_language_set
+Recompile: modules/mod_translation/filters/filter_language
+Recompile: modules/mod_translation/filters/filter_is_rtl
+Recompile: modules/mod_tkvstore/models/m_tkvstore
+Recompile: modules/mod_survey/support/mod_survey_schema
+Recompile: modules/mod_survey/scomps/scomp_survey_survey_example
+Recompile: modules/mod_survey/scomps/scomp_survey_poll
+Recompile: modules/mod_survey/resources/resource_survey_results
+Recompile: modules/mod_survey/questions/survey_q_yesno
+Recompile: modules/mod_survey/questions/survey_q_truefalse
+Recompile: modules/mod_survey/questions/survey_q_thurstone
+Recompile: modules/mod_survey/questions/survey_q_short_answer
+Recompile: modules/mod_survey/questions/survey_q_page_break
+Recompile: modules/mod_survey/questions/survey_q_narrative
+Recompile: modules/mod_survey/questions/survey_q_matching
+Recompile: modules/mod_survey/questions/survey_q_long_answer
+Recompile: modules/mod_survey/questions/survey_q_likert
+Recompile: modules/mod_survey/questions/survey_q_country
+Recompile: modules/mod_survey/questions/survey_q_button
+Recompile: modules/mod_survey/models/m_survey
+Recompile: modules/mod_survey/filters/filter_survey_prepare_thurstone
+Recompile: modules/mod_survey/filters/filter_survey_prepare_narrative
+Recompile: modules/mod_survey/filters/filter_survey_prepare_matching
+Recompile: modules/mod_survey/filters/filter_survey_answer_split
+Recompile: modules/mod_signup/resources/resource_signup_confirm
+Recompile: modules/mod_signup/resources/resource_signup
+Recompile: modules/mod_signal/tests/mod_signal_tests
+Recompile: modules/mod_signal/models/m_signal
+Recompile: modules/mod_signal/actions/action_signal_emit
+Recompile: modules/mod_signal/actions/action_signal_disconnect
+Recompile: modules/mod_signal/actions/action_signal_connect
+Recompile: modules/mod_seo/resources/resource_admin_seo
+Recompile: modules/mod_search/tests/mod_search_tests
+Recompile: modules/mod_search/support/search_query_notify
+Recompile: modules/mod_search/support/search_query
+Recompile: modules/mod_search/support/search_all_bytitle
+Recompile: modules/mod_search/services/service_search_search
+Recompile: modules/mod_oembed/support/oembed_providers
+Recompile: modules/mod_oembed/support/oembed_client
+Recompile: modules/mod_oauth/support/oauth_install_data
+Recompile: modules/mod_oauth/resources/resource_oauth_request_token
+Recompile: modules/mod_oauth/resources/resource_oauth_authorize
+Recompile: modules/mod_oauth/resources/resource_oauth_apps
+Recompile: modules/mod_oauth/resources/resource_oauth_access_token
+Recompile: modules/mod_oauth/models/m_oauth_perms
+Recompile: modules/mod_oauth/models/m_oauth_app
+Recompile: modules/mod_menu/scomps/scomp_menu_menu
+Recompile: modules/mod_menu/filters/filter_menu_trail
+Recompile: modules/mod_menu/filters/filter_menu_subtree
+Recompile: modules/mod_menu/filters/filter_menu_flat
+Recompile: modules/mod_mailinglist/support/mod_mailinglist_schema
+Recompile: modules/mod_mailinglist/scomps/scomp_mailinglist_mailinglist_subscribe
+Recompile: modules/mod_mailinglist/resources/resource_mailinglist_export
+Recompile: modules/mod_mailinglist/resources/resource_admin_mailinglist_recipients
+Recompile: modules/mod_mailinglist/resources/resource_admin_mailinglist
+Recompile: modules/mod_mailinglist/resources/resource_admin_mailing_status
+Recompile: modules/mod_mailinglist/resources/resource_admin_mailing_preview
+Recompile: modules/mod_mailinglist/models/m_mailinglist
+Recompile: modules/mod_mailinglist/filters/filter_inject_recipientdetails
+Recompile: modules/mod_mailinglist/actions/action_mailinglist_mailinglist_unsubscribe
+Recompile: modules/mod_mailinglist/actions/action_mailinglist_mailinglist_confirm
+Recompile: modules/mod_mailinglist/actions/action_mailinglist_mailing_page_test
+Recompile: modules/mod_mailinglist/actions/action_mailinglist_dialog_mailing_page
+Recompile: modules/mod_logging/models/m_log_email
+Recompile: modules/mod_logging/models/m_log
+Recompile: modules/mod_logging/actions/action_logging_addlog
+Recompile: modules/mod_l10n/support/l10n_iso2country
+Recompile: modules/mod_l10n/support/l10n_date
+Recompile: modules/mod_l10n/support/l10n_country2iso
+Recompile: modules/mod_l10n/models/m_l10n
+Recompile: modules/mod_import_wordpress/support/import_wordpress
+Recompile: modules/mod_import_csv/support/parse_csv
+Recompile: modules/mod_import_csv/support/import_csv
+Recompile: modules/mod_geomap/support/geomap_tiles
+Recompile: modules/mod_geomap/support/geomap_quadtile
+Recompile: modules/mod_geomap/services/service_geomap_locations
+Recompile: modules/mod_geomap/services/service_geomap_countries
+Recompile: modules/mod_geomap/scomps/scomp_geomap_geomap_static
+Recompile: modules/mod_facebook/resources/resource_facebook_redirect
+Recompile: modules/mod_facebook/resources/resource_facebook_authorize
+Recompile: modules/mod_facebook/resources/resource_admin_facebook
+Recompile: modules/mod_facebook/models/m_facebook
+Recompile: modules/mod_email_receive/models/m_email_receive_recipient
+Recompile: modules/mod_development/services/service_development_recompile
+Recompile: modules/mod_development/resources/resource_wmtrace_conf
+Recompile: modules/mod_development/resources/resource_wmtrace
+Recompile: modules/mod_development/actions/action_development_development_templates_stream
+Recompile: modules/mod_comment/resources/resource_admin_comments_settings
+Recompile: modules/mod_comment/resources/resource_admin_comments
+Recompile: modules/mod_comment/models/m_comment
+Recompile: modules/mod_comment/filters/filter_gravatar_code
+Recompile: modules/mod_base/validators/validator_base_presence
+Recompile: modules/mod_base/validators/validator_base_postback
+Recompile: modules/mod_base/validators/validator_base_numericality
+Recompile: modules/mod_base/validators/validator_base_length
+Recompile: modules/mod_base/validators/validator_base_format
+Recompile: modules/mod_base/validators/validator_base_email
+Recompile: modules/mod_base/validators/validator_base_date
+Recompile: modules/mod_base/validators/validator_base_custom
+Recompile: modules/mod_base/validators/validator_base_confirmation
+Recompile: modules/mod_base/validators/validator_base_acceptance
+Recompile: modules/mod_base/tests/mod_admin_tests
+Recompile: modules/mod_base/support/z_websocket_hybi17
+Recompile: modules/mod_base/support/z_websocket_hybi00
+Recompile: modules/mod_base/support/z_websocket_hixie75
+Recompile: modules/mod_base/support/z_list_of_ids_filter
+Recompile: modules/mod_base/services/service_base_persistent_set
+Recompile: modules/mod_base/services/service_base_persistent_get
+Recompile: modules/mod_base/services/service_base_meta
+Recompile: modules/mod_base/services/service_base_info
+Recompile: modules/mod_base/services/service_base_export
+Recompile: modules/mod_base/services/service_base_everything
+Recompile: modules/mod_base/scomps/scomp_base_wire_args
+Recompile: modules/mod_base/scomps/scomp_base_wire
+Recompile: modules/mod_base/scomps/scomp_base_validate
+Recompile: modules/mod_base/scomps/scomp_base_tabs
+Recompile: modules/mod_base/scomps/scomp_base_stream
+Recompile: modules/mod_base/scomps/scomp_base_spinner
+Recompile: modules/mod_base/scomps/scomp_base_sorter
+Recompile: modules/mod_base/scomps/scomp_base_sortable
+Recompile: modules/mod_base/scomps/scomp_base_script
+Recompile: modules/mod_base/scomps/scomp_base_pager
+modules/mod_base/scomps/scomp_base_pager.erl:111: Warning: function prev/5 is unused
+modules/mod_base/scomps/scomp_base_pager.erl:117: Warning: function next/5 is unused
+modules/mod_base/scomps/scomp_base_pager.erl:124: Warning: function url_to_li/3 is unused
+Recompile: modules/mod_base/scomps/scomp_base_loremipsum
+Recompile: modules/mod_base/scomps/scomp_base_lazy
+Recompile: modules/mod_base/scomps/scomp_base_inplace_textbox
+Recompile: modules/mod_base/scomps/scomp_base_include
+Recompile: modules/mod_base/scomps/scomp_base_google_chart
+Recompile: modules/mod_base/scomps/scomp_base_droppable
+Recompile: modules/mod_base/scomps/scomp_base_draggable
+Recompile: modules/mod_base/scomps/scomp_base_debug
+Recompile: modules/mod_base/scomps/scomp_base_chart_pie3d
+Recompile: modules/mod_base/scomps/scomp_base_chart_pie
+Recompile: modules/mod_base/scomps/scomp_base_catinclude
+Recompile: modules/mod_base/scomps/scomp_base_button
+Recompile: modules/mod_base/resources/resource_websocket
+Recompile: modules/mod_base/resources/resource_website_redirect
+Recompile: modules/mod_base/resources/resource_user_agent_select
+Recompile: modules/mod_base/resources/resource_user_agent_probe
+Recompile: modules/mod_base/resources/resource_template
+Recompile: modules/mod_base/resources/resource_static_pages
+Recompile: modules/mod_base/resources/resource_redirect
+Recompile: modules/mod_base/resources/resource_postback
+Recompile: modules/mod_base/resources/resource_page
+Recompile: modules/mod_base/resources/resource_lib
+Recompile: modules/mod_base/resources/resource_id
+Recompile: modules/mod_base/resources/resource_home
+Recompile: modules/mod_base/resources/resource_file_readonly
+Recompile: modules/mod_base/resources/resource_error
+Recompile: modules/mod_base/resources/resource_comet
+Recompile: modules/mod_base/resources/resource_close_connection
+Recompile: modules/mod_base/resources/resource_api
+Recompile: modules/mod_base/filters/filter_yesno
+Recompile: modules/mod_base/filters/filter_without_embedded_media
+Recompile: modules/mod_base/filters/filter_vsplit_in
+Recompile: modules/mod_base/filters/filter_utc
+Recompile: modules/mod_base/filters/filter_urlize
+Recompile: modules/mod_base/filters/filter_urlencode
+Recompile: modules/mod_base/filters/filter_upper
+Recompile: modules/mod_base/filters/filter_unescape
+Recompile: modules/mod_base/filters/filter_truncate
+Recompile: modules/mod_base/filters/filter_to_json
+Recompile: modules/mod_base/filters/filter_to_integer
+Recompile: modules/mod_base/filters/filter_to_binary
+Recompile: modules/mod_base/filters/filter_timesince
+Recompile: modules/mod_base/filters/filter_tail
+Recompile: modules/mod_base/filters/filter_summary
+Recompile: modules/mod_base/filters/filter_sub_year
+Recompile: modules/mod_base/filters/filter_sub_week
+Recompile: modules/mod_base/filters/filter_sub_month
+Recompile: modules/mod_base/filters/filter_sub_day
+Recompile: modules/mod_base/filters/filter_striptags
+Recompile: modules/mod_base/filters/filter_stringify
+Recompile: modules/mod_base/filters/filter_split_in
+Recompile: modules/mod_base/filters/filter_split
+Recompile: modules/mod_base/filters/filter_slugify
+Recompile: modules/mod_base/filters/filter_slice
+Recompile: modules/mod_base/filters/filter_show_media
+Recompile: modules/mod_base/filters/filter_sha1
+Recompile: modules/mod_base/filters/filter_rjust
+Recompile: modules/mod_base/filters/filter_reversed
+Recompile: modules/mod_base/filters/filter_replace_args
+Recompile: modules/mod_base/filters/filter_replace
+Recompile: modules/mod_base/filters/filter_range
+Recompile: modules/mod_base/filters/filter_randomize
+Recompile: modules/mod_base/filters/filter_random
+Recompile: modules/mod_base/filters/filter_rand
+Recompile: modules/mod_base/filters/filter_pprint
+Recompile: modules/mod_base/filters/filter_nthtail
+Recompile: modules/mod_base/filters/filter_ne_day
+Recompile: modules/mod_base/filters/filter_minmax
+Recompile: modules/mod_base/filters/filter_min
+Recompile: modules/mod_base/filters/filter_member
+Recompile: modules/mod_base/filters/filter_max
+Recompile: modules/mod_base/filters/filter_match
+Recompile: modules/mod_base/filters/filter_make_list
+Recompile: modules/mod_base/filters/filter_lower
+Recompile: modules/mod_base/filters/filter_ljust
+Recompile: modules/mod_base/filters/filter_linebreaksbr
+Recompile: modules/mod_base/filters/filter_length_is
+Recompile: modules/mod_base/filters/filter_length
+Recompile: modules/mod_base/filters/filter_last
+Recompile: modules/mod_base/filters/filter_join
+Recompile: modules/mod_base/filters/filter_is_visible
+Recompile: modules/mod_base/filters/filter_is_undefined
+Recompile: modules/mod_base/filters/filter_is_not_a
+Recompile: modules/mod_base/filters/filter_is_even
+Recompile: modules/mod_base/filters/filter_is_defined
+Recompile: modules/mod_base/filters/filter_is_a
+Recompile: modules/mod_base/filters/filter_insert
+Recompile: modules/mod_base/filters/filter_index_of
+Recompile: modules/mod_base/filters/filter_in_past
+Recompile: modules/mod_base/filters/filter_in_future
+Recompile: modules/mod_base/filters/filter_if
+Recompile: modules/mod_base/filters/filter_group_title_firstchar
+Recompile: modules/mod_base/filters/filter_group_firstchar
+Recompile: modules/mod_base/filters/filter_group_by
+Recompile: modules/mod_base/filters/filter_format_price
+Recompile: modules/mod_base/filters/filter_format_number
+Recompile: modules/mod_base/filters/filter_format_integer
+Recompile: modules/mod_base/filters/filter_force_escape
+Recompile: modules/mod_base/filters/filter_fix_ampersands
+Recompile: modules/mod_base/filters/filter_first
+Recompile: modules/mod_base/filters/filter_filesizeformat
+Recompile: modules/mod_base/filters/filter_escapexml
+Recompile: modules/mod_base/filters/filter_escapejson
+Recompile: modules/mod_base/filters/filter_escapejs
+Recompile: modules/mod_base/filters/filter_escape_ical
+Recompile: modules/mod_base/filters/filter_eq_day
+Recompile: modules/mod_base/filters/filter_element
+Recompile: modules/mod_base/filters/filter_datediff
+Recompile: modules/mod_base/filters/filter_date_range
+Recompile: modules/mod_base/filters/filter_date
+Recompile: modules/mod_base/filters/filter_chunk
+Recompile: modules/mod_base/filters/filter_center
+Recompile: modules/mod_base/filters/filter_capfirst
+Recompile: modules/mod_base/filters/filter_brlinebreaks
+Recompile: modules/mod_base/filters/filter_before
+Recompile: modules/mod_base/filters/filter_as_atom
+Recompile: modules/mod_base/filters/filter_append
+Recompile: modules/mod_base/filters/filter_after
+Recompile: modules/mod_base/filters/filter_add_year
+Recompile: modules/mod_base/filters/filter_add_week
+Recompile: modules/mod_base/filters/filter_add_month
+Recompile: modules/mod_base/filters/filter_add_day
+Recompile: modules/mod_base/actions/action_base_with_args
+Recompile: modules/mod_base/actions/action_base_validation_error
+Recompile: modules/mod_base/actions/action_base_update
+Recompile: modules/mod_base/actions/action_base_unmask
+Recompile: modules/mod_base/actions/action_base_typeselect
+Recompile: modules/mod_base/actions/action_base_trigger_event
+Recompile: modules/mod_base/actions/action_base_toggle_class
+Recompile: modules/mod_base/actions/action_base_toggle
+Recompile: modules/mod_base/actions/action_base_tinymce_remove
+Recompile: modules/mod_base/actions/action_base_tinymce_add
+Recompile: modules/mod_base/actions/action_base_submit
+Recompile: modules/mod_base/actions/action_base_slide_up
+Recompile: modules/mod_base/actions/action_base_slide_toggle
+Recompile: modules/mod_base/actions/action_base_slide_fade_out
+Recompile: modules/mod_base/actions/action_base_slide_fade_in
+Recompile: modules/mod_base/actions/action_base_slide_down
+Recompile: modules/mod_base/actions/action_base_show
+Recompile: modules/mod_base/actions/action_base_set_value
+Recompile: modules/mod_base/actions/action_base_set_class
+Recompile: modules/mod_base/actions/action_base_script
+Recompile: modules/mod_base/actions/action_base_reset
+Recompile: modules/mod_base/actions/action_base_replace
+Recompile: modules/mod_base/actions/action_base_remove_class
+Recompile: modules/mod_base/actions/action_base_remove
+Recompile: modules/mod_base/actions/action_base_reload
+Recompile: modules/mod_base/actions/action_base_redirect
+Recompile: modules/mod_base/actions/action_base_postback
+Recompile: modules/mod_base/actions/action_base_notify
+Recompile: modules/mod_base/actions/action_base_move
+Recompile: modules/mod_base/actions/action_base_moreresults
+Recompile: modules/mod_base/actions/action_base_mask
+Recompile: modules/mod_base/actions/action_base_logoff
+Recompile: modules/mod_base/actions/action_base_jquery_effect
+Recompile: modules/mod_base/actions/action_base_insert_top
+Recompile: modules/mod_base/actions/action_base_insert_bottom
+Recompile: modules/mod_base/actions/action_base_insert_before
+Recompile: modules/mod_base/actions/action_base_insert_after
+Recompile: modules/mod_base/actions/action_base_hide
+Recompile: modules/mod_base/actions/action_base_growl
+Recompile: modules/mod_base/actions/action_base_form_reset
+Recompile: modules/mod_base/actions/action_base_focus
+Recompile: modules/mod_base/actions/action_base_fade_out
+Recompile: modules/mod_base/actions/action_base_fade_in
+Recompile: modules/mod_base/actions/action_base_event
+Recompile: modules/mod_base/actions/action_base_enable
+Recompile: modules/mod_base/actions/action_base_effect
+Recompile: modules/mod_base/actions/action_base_disable
+Recompile: modules/mod_base/actions/action_base_dialog_open
+Recompile: modules/mod_base/actions/action_base_dialog_close
+Recompile: modules/mod_base/actions/action_base_dialog
+Recompile: modules/mod_base/actions/action_base_confirm
+Recompile: modules/mod_base/actions/action_base_buttonize
+Recompile: modules/mod_base/actions/action_base_animate
+Recompile: modules/mod_base/actions/action_base_alert
+Recompile: modules/mod_base/actions/action_base_add_class
+Recompile: modules/mod_backup/resources/resource_admin_backup
+Recompile: modules/mod_backup/actions/action_backup_backup_start
+Recompile: modules/mod_authentication/resources/resource_logon
+Recompile: modules/mod_authentication/resources/resource_logoff
+Recompile: modules/mod_atom_feed/resources/resource_atom_feed_search
+Recompile: modules/mod_atom_feed/resources/resource_atom_feed_cat
+Recompile: modules/mod_atom/tests/atom_convert_tests
+Recompile: modules/mod_atom/resources/resource_atom_entry
+Recompile: modules/mod_admin_predicate/actions/action_admin_predicate_predicate_delete
+Recompile: modules/mod_admin_predicate/actions/action_admin_predicate_dialog_predicate_new
+Recompile: modules/mod_admin_predicate/actions/action_admin_predicate_dialog_predicate_delete
+Recompile: modules/mod_admin_modules/resources/resource_admin_module_manager
+Recompile: modules/mod_admin_modules/actions/action_admin_modules_module_toggle
+Recompile: modules/mod_admin_modules/actions/action_admin_modules_module_rescan
+Recompile: modules/mod_admin_identity/validators/validator_admin_identity_username_unique
+Recompile: modules/mod_admin_identity/validators/validator_admin_identity_email_unique
+Recompile: modules/mod_admin_identity/actions/action_admin_identity_dialog_user_add
+Recompile: modules/mod_admin_identity/actions/action_admin_identity_dialog_set_username_password
+Recompile: modules/mod_admin_identity/actions/action_admin_identity_dialog_delete_username
+Recompile: modules/mod_admin_identity/actions/action_admin_identity_delete_username
+Recompile: modules/mod_admin_config/resources/resource_admin_config
+Recompile: modules/mod_admin_config/actions/action_admin_config_dialog_config_new
+Recompile: modules/mod_admin_config/actions/action_admin_config_dialog_config_edit
+Recompile: modules/mod_admin_config/actions/action_admin_config_dialog_config_delete
+Recompile: modules/mod_admin_config/actions/action_admin_config_config_toggle
+Recompile: modules/mod_admin_config/actions/action_admin_config_config_delete
+Recompile: modules/mod_admin_category/resources/resource_admin_category_sorter
+Recompile: modules/mod_admin_category/actions/action_admin_category_dialog_category_delete
+Recompile: modules/mod_admin_category/actions/action_admin_category_dialog_category_add
+Recompile: modules/mod_admin/resources/resource_admin_referrers
+Recompile: modules/mod_admin/resources/resource_admin_media_preview
+Recompile: modules/mod_admin/resources/resource_admin_edit
+Recompile: modules/mod_admin/resources/resource_admin
+Recompile: modules/mod_admin/models/m_admin_menu
+Recompile: modules/mod_admin/actions/action_admin_zmedia_has_chosen
+Recompile: modules/mod_admin/actions/action_admin_zmedia_choose
+Recompile: modules/mod_admin/actions/action_admin_zmedia
+Recompile: modules/mod_admin/actions/action_admin_zlink
+Recompile: modules/mod_admin/actions/action_admin_unlink
+Recompile: modules/mod_admin/actions/action_admin_link
+Recompile: modules/mod_admin/actions/action_admin_dialog_new_rsc
+Recompile: modules/mod_admin/actions/action_admin_dialog_media_upload
+Recompile: modules/mod_admin/actions/action_admin_dialog_edit_basics
+Recompile: modules/mod_admin/actions/action_admin_dialog_duplicate_rsc
+Recompile: modules/mod_admin/actions/action_admin_dialog_delete_rsc
+Recompile: modules/mod_admin/actions/action_admin_delete_rsc
+Recompile: modules/mod_admin/actions/action_admin_delete_media
+Recompile: modules/mod_admin/actions/action_admin_adminwidget_toggle
+Recompile: modules/mod_admin/actions/action_admin_admin_tasks
+Recompile: priv/sites/zotonic_status/zotonic_status
+Recompile: priv/sites/testsandbox/testsandbox
+Recompile: priv/sites/default/default
+Recompile: priv/sites/zotonic_status/resources/resource_zotonic_status
+Recompile: priv/sites/testsandbox/tests/testsandbox_basic_tests
+Recompile: priv/sites/testsandbox/resources/resource_test_helloworld
+Recompile: priv/sites/default/resources/resource_default_postcomment
+Recompile: priv/sites/default/resources/resource_default_contact
+Recompile: priv/sites/zotonic_status/modules/mod_zotonic_tracer/mod_zotonic_tracer
+Recompile: priv/sites/zotonic_status/modules/mod_zotonic_status_vcs/mod_zotonic_status_vcs
+        1 file(s) copied.
+------------------------------
+ build done
+==============================

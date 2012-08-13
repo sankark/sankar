@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<family>
+<members>
+	<member>
+		<name>sankar</name>
+		<gender>male</gender>
+	</member>
+	<member>
+		<name>kanagu</name>
+		<gender>male</gender>
+	</member>
+	<member>
+		<name>valar</name>
+		<gender>female</gender>
+	</member>
+	<member>
+		<name>deepa</name>
+		<gender>female</gender>
+	</member>
+</members>
+	<parents>
+		<parent>
+			<name>kanagu</name>
+			<child>sankar</child>
+		</parent>
+		<parent>
+			<name>valar</name>
+			<child>deepa</child>
+		</parent>
+		<parent>
+			<name>valar</name>
+			<child>sankar</child>
+		</parent>
+	</parents>
+
+</family>

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+#
+# Copyright 2011 Lloyd R. Prentice
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+export ZOTONIC_BIN=${ZOTONIC_BIN:=$ZOTONIC/bin}
+export SITES=${SITES:=$ZOTONIC/priv/sites}
+
+# Path to the Erlang VM
+export ERL=${ERL:=erl}
+
+export MAKE=${MAKE:=make}
+
+# Increase this if you expect a lot of concurrent connections. For example
+# if you use comet on popular pages.
+# Please check the documentation of your system on how to increase 
+# the maximum number of open files your operating system. 
+export MAX_PORTS=${MAX_PORTS:=1024}
+
+# The include path for the erlang vm, add when needed for your application.
+export PA=${PA:="$ZOTONIC/ebin $ZOTONIC/deps/*/ebin $ZOTONIC/modules/*/deps/*/ebin $ZOTONIC/priv/modules/*/deps/*/ebin $ZOTONIC/priv/sites/*/modules/*/deps/*/ebin"}
+
+# The name of the Erlang node, this must be unique on your host.
+export SNAME=${SNAME:=zotonic001}
+
+# Hostname to the fully qualified domain name of your host, or leave it as localhost.
+if [ "$HOSTNAME" != "localhost" ]; then
+    if [ "`echo $HOSTNAME|grep '\.'`" != "$HOSTNAME" ]; then
+	HOSTNAME="${HOSTNAME}.local"
+    else
+	HOSTNAME=${HOSTNAME:=localhost}
+    fi
+fi
+export HOSTNAME=$HOSTNAME
+
+# The filename where zotonic writes its unix process Id to, for monitoring applications.
+export ZOTONIC_PIDFILE=$ZOTONIC/zotonic.pid
+
+# Make sure the erlang.config file exists
+if [ ! -e "$ZOTONIC/priv/erlang.config" -a -e "$ZOTONIC/priv/erlang.config.in" ]; then
+    echo "Installing default erlang.config file"
+    cp "$ZOTONIC/priv/erlang.config.in" "$ZOTONIC/priv/erlang.config"
+fi
+
+# Make sure Zotonic is built
+if [ ! -e "$ZOTONIC/ebin/zotonic.app" ]; then
+    echo "Building Zotonic for the first time."
+    $MAKE
+fi
