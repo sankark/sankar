@@ -117,21 +117,39 @@ event(#submit{message=rscform}, Context) ->
             z_render:growl_error("Something went wrong. Sorry.", Context)
     end;
 
-event(#postback{message={reload_media, Opts}}, Context) ->
-    RscId = proplists:get_value(rsc_id, Opts),
-    DivId = proplists:get_value(div_id, Opts),
-    {Html, Context1} = z_template:render_to_iolist({cat, "_edit_media.tpl"}, [{id,RscId},{div_id,DivId}], Context),
-    z_render:update(DivId, Html, Context1);
+event(#postback{message={test_data, Opts}}, Context) ->
+   Data=z_context:get_q("test_data", Context),
+   io:format("dsfsdfdsdfafda~p",[Context]),
+   Context;
 
 event(#submit{message=add_rule}, Context) ->
 	    Post = z_context:get_q_all_noz(Context),
     Props = filter_props(Post),
 		Props2=proplists:delete(is_authoritative, Props) ,
-		io:format("inside postback ~p",[Props2]),
-	m_rules:insert(Props2,Context),
-	
-	io:format("inside postback ~p",[Props2]),
-      z_render:wire({reload, []}, Context);
+		io:format("inside postback ~p",[Context]),
+		RuleName=proplists:get_value("rule_name", Props2),
+		Pattern=proplists:get_value("pattern", Props2),
+		Cond=proplists:get_value("condition", Props2,""),
+		Action=proplists:get_value("action", Props2,""),
+		State=proplists:get_value("client_state", Props2,""),
+		R2=case proplists:is_defined("pattern", Post) of
+                true ->
+					rules_service:add_rule(RuleName,Pattern,Cond,Action,State),
+					m_rules:insert(Props2,Context),
+			    z_render:wire({reload, []}, Context);
+				false -> 
+					case proplists:is_defined("test_rule", Post) of
+						true ->Test_Data=proplists:get_value("test_rule", Props2),
+							    Res=[X || X <- Test_Data, X =/= $\"],
+							   io:format("Test Rule Found ~p",[Res]),
+							   Result=rules_service:test_data(Res),
+							   Context1 = z_context:set("test_result",Result,Context),
+							   io:format("new contex~p",[Context1]),
+							   {Html, Context2} = z_template:render_to_iolist("test_result.tpl", [{test_result,Result}], Context1),
+        					   z_render:update("querypreview", Html, Context2)
+					end
+		end;
+     
 
 event(#sort{items=Sorted, drop={dragdrop, {object_sorter, Props}, _, _}}, Context) ->
     RscId     = proplists:get_value(id, Props),
@@ -139,6 +157,12 @@ event(#sort{items=Sorted, drop={dragdrop, {object_sorter, Props}, _, _}}, Contex
     EdgeIds   = [ EdgeId || {dragdrop, EdgeId, _, _ElementId} <- Sorted ],
     m_edge:update_sequence_edge_ids(RscId, Predicate, EdgeIds, Context),
     Context;
+%%{% wire id=#query type="change" postback={query_preview rsc_id=id div_id=#querypreview} delegate="resource_admin_edit" %}
+
+
+%<div class="query-results" id="{{ #querypreview }}">
+%		{% include "_admin_query_preview.tpl" result=m.search[{query query_id=id pagelen=20}] %}
+%	</div>
 
 %% Previewing the results of a query in the admin edit
 event(#postback{message={query_preview, Opts}}, Context) ->
@@ -167,7 +191,8 @@ filter_props(Fs) ->
         "save_view",
         "save_duplicate",
         "save_stay",
-		"is_authoritative"
+		"is_authoritative",
+		"test_result"
     ],
     lists:foldl(fun(P, Acc) -> proplists:delete(P, Acc) end, Fs, Remove).
     %[ {list_to_existing_atom(K), list_to_binary(V)} || {K,V} <- Props ].

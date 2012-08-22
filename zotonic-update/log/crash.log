@@ -3369,3 +3369,774 @@ webmachine error: path="/rules"
      Reason:     {already_started,<0.67.0>}
      Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
 
+2012-08-13 14:14:35 =SUPERVISOR REPORT====
+     Supervisor: {<0.7904.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:24:36 =SUPERVISOR REPORT====
+     Supervisor: {<0.11726.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:26:40 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:26:40 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:26:40 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:26:40 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:26:40 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:26:41 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:26:41 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:28:03 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:28:03 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:28:03 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:28:03 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:28:03 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:28:03 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:28:03 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:29:27 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:29:27 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:29:28 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:29:28 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:29:28 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:29:28 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:29:28 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:29:31 =ERROR REPORT====
+** Generic server rules_compiler terminating 
+** Last message in was {compile_rules,"C:/ErlangTools/seresye/src/rules/test3"}
+** When Server state == 0
+** Reason for termination == 
+** {{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ErlangTools/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-08-13 14:29:31 =CRASH REPORT====
+  crasher:
+    initial call: rules_compiler:init/1
+    pid: <0.68.0>
+    registered_name: rules_compiler
+    exception exit: {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ErlangTools/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.65.0>]
+    messages: []
+    links: [<0.65.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 353
+  neighbours:
+2012-08-13 14:37:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:37:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:37:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:37:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:37:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:37:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:37:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:47:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.4074.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:57:08 =SUPERVISOR REPORT====
+     Supervisor: {<0.7901.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:57:47 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:57:47 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:57:47 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:57:47 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:57:47 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:57:47 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:57:47 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:58:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:58:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:58:33 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:58:33 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:58:33 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:58:33 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 14:58:33 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 15:08:33 =SUPERVISOR REPORT====
+     Supervisor: {<0.4072.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 15:18:34 =SUPERVISOR REPORT====
+     Supervisor: {<0.7893.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 15:28:35 =SUPERVISOR REPORT====
+     Supervisor: {<0.11715.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 15:38:36 =SUPERVISOR REPORT====
+     Supervisor: {<0.15535.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 15:48:37 =SUPERVISOR REPORT====
+     Supervisor: {<0.19360.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 15:58:38 =SUPERVISOR REPORT====
+     Supervisor: {<0.23184.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 16:08:39 =SUPERVISOR REPORT====
+     Supervisor: {<0.27007.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 16:18:40 =SUPERVISOR REPORT====
+     Supervisor: {<0.30827.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-13 16:28:41 =SUPERVISOR REPORT====
+     Supervisor: {<0.1881.1>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:09:19 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:09:19 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:09:19 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:09:19 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:09:19 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:09:19 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:09:19 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:10:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:10:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:10:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:10:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:10:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:10:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:10:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:13:21 =SUPERVISOR REPORT====
+     Supervisor: {<0.10621.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:13:21 =SUPERVISOR REPORT====
+     Supervisor: {<0.10623.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:13:21 =SUPERVISOR REPORT====
+     Supervisor: {<0.10625.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:13:21 =SUPERVISOR REPORT====
+     Supervisor: {<0.10627.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:13:21 =SUPERVISOR REPORT====
+     Supervisor: {<0.10629.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:13:21 =SUPERVISOR REPORT====
+     Supervisor: {<0.10631.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:13:21 =SUPERVISOR REPORT====
+     Supervisor: {<0.10633.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:14:14 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:14:14 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:14:14 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:14:14 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:14:14 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:14:14 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:14:14 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:15:00 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:15:00 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:15:00 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:15:00 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:15:00 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:15:00 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:15:00 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:16:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.146.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:16:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:16:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.150.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:16:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.152.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:16:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.154.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:16:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.156.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:16:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.158.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:24:52 =SUPERVISOR REPORT====
+     Supervisor: {<0.425.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:24:52 =SUPERVISOR REPORT====
+     Supervisor: {<0.427.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:24:52 =SUPERVISOR REPORT====
+     Supervisor: {<0.429.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:24:52 =SUPERVISOR REPORT====
+     Supervisor: {<0.431.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:24:52 =SUPERVISOR REPORT====
+     Supervisor: {<0.433.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:24:52 =SUPERVISOR REPORT====
+     Supervisor: {<0.435.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:24:52 =SUPERVISOR REPORT====
+     Supervisor: {<0.437.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-16 09:34:53 =SUPERVISOR REPORT====
+     Supervisor: {<0.5463.0>,z_site_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.67.0>}
+     Offender:   [{pid,undefined},{name,default},{mfargs,{pgsql_pool,start_link,[default,10,[{host,"127.0.0.1"},{port,5433},{username,"zotonic"},{password,"zotonic"},{database,"zotonic"},{schema,"public"}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-08-17 09:24:55 =CRASH REPORT====
+  crasher:
+    initial call: z_sites_manager:init/1
+    pid: <0.142.0>
+    registered_name: []
+    exception exit: {{timeout,{gen_server,call,[<0.143.0>,{start_child,default}]}},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [zotonic_sup,<0.89.0>]
+    messages: []
+    links: [<0.110.0>,<0.143.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 5658
+  neighbours:
+2012-08-17 09:32:18 =ERROR REPORT====
+** Generic server rules_compiler terminating 
+** Last message in was {compile_rules,"C:/ErlangTools/seresye/src/rules/{zotonic}"}
+** When Server state == 0
+** Reason for termination == 
+** {{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-08-17 09:32:18 =CRASH REPORT====
+  crasher:
+    initial call: rules_compiler:init/1
+    pid: <0.68.0>
+    registered_name: rules_compiler
+    exception exit: {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.65.0>]
+    messages: []
+    links: [<0.65.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 371
+  neighbours:
+2012-08-17 10:14:20 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl",71,112,"syntax error before: "%}""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-08-17 10:45:47 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl",71,125,"syntax error before: "}""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-08-17 10:45:52 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl",71,125,"syntax error before: "}""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-08-17 10:51:37 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl",78,17,"syntax error before: "}""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-08-17 12:51:18 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl",76,5,"syntax error before: "endif""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-08-17 14:05:15 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error rendering template: ~p (~p)~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl",{error,"scomp wire: please give either an <em>action</em> or a <em>postback</em> parameter."}]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,126}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-08-21 08:34:32 =ERROR REPORT====
+webmachine error: path="/postback"
+{error,{error,{case_clause,false},[{resource_rules,event,2,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,140}]},{resource_postback,process_postback,1,[{file,"modules/mod_base/resources/resource_postback.erl"},{line,138}]},{resource_postback,process_post,2,[{file,"modules/mod_base/resources/resource_postback.erl"},{line,70}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,484}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]},{webmachine_mochiweb,loop,2,[{file,"src/webmachine_mochiweb.erl"},{line,107}]}]}}
+2012-08-21 08:48:00 =ERROR REPORT====
+** Generic server rules_compiler terminating 
+** Last message in was {compile_rules,"C:/ErlangTools/seresye/src/rules/test"}
+** When Server state == 0
+** Reason for termination == 
+** {{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-08-21 08:48:00 =CRASH REPORT====
+  crasher:
+    initial call: rules_compiler:init/1
+    pid: <0.68.0>
+    registered_name: rules_compiler
+    exception exit: {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.65.0>]
+    messages: []
+    links: [<0.65.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 349
+  neighbours:
+2012-08-21 13:10:45 =ERROR REPORT====
+** Generic server rules_compiler terminating 
+** Last message in was {compile_rules,"C:/ErlangTools/seresye/src/rules/test"}
+** When Server state == 0
+** Reason for termination == 
+** {{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-08-21 13:10:45 =CRASH REPORT====
+  crasher:
+    initial call: rules_compiler:init/1
+    pid: <0.68.0>
+    registered_name: rules_compiler
+    exception exit: {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.65.0>]
+    messages: []
+    links: [<0.65.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 349
+  neighbours:
+2012-08-22 06:37:44 =CRASH REPORT====
+  crasher:
+    initial call: z_sites_manager:init/1
+    pid: <0.142.0>
+    registered_name: []
+    exception exit: {{timeout,{gen_server,call,[<0.143.0>,{start_child,default}]}},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [zotonic_sup,<0.89.0>]
+    messages: []
+    links: [<0.110.0>,<0.143.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 5658
+  neighbours:

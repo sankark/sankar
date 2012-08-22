@@ -8,7 +8,7 @@
 %%% license distributed with this project or
 %%% http://www.opensource.org/licenses/bsd-license.php
 -module (node_usecase).
--export ([heap_above60/3,heap_below20/3,avg_heap/3,tot_nodes/2,tot_heap/2,node/3,init/2,start/0]).
+-export ([heap_above60/3,heap_below20/3,tot_nodes/2,avg_heap/3,tot_heap/2,node/3,init/2,start/0,no_of_nodes/3]).
 
 
 -record (node, {mem_id,heap}).
@@ -17,7 +17,7 @@
 
 -include_lib("eunit/include/eunit.hrl").
 
--rules([heap_above60,avg_heap,tot_nodes,tot_heap,node,init,heap_below20]).
+-rules([heap_above60,avg_heap,tot_heap,node,init,heap_below20,tot_nodes,no_of_nodes]).
 
 
 heap_above60(Engine,{heap_above,60,X},{tot_nodes,Y}) when (X > 0) and (X/Y*100 >= 75) ->
@@ -32,10 +32,23 @@ avg_heap(Engine,#nodes{nodes=Nodes},{tot_heap,X}) when X > 0 ->
 		Engine1 = seresye_engine:assert (Engine,{avg_heap,X/length(Nodes)}),
 	 seresye_engine:set_client_state(Engine1,
                                     [seresye_engine:get_client_state(Engine1)]).
-tot_nodes(Engine,#nodes{nodes=Nodes}) ->
-		Engine1 = seresye_engine:assert (Engine,{tot_nodes,length(Nodes)}),
-	 seresye_engine:set_client_state(Engine1,
+%tot_nodes(Engine,#nodes{nodes=Nodes}) ->
+		%Engine1 = seresye_engine:assert (Engine,{tot_nodes,length(Nodes)}),
+	 %seresye_engine:set_client_state(Engine1,
+                     %              [seresye_engine:get_client_state(Engine1)]).
+
+no_of_nodes(Engine,{no_of_nodes}=F,{tot_nodes,X}=G)->
+		Engine1=seresye_engine:retract(Engine,F),
+		Engine2=seresye_engine:retract(Engine1,G),
+		Engine3=seresye_engine:assert(Engine2,{tot_nodes,X+1}),
+		seresye_engine:set_client_state(Engine3,
+                                    [seresye_engine:get_client_state(Engine3)]).
+tot_nodes(Engine,#node{}=Y)->
+	io:format("tot_nodes~n"),
+	Engine1=seresye_engine:assert(Engine,{no_of_nodes}),
+	seresye_engine:set_client_state(Engine1,
                                     [seresye_engine:get_client_state(Engine1)]).
+
 
 tot_heap(Engine,#nodes{nodes=Nodes})->
 	Tot=lists:foldl(fun (#node{heap=Heap},Acc) -> Acc+Heap end, 0 ,Nodes),					
@@ -56,15 +69,17 @@ node(Engine,#node{heap=Heap}=F,{heap_below,20, X} = G) when Heap < 20 ->
 	seresye_engine:set_client_state(Engine3,
                                     [seresye_engine:get_client_state(Engine3)]).
 init(Engine,#nodes { nodes = Nodes }) ->
+		
 	Engine2=lists:foldl(fun (Node,Engine1) -> seresye_engine:assert (Engine1,Node) end, Engine ,Nodes),
-	Engine3 = seresye_engine:assert (Engine2,{heap_above,60,0}),
+	Engine5 = seresye_engine:assert (Engine2,{tot_nodes,0}),
+	Engine3 = seresye_engine:assert (Engine5,{heap_above,60,0}),
 	Engine4 = seresye_engine:assert (Engine3,{heap_below,20,0}),
 	seresye_engine:set_client_state(Engine4,
                                     [seresye_engine:get_client_state(Engine4)]).
 	
 start () ->
-    Engine0 = seresye_engine:add_rules (seresye_engine:new([]), ?MODULE),
+    Engine0 = seresye_engine:add_rules (seresye_engine:new([]), node_usecase),
     Engine1 = seresye_engine:assert (Engine0, [#nodes { nodes = [#node{mem_id=1,heap=10},#node{mem_id=2,heap=10},#node{mem_id=3,heap=10},#node{mem_id=4,heap=100}]}]),
 State = seresye_engine:get_client_state(Engine1),
-	io:format("~nResult ~n~p",[lists:flatten(State)]).
+	io:format("~n~p",[Engine1]).
 

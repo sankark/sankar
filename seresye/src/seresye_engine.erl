@@ -46,7 +46,7 @@ set_hooks(EngineState, Hooks) when is_list(Hooks) ->
     EngineState#seresye{ hooks = Hooks }.
 
 set_client_state(EngineState, NewState) ->
-    EngineState#seresye{client_state=NewState}.
+    EngineState#seresye{kb=[],client_state=NewState}.
 
 get_client_state(#seresye{client_state=State}) ->
     State.

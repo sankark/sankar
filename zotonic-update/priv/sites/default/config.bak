@@ -1,10 +1,10 @@
 % Zotonic site configuration for default.
 [
     % This site is enabled or not.
-    {enabled, true},
+    {enabled, f},
 
     % Atomic hostname, MUST be equal to the directory name of this site.
-    {host, default2},
+    {host, default},
 
     % Hostname on which this site runs
     {hostname, "127.0.0.1:8000"},

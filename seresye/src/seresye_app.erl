@@ -20,7 +20,7 @@
 
 start(_StartType, _StartArgs) ->
     seresye_sup:start_link(),
-	seresye:start(default),
+	seresye:start(defaultengine),
 	rules_compiler:start_link(),
 	rules_compiler:start().
 

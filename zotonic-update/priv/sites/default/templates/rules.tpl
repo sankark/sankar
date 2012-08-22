@@ -21,9 +21,10 @@
         </thead>
 
         <tbody>
- 
+        
+        
  {% wire id="add_rule" type="submit" postback="add_rule"%}
-<form id="add_rule" method="POST" action="postback" class="row">
+<form id="add_rule" method="post" action="postback" class="row">
 	   <div class="row">
     <div class="control-group span2">
 	<label class="control-label" for="name_first">{_ Rule Name _}</label>
@@ -63,7 +64,23 @@
 	  <div class="well">
         {% button class="btn btn-primary"  type="submit" text=_"Add Rule" %}
     </div>
+    </form>
+     {% wire id="test" type="submit" postback="add_rule"%}
+<form id="test" method="post" action="postback" class="row">
+
+	<input type="text" id="test_rule" name="test_rule" value=""/>
+    <div class="well">
+	   {% button type="submit" class="btn btn-primary" text=_"Test" title=_"Test" %}
+     </div>    
+	
+	
 </form>
+ <div id="querypreview" class="well">
+{% include "test_result.tpl" %}
+	    </div>
+  </div>
+
+
             {% for p in result %}
 	    
             <tr id="{{ #li.name }}" data-href="{% url admin_edit_rsc id=p.id %}">
