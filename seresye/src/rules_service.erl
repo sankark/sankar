@@ -18,8 +18,8 @@
 -define(line(Tup), element(2, Tup)).
 add_rule(RuleName,Pattern,Arity,Cond,Action,State)->
 	Dest="C:/ErlangTools/seresye/src/rules/",
-	Header=lists:flatten(io_lib:format("-module(~s).\n-export([~s/~w]).\n-rules([~s]).\n",
-                                    [RuleName,
+	Header=lists:flatten(io_lib:format("-module(~s).\n~s-export([~s/~w]).\n-rules([~s]).\n",
+                                    [RuleName,model_service:get_includes(),
 									 RuleName,Arity,
 									 RuleName])),
 	case length(Cond) of

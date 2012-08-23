@@ -208,6 +208,7 @@ ask_yn(Prompt) ->
 
 ask_question(Prompt) -> io:get_line(Prompt).
 
+
 start() ->
     Engine0 = seresye_engine:new(),
     %% Rules with high priority (10)
