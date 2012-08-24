@@ -12,7 +12,7 @@
 -behaviour(supervisor).
 
 %% API
--export([start_link/0, start_engine/0, start_engine/1, start_engine/2,start_compiler/0]).
+-export([start_link/0, start_engine/0, start_engine/1, start_engine/2,start_compiler/1]).
 
 %% Supervisor callbacks
 -export([init/1]).
@@ -29,8 +29,8 @@ start_link() ->
 start_engine() ->
     supervisor:start_child(?SERVER, []).
 
-start_compiler() ->
-    supervisor:start_child(?SERVER, []).
+start_compiler(Name) ->
+    supervisor:start_child(?SERVER, [Name]).
 
 start_engine(Name) ->
     supervisor:start_child(?SERVER, [Name]).

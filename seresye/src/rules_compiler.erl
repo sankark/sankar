@@ -7,7 +7,7 @@
 -export([start_link/0, compile_rules/1]).
 
 -export([init/1, handle_call/3, handle_cast/2, 
-         handle_info/2, terminate/2, code_change/3,start/0]).
+         handle_info/2, terminate/2, code_change/3,start/1]).
 -record(state, {sup}).
 
 
@@ -26,8 +26,8 @@ start_link(Name) when is_atom(Name) ->
     gen_server:start_link({local, Name}, ?MODULE, [], []). 
 
 
-start() ->
-    seresye_sup:start_compiler().
+start(Name) ->
+    seresye_sup:start_compiler(Name).
 %%--------------------------------------------------------------------
 %% Function: print_state() -> ok
 %% Description: Prints the current state to std output
@@ -47,7 +47,7 @@ compile_rules(Module) ->
 %% Description: Initiates the server
 %%--------------------------------------------------------------------
 init([]) -> 
-    {ok, 0}.
+    {ok, #state{sup=[]}}.
 
 %%--------------------------------------------------------------------
 %% Function: %% handle_call(Request, From, State) -> {reply, Reply, State} |
@@ -70,7 +70,7 @@ handle_call({compile_rules,Module}, _From, State) ->
     file:close(File),
 	code:purge(rules_compiler),
 	code:load_file(rules_compiler),
-    {reply, ok,State+1};
+    {reply, ok,State};
 
 handle_call(_Call, _From, State) -> 
     {noreply, State}.

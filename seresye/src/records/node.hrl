@@ -1,0 +1,1 @@
+-record (node, {node_id,heap,memory,ipaddr}).

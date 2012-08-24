@@ -7,7 +7,7 @@
     
     <h2>{_ Rules _}</h2>
 
-   
+   {% include "models.tpl" %}
    <table class="table table-striped do_adminLinkedTable">
         <thead>
             <tr>

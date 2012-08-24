@@ -1,6 +1,6 @@
 -module(test5).
 -include("../records/ontology.hrl").
--include("../records/wine2.hrl").
+-include("../records/wine.hrl").
 -export([test5/3]).
 -rules([test5]).
 test5(Engine0,{test,test},{test2,X}=F) when X>10 ->

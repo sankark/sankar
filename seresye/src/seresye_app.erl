@@ -19,10 +19,17 @@
 %%%===================================================================
 
 start(_StartType, _StartArgs) ->
+	set_path(),
     seresye_sup:start_link(),
 	seresye:start(defaultengine),
 	rules_compiler:start_link(),
-	rules_compiler:start().
+	rules_compiler:start(rulescompiler).
+	
 
 stop(_State) ->
     ok.
+
+set_path() ->
+	P = code:all_loaded(),
+	Path = filename:dirname(filename:dirname(proplists:get_value(?MODULE, P))),
+	application:set_env(seresye, lib_dir, Path).

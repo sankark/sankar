@@ -1613,3 +1613,13 @@ $.parseQuery = function(qs,options) {
 	return params;
 }
 
+
+
+ function GetSelectedValut(id)
+{
+document.getElementById("input").value="";
+    document.getElementById("pattern").value=id;
+	$("ul").empty();
+
+
+}
