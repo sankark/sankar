@@ -132,9 +132,10 @@ event(#submit{message=add_rule}, Context) ->
 		Cond=proplists:get_value("condition", Props2,""),
 		Action=proplists:get_value("action", Props2,""),
 		State=proplists:get_value("client_state", Props2,""),
+		Salience=proplists:get_value("salience", Props2,"0"),
 		R2=case proplists:is_defined("pattern", Post) of
                 true ->
-					rules_service:add_rule(RuleName,Pattern,Cond,Action,State),
+					rules_service:add_rule(RuleName,Pattern,Cond,Action,State,Salience),
 					m_rules:insert(Props2,Context),
 			    z_render:wire({reload, []}, Context);
 				false -> 

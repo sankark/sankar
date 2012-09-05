@@ -46,7 +46,7 @@ resource_exists(ReqData, Context) ->
 html(Context) ->
     Id = z_context:get(id, Context),
     Template = z_context:get(template, Context),
-	Result=m_rules:getAll(rules,Context),
+	Result=m_models:getAll(models,Context),
 	io:format("Result ~p",[Result]),
     Html = z_template:render(Template, [{result,Result}], Context),
 	z_context:output(Html, Context).
@@ -122,33 +122,17 @@ event(#postback{message={test_data, Opts}}, Context) ->
    io:format("dsfsdfdsdfafda~p",[Context]),
    Context;
 
-event(#submit{message=add_rule}, Context) ->
+event(#submit{message=add_model}, Context) ->
 	    Post = z_context:get_q_all_noz(Context),
     Props = filter_props(Post),
 		Props2=proplists:delete(is_authoritative, Props) ,
 		io:format("inside postback ~p",[Context]),
-		RuleName=proplists:get_value("rule_name", Props2),
-		Pattern=proplists:get_value("pattern", Props2),
-		Cond=proplists:get_value("condition", Props2,""),
-		Action=proplists:get_value("action", Props2,""),
-		State=proplists:get_value("client_state", Props2,""),
-		R2=case proplists:is_defined("pattern", Post) of
-                true ->
-					rules_service:add_rule(RuleName,Pattern,Cond,Action,State),
-					m_rules:insert(Props2,Context),
-			    z_render:wire({reload, []}, Context);
-				false -> 
-					case proplists:is_defined("test_rule", Post) of
-						true ->Test_Data=proplists:get_value("test_rule", Props2),
-							    Res=[X || X <- Test_Data, X =/= $\"],
-							   io:format("Test Rule Found ~p",[Res]),
-							   Result=rules_service:test_data(Res),
-							   Context1 = z_context:set("test_result",Result,Context),
-							   io:format("new contex~p",[Context1]),
-							   {Html, Context2} = z_template:render_to_iolist("test_result.tpl", [{test_result,Result}], Context1),
-        					   z_render:update("querypreview", Html, Context2)
-					end
-		end;
+		Model_Name=proplists:get_value("model_name", Props2),
+		Model_Def=proplists:get_value("model_def", Props2),
+		proto_service:generate_model(Model_Def,Model_Name),
+		m_models:insert(Props2,Context),
+		z_render:growl(["Model Added"], Context),
+		 z_render:wire({reload, []}, Context);
      
 event(#postback{message={typeselect, Cats, Template, Actions, ActionsWithId, OtherArgs}, target=TargetId}, Context) ->
     Text = z_context:get_q("triggervalue", Context),

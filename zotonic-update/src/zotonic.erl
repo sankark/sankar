@@ -41,9 +41,13 @@ start(_Args) ->
     ensure_started(crypto),
     ensure_started(webzmachine),
     ensure_started(lager),
+	ensure_started(protobuffs),
+	ensure_started(syntax_tools),
+	ensure_started(parse_trans),
 	ensure_started(seresye),
+	seresye:start(defaultengine),
     ensure_started(mnesia),
-    ok = application:start(zotonic).
+    application:start(zotonic).
 
 %% @spec stop() -> ok
 %% @doc Stop the zotonic server.

@@ -7,15 +7,43 @@
     
     <h2>{_ Rules _}</h2>
 
-   {% include "models.tpl" %}
+   <div class="tab-pane" id="{{ #tab }}-search">
+	    <div class="control-group">
+
+                <label for="input" class="control-label">{_ Use the autocompleter to search pattern. _}</label>
+                <div class="controls">
+                    <input id="input" class="autocompleter span5 do_autofocus" type="text" value="" />
+                    <ul id="{{#suggestions}}" class="suggestions-list"></ul>
+                </div>
+            </div>
+
+            {% wire id="input"
+                type="click" 
+                action={search
+                target=#suggestions 
+                action_with_id={with_args action={link subject_id=subject_id predicate="depiction" element_id=element_id} arg={object_id select_id}
+                }
+	        action={postback postback={reload_media rsc_id=id div_id=media_div_id} delegate="resource_admin_edit"}
+                action_with_id={with_args action={zmedia_has_chosen} arg={id select_id}}
+                action={dialog_close}
+
+                cat=m.predicate.object_category["depiction"]
+	        }
+            %}
+                
+	</div>
+		
+
+
    <table class="table table-striped do_adminLinkedTable">
         <thead>
             <tr>
                 <th width="20%">{_ RuleName _}</th>
-                <th width="40%">{_ Pattern _}</th>
+                <th width="20%">{_ Pattern _}</th>
                 <th width="20%">{_ Condition _}</th>
                 <th width="20%">{_ Action _}</th>
                 <th width="20%">{_ ClientState _}</th>
+                 <th width="10%">{_ Priority _}</th>
                 <th width="20%">&nbsp;</th>
             </tr>
         </thead>
@@ -33,7 +61,7 @@
         </div>
     </div>
 
-    <div class="control-group span4">
+    <div class="control-group span3">
 	<label class="control-label" for="name_middle">{_ Pattern _}</label>
         <div class="controls">
 	    <input id="pattern" type="text" name="pattern" value="{{ r.pattern }}" style="width: 100%" />
@@ -58,6 +86,13 @@
 	<label class="control-label" for="name_surname">{_ Client State _}</label>
         <div class="controls">
 	    <input id="client_state" type="text" name="client_state" value="{{ r.client_state }}" style="width: 90%" />
+        </div>
+    </div>
+    
+      <div class="control-group span1">
+	<label class="control-label" for="name_surname">{_ Salience _}</label>
+        <div class="controls">
+	    <input id="salience" type="text" name="salience" value="{{ r.salience }}" style="width: 20%" />
         </div>
     </div>
 </div>

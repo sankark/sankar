@@ -109,8 +109,16 @@ init([]) ->
     SitesSup = {z_sites_manager,
                 {z_sites_manager, start_link, []},
                 permanent, 5000, worker, dynamic},
+	
+	RulesCompiler = {rules_compiler,
+                {rules_compiler, start_link, []},
+                permanent, 5000, worker, dynamic},
+		ProtoService = {proto_service,
+                {proto_service, start_link, []},
+                permanent, 5000, worker, dynamic},
                 
     Processes = [
+				 RulesCompiler,ProtoService,
         Ids, Config, PreviewServer,
         SmtpServer, SmtpBounceServer,
         SitesSup, Dispatcher | get_extensions()

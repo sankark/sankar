@@ -1,27 +1,41 @@
-   <div class="tab-pane" id="{{ #tab }}-search">
-	    <div class="control-group">
+{% extends "admin_base.tpl" %}
 
-                <label for="input" class="control-label">{_ Use the autocompleter to search pattern. _}</label>
-                <div class="controls">
-                    <input id="input" class="autocompleter span5 do_autofocus" type="text" value="" />
-                    <ul id="{{#suggestions}}" class="suggestions-list"></ul>
-                </div>
-            </div>
+{% block title %} Rules {% endblock %}
+{% block content %}
 
-            {% wire id="input"
-                type="click" 
-                action={search
-                target=#suggestions 
-                action_with_id={with_args action={link subject_id=subject_id predicate="depiction" element_id=element_id} arg={object_id select_id}
-                }
-	        action={postback postback={reload_media rsc_id=id div_id=media_div_id} delegate="resource_admin_edit"}
-                action_with_id={with_args action={zmedia_has_chosen} arg={id select_id}}
-                action={dialog_close}
+  {% wire id="model_form" type="submit" postback="add_model"%}
+<form id="model_form" method="post" action="postback" class="row">
+ <label for="message">{_ Model Name _}</label>
+<input type="text" id="model_name" name="model_name" value=""/>
+ <label for="message">{_ Model Definition _}</label>
+	    <textarea name="model_def" id="model_def" cols="60" rows="8" ></textarea><br>
+	   {% button type="submit" class="btn btn-primary" text=_"Add Model" title=_"Test" %}
+</form>		
+ <table class="table table-striped do_adminLinkedTable">
+        <thead>
+            <tr>
+                <th width="20%">{_ Model Name _}</th>
+                <th width="20%">{_ Model Definition _}</th>
+                <th width="20%">&nbsp;</th>
+            </tr>
+        </thead>
 
-                cat=m.predicate.object_category["depiction"]
-	        }
-            %}
-                
-	</div>
-		
-
+        <tbody>
+        
+            {% for p in result %}
+	    
+            <tr id="{{ #li.name }}" data-href="{% url admin_edit_rsc id=p.id %}">
+                <td>{{ p.model_name|default:"&nbsp;" }}</td>
+                <td>{{ p.model_def|default:"&nbsp;" }}</td>
+                <td>
+                    <div class="pull-right">
+                        {% button class="btn btn-mini" disabled=p.is_protected text="delete" action={delete id=p.id on_success={slide_fade_out target=#li.name}} %}
+                        <a href="{% url admin_edit_rsc id=p.id %}" class="btn btn-mini">{_ edit _}</a>
+                    </div>                        
+                    {{ p.reversed|yesno:"reversed,&nbsp;" }}
+                </td>
+            </li>
+            {% empty %}
+            
+            {% endfor %}		
+{% endblock %}

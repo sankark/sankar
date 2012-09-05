@@ -41,6 +41,7 @@ start(_Type, _StartArgs) ->
 	ensure_started(inets),
 	inets:start(httpc,[{profile,zotonic}]),
     zotonic_deps:ensure(),
+		
     zotonic_sup:start_link().
 
 %% @spec stop(_State) -> ServerRet
@@ -52,7 +53,10 @@ stop(_State) ->
 set_path() ->
 	P = code:all_loaded(),
 	Path = filename:dirname(filename:dirname(proplists:get_value(?MODULE, P))),
-	application:set_env(zotonic, lib_dir, Path).
+	application:set_env(zotonic, lib_dir, Path),
+	SeresyePath   = filename:join([Path,"deps","seresye"]),
+	io:format("Seresye Path ~p~n",[SeresyePath]),
+	application:set_env(seresye, lib_dir, SeresyePath).
 
 get_path() ->
 	application:get_env(zotonic, lib_dir).

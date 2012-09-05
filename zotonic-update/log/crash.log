@@ -4619,3 +4619,607 @@ webmachine error: path="/image/2012/8/10/welcome.jpg%28mediaclass-admin-list-ove
     stack_size: 24
     reductions: 354
   neighbours:
+2012-08-28 12:07:58 =CRASH REPORT====
+  crasher:
+    initial call: z_sites_manager:init/1
+    pid: <0.142.0>
+    registered_name: []
+    exception exit: {{timeout,{gen_server,call,[<0.143.0>,{start_child,default}]}},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [zotonic_sup,<0.89.0>]
+    messages: []
+    links: [<0.110.0>,<0.143.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 5658
+  neighbours:
+2012-09-04 05:44:31 =CRASH REPORT====
+  crasher:
+    initial call: z_sites_manager:init/1
+    pid: <0.139.0>
+    registered_name: []
+    exception exit: {{timeout,{gen_server,call,[<0.140.0>,{start_child,default}]}},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [zotonic_sup,<0.86.0>]
+    messages: []
+    links: [<0.107.0>,<0.140.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 5658
+  neighbours:
+2012-09-04 06:03:31 =ERROR REPORT====
+webmachine error: path="/postback"
+{error,{exit,{noproc,{gen_server,call,[rules_compiler,{compile_rules,"C:/ErlangTools/seresye/src/rules/exit"}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{rules_service,add_rule,6,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_service.erl"},{line,53}]},{resource_rules,event,2,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,137}]},{resource_postback,process_postback,1,[{file,"modules/mod_base/resources/resource_postback.erl"},{line,138}]},{resource_postback,process_post,2,[{file,"modules/mod_base/resources/resource_postback.erl"},{line,70}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,484}]}]}}
+2012-09-04 06:03:45 =ERROR REPORT====
+webmachine error: path="/postback"
+{error,{exit,{noproc,{gen_server,call,[rules_compiler,{compile_rules,"C:/ErlangTools/seresye/src/rules/exit"}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{rules_service,add_rule,6,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_service.erl"},{line,53}]},{resource_rules,event,2,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,137}]},{resource_postback,process_postback,1,[{file,"modules/mod_base/resources/resource_postback.erl"},{line,138}]},{resource_postback,process_post,2,[{file,"modules/mod_base/resources/resource_postback.erl"},{line,70}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,484}]}]}}
+2012-09-04 08:33:19 =ERROR REPORT====
+** Generic server proto_service terminating 
+** Last message in was {generate_model,"message Person { required string name = 1;}","person"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {'module could not be loaded',[{protobuffs_compile,scan_file,["C:/ErlangTools/seresye/src/records/proto/person.proto",[{output_ebin_dir,"C:/ErlangTools/seresye/src/records/proto/beam"},{output_include_dir,"C:/ErlangTools/seresye/src/records/"}]],[]},{proto_service,handle_call,3,[{file,"c:/ErlangTools/seresye/src/proto_service.erl"},{line,68}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 08:33:19 =CRASH REPORT====
+  crasher:
+    initial call: proto_service:init/1
+    pid: <0.1979.0>
+    registered_name: proto_service
+    exception exit: {{undef,[{protobuffs_compile,scan_file,["C:/ErlangTools/seresye/src/records/proto/person.proto",[{output_ebin_dir,"C:/ErlangTools/seresye/src/records/proto/beam"},{output_include_dir,"C:/ErlangTools/seresye/src/records/"}]],[]},{proto_service,handle_call,3,[{file,"c:/ErlangTools/seresye/src/proto_service.erl"},{line,68}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.523.0>]
+    messages: []
+    links: [<0.523.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 272
+  neighbours:
+    neighbour: [{pid,<0.523.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{gen,do_call,4}},{ancestors,[]},{messages,[]},{links,[<0.24.0>,<0.1979.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,4181},{stack_size,36},{reductions,3797}]
+2012-09-04 08:38:11 =ERROR REPORT====
+** Generic server rules_compiler terminating 
+** Last message in was {compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 08:38:11 =CRASH REPORT====
+  crasher:
+    initial call: rules_compiler:init/1
+    pid: <0.68.0>
+    registered_name: rules_compiler
+    exception exit: {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [seresye_sup,<0.66.0>]
+    messages: []
+    links: [<0.67.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 427
+  neighbours:
+2012-09-04 08:38:11 =ERROR REPORT====
+** Generic server proto_service terminating 
+** Last message in was {generate_model,"message Person { required string name = 1;}","person"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}}
+2012-09-04 08:38:11 =CRASH REPORT====
+  crasher:
+    initial call: proto_service:init/1
+    pid: <0.452.0>
+    registered_name: proto_service
+    exception exit: {{{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.39.0>]
+    messages: []
+    links: [<0.39.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 28657
+    stack_size: 24
+    reductions: 10440
+  neighbours:
+    neighbour: [{pid,<0.39.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{gen,do_call,4}},{ancestors,[]},{messages,[]},{links,[<0.24.0>,<0.452.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,2584},{stack_size,36},{reductions,3795}]
+2012-09-04 08:42:53 =ERROR REPORT====
+** Generic server proto_service terminating 
+** Last message in was {generate_model,"message Person { required string name = 1;}","person"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {noproc,{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}}
+2012-09-04 08:42:53 =CRASH REPORT====
+  crasher:
+    initial call: proto_service:init/1
+    pid: <0.3512.0>
+    registered_name: proto_service
+    exception exit: {{noproc,{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.3479.0>]
+    messages: []
+    links: [<0.3479.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 28657
+    stack_size: 24
+    reductions: 11009
+  neighbours:
+    neighbour: [{pid,<0.3479.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{gen,do_call,4}},{ancestors,[]},{messages,[]},{links,[<0.24.0>,<0.3512.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,2584},{stack_size,36},{reductions,3787}]
+2012-09-04 08:43:11 =ERROR REPORT====
+** Generic server rules_compiler terminating 
+** Last message in was {compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 08:43:11 =CRASH REPORT====
+  crasher:
+    initial call: rules_compiler:init/1
+    pid: <0.68.0>
+    registered_name: rules_compiler
+    exception exit: {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [seresye_sup,<0.66.0>]
+    messages: []
+    links: [<0.67.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 427
+  neighbours:
+2012-09-04 08:43:11 =ERROR REPORT====
+** Generic server proto_service terminating 
+** Last message in was {generate_model,"message Person { required string name = 1;}","person"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}}
+2012-09-04 08:43:11 =CRASH REPORT====
+  crasher:
+    initial call: proto_service:init/1
+    pid: <0.426.0>
+    registered_name: proto_service
+    exception exit: {{{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.39.0>]
+    messages: []
+    links: [<0.39.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 28657
+    stack_size: 24
+    reductions: 11053
+  neighbours:
+    neighbour: [{pid,<0.39.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{gen,do_call,4}},{ancestors,[]},{messages,[]},{links,[<0.24.0>,<0.426.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,2584},{stack_size,36},{reductions,3795}]
+2012-09-04 08:44:45 =ERROR REPORT====
+** Generic server rules_compiler terminating 
+** Last message in was {compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 08:44:45 =CRASH REPORT====
+  crasher:
+    initial call: rules_compiler:init/1
+    pid: <0.68.0>
+    registered_name: rules_compiler
+    exception exit: {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [seresye_sup,<0.66.0>]
+    messages: []
+    links: [<0.67.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 427
+  neighbours:
+2012-09-04 08:44:45 =ERROR REPORT====
+** Generic server proto_service terminating 
+** Last message in was {generate_model,"message Person { required string name = 1;}","person"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}}
+2012-09-04 08:44:45 =CRASH REPORT====
+  crasher:
+    initial call: proto_service:init/1
+    pid: <0.427.0>
+    registered_name: proto_service
+    exception exit: {{{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ZOTONI~1/deps/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.39.0>]
+    messages: []
+    links: [<0.39.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 28657
+    stack_size: 24
+    reductions: 10440
+  neighbours:
+    neighbour: [{pid,<0.39.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{gen,do_call,4}},{ancestors,[]},{messages,[]},{links,[<0.24.0>,<0.427.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,2584},{stack_size,36},{reductions,3795}]
+2012-09-04 08:53:01 =ERROR REPORT====
+** Generic server rules_compiler terminating 
+** Last message in was {compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ErlangTools/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 08:53:01 =CRASH REPORT====
+  crasher:
+    initial call: rules_compiler:init/1
+    pid: <0.68.0>
+    registered_name: rules_compiler
+    exception exit: {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ErlangTools/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [seresye_sup,<0.66.0>]
+    messages: []
+    links: [<0.67.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 427
+  neighbours:
+2012-09-04 08:53:01 =ERROR REPORT====
+** Generic server proto_service terminating 
+** Last message in was {generate_model,"message Person { required string name = 1;}","person"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ErlangTools/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}}
+2012-09-04 08:53:01 =CRASH REPORT====
+  crasher:
+    initial call: proto_service:init/1
+    pid: <0.421.0>
+    registered_name: proto_service
+    exception exit: {{{{badmatch,error},[{rules_compiler,handle_call,3,[{file,"c:/ErlangTools/seresye/src/rules_compiler.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[rules_compiler,{compile_rules,"c:/zotonic-update/deps/seresye/src/rules/record_info"}]}},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.39.0>]
+    messages: []
+    links: [<0.39.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 28657
+    stack_size: 24
+    reductions: 10440
+  neighbours:
+    neighbour: [{pid,<0.39.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{gen,do_call,4}},{ancestors,[]},{messages,[]},{links,[<0.24.0>,<0.421.0>]},{dictionary,[]},{trap_exit,false},{status,waiting},{heap_size,2584},{stack_size,36},{reductions,3795}]
+2012-09-04 09:15:36 =ERROR REPORT====
+** Generic server 'z_template$default' terminating 
+** Last message in was {compile,"models.tpl","c:/zotonic-update/priv/sites/default/templates/models.tpl",template_default__desktopc__zotonic_update_priv_sites_default_templates_models_tpl,{context,default,{wm_reqdata,#Port<0.21313>,{dict,7,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[[ua_class|desktop],[ua_props,{is_user_select,true},{has_pointer,true}]],[[zotonic_host|default],['chosen-charset',117,116,102,45,56]],[[resource_module|resource_rules],['content-type',116,101,120,116,47,104,116,109,108]],[],[['content-encoding',105,100,101,110,116,105,116,121]],[],[],[],[],[],[],[],[]}}},undefined,"127.0.0.1",undefined,{wm_log_data,1001346746536815355,undefined,{1346,746536,815356},'GET',{10,{"host",{'Host',"127.0.0.1:8000"},{"connection",{'Connection',"keep-alive"},{"cache-control",{'Cache-Control',"max-age=0"},{"accept",{'Accept',"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},nil,{"accept-encoding",{'Accept-Encoding',"gzip,deflate,sdch"},{"accept-charset",{'Accept-Charset',"ISO-8859-1,utf-8;q=0.7,*;q=0.3"},nil,nil},{"accept-language",{'Accept-Language',"en-US,en;q=0.8"},nil,nil}}},nil},{"cookie",{'Cookie',"m=34e2:|3c0d:t|370d:t|6ef2:t; z_pid=Dosg0M7oCvKlPMR0TlMk; z_ua=c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024; z_sid=SqDOl3xGD1N0fsMDx1Uy"},nil,nil}},{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1"},{"referer",{'Referer',"http://127.0.0.1:8000/logon?p=%2Fmodels"},nil,nil},nil}}},"127.0.0.1","/models",{1,1},404,0,undefined,undefined},'GET',http,{1,1},[],"/models","/models",{dict,2,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[zotonic_host|default]],[],[],[],[[zotonic_dispatch|rules_models]],[],[],[],[],[],[],[]}}},[],".",500,1073741824,[{"m","34e2"},{"z_pid","Dosg0M7oCvKlPMR0TlMk"},{"z_ua","c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024"},{"z_sid","SqDOl3xGD1N0fsMDx1Uy"}],[],[{"accept","text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},{"accept-charset","ISO-8859-1,utf-8;q=0.7,*;q=0.3"},{"accept-encoding","gzip,deflate,sdch"},{"accept-language","en-US,en;q=0.8"},{"cache-control","max-age=0"},{"connection","keep-alive"},{"cookie","m=34e2:|3c0d:t|370d:t|6ef2:t; z_pid=Dosg0M7oCvKlPMR0TlMk; z_ua=c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024; z_sid=SqDOl3xGD1N0fsMDx1Uy"},{"host","127.0.0.1:8000"},{"referer","http://127.0.0.1:8000/logon?p=%2Fmodels"},{"user-agent","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1"}],not_fetched_yet,false,{4,{"cache-control",{"Cache-Control","no-store, no-cache, must-revalidate, post-check=0, pre-check=0"},nil,{"expires",{"Expires","Wed, 10 Dec 2008 15:30:00 GMT"},{"content-type",{"Content-Type","text/html; charset=utf-8"},nil,nil},{"p3p",{"P3P","CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM""},nil,nil}}}},<<>>,[],none,[{last_modified,undefined},{generate_etag,undefined},{encodings_provided,[{"identity",#Fun<webmachine_resource.0.70390858>}]},{charsets_provided,[{"utf-8",#Fun<resource_rules.0.84592306>}]},{content_types_provided,[{"text/html",to_html}]}]},resource_rules,<0.414.0>,<0.5511.0>,"QxGE2tcyZsrKGPN4tJRi",undefined,'z_depcache$default','z_notifier$default','z_session_manager$default','z_dispatcher$default','z_template$default','z_scomp$default','z_dropbox$default','z_pivot_rsc$default','z_module_indexer$default',81967,undefined,en,mod_acl_adminonly,1,[],[],[],[],[],[],[],[{session_id,"SqDOl3xGD1N0fsMDx1Uy"},{q,[{"zotonic_host","default"},{"zotonic_dispatch","rules_models"}]},{id,1},{template,"models.tpl"},{zotonic_dispatch,rules_models}]}}
+** When Server state == {state,1346746070705,default}
+** Reason for termination == 
+** {{case_clause,{extends,{string_literal,{"c:/zotonic-update/priv/sites/default/templates/models.tpl",1,15},"admin_base.tpl"}}},[{erlydtl_compiler,value_ast,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,613}]},{erlydtl_compiler,'-body_ast/3-fun-1-',3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,476}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},{erlydtl_compiler,body_ast,3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,355}]},{erlydtl_compiler,compile_to_binary,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,131}]},{erlydtl_compiler,compile,5,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,110}]},{z_template,handle_call,3,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,266}]}]}
+2012-09-04 09:15:36 =CRASH REPORT====
+  crasher:
+    initial call: z_template:init/1
+    pid: <0.160.0>
+    registered_name: 'z_template$default'
+    exception exit: {{{case_clause,{extends,{string_literal,{"c:/zotonic-update/priv/sites/default/templates/models.tpl",1,15},"admin_base.tpl"}}},[{erlydtl_compiler,value_ast,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,613}]},{erlydtl_compiler,'-body_ast/3-fun-1-',3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,476}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},{erlydtl_compiler,body_ast,3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,355}]},{erlydtl_compiler,compile_to_binary,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,131}]},{erlydtl_compiler,compile,5,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,110}]},{z_template,handle_call,3,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,266}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.148.0>,<0.145.0>,z_sites_manager,zotonic_sup,<0.91.0>]
+    messages: []
+    links: [<0.148.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 832040
+    stack_size: 24
+    reductions: 2094724
+  neighbours:
+2012-09-04 09:15:36 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    child_terminated
+     Reason:     {{case_clause,{extends,{string_literal,{"c:/zotonic-update/priv/sites/default/templates/models.tpl",1,15},"admin_base.tpl"}}},[{erlydtl_compiler,value_ast,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,613}]},{erlydtl_compiler,'-body_ast/3-fun-1-',3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,476}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},{erlydtl_compiler,body_ast,3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,355}]},{erlydtl_compiler,compile_to_binary,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,131}]},{erlydtl_compiler,compile,5,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,110}]},{z_template,handle_call,3,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,266}]}]}
+     Offender:   [{pid,<0.160.0>},{name,z_template},{mfargs,{z_template,start_link,[[{enabled,true},{host,default},{hostname,"127.0.0.1:8000"},{dbhost,"127.0.0.1"},{dbport,5433},{dbuser,"zotonic"},{dbpassword,"zotonic"},{dbdatabase,"zotonic"},{dbschema,"public"},{depcache_memory_max,100},{admin_password,"sankar"},{skeleton,blog},{title,<<"Your first blog">>},{subtitle,<<"built with Zotonic, the Erlang CMS.">>},{pagelen,5}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-09-04 09:15:36 =ERROR REPORT====
+webmachine error: path="/models"
+{error,{exit,{{{case_clause,{extends,{string_literal,{"c:/zotonic-update/priv/sites/default/templates/models.tpl",1,15},"admin_base.tpl"}}},[{erlydtl_compiler,value_ast,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,613}]},{erlydtl_compiler,'-body_ast/3-fun-1-',3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,476}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},{erlydtl_compiler,body_ast,3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,355}]},{erlydtl_compiler,compile_to_binary,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,131}]},{erlydtl_compiler,compile,5,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,110}]},{z_template,handle_call,3,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,266}]}]},{gen_server,call,['z_template$default',{compile,"models.tpl","c:/zotonic-update/priv/sites/default/templates/models.tpl",template_default__desktopc__zotonic_update_priv_sites_default_templates_models_tpl,{context,default,{wm_reqdata,#Port<0.21313>,{dict,7,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[[ua_class|desktop],[ua_props,{is_user_select,true},{has_pointer,true}]],[[zotonic_host|default],['chosen-charset',117,116,102,45,56]],[[resource_module|resource_rules],['content-type',116,101,120,116,47,104,116,109,108]],[],[['content-encoding',105,100,101,110,116,105,116,121]],[],[],[],[],[],[],[],[]}}},undefined,"127.0.0.1",undefined,{wm_log_data,1001346746536815355,undefined,{1346,746536,815356},'GET',{10,{"host",{'Host',"127.0.0.1:8000"},{"connection",{'Connection',"keep-alive"},{"cache-control",{'Cache-Control',"max-age=0"},{"accept",{'Accept',"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},nil,{"accept-encoding",{'Accept-Encoding',"gzip,deflate,sdch"},{"accept-charset",{'Accept-Charset',"ISO-8859-1,utf-8;q=0.7,*;q=0.3"},nil,nil},{"accept-language",{'Accept-Language',"en-US,en;q=0.8"},nil,nil}}},nil},{"cookie",{'Cookie',"m=34e2:|3c0d:t|370d:t|6ef2:t; z_pid=Dosg0M7oCvKlPMR0TlMk; z_ua=c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024; z_sid=SqDOl3xGD1N0fsMDx1Uy"},nil,nil}},{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1"},{"referer",{'Referer',"http://127.0.0.1:8000/logon?p=%2Fmodels"},nil,nil},nil}}},"127.0.0.1","/models",{1,1},404,0,undefined,undefined},'GET',http,{1,1},[],"/models","/models",{dict,2,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[zotonic_host|default]],[],[],[],[[zotonic_dispatch|rules_models]],[],[],[],[],[],[],[]}}},[],".",500,1073741824,[{"m","34e2"},{"z_pid","Dosg0M7oCvKlPMR0TlMk"},{"z_ua","c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024"},{"z_sid","SqDOl3xGD1N0fsMDx1Uy"}],[],[{"accept","text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},{"accept-charset","ISO-8859-1,utf-8;q=0.7,*;q=0.3"},{"accept-encoding","gzip,deflate,sdch"},{"accept-language","en-US,en;q=0.8"},{"cache-control","max-age=0"},{"connection","keep-alive"},{"cookie","m=34e2:|3c0d:t|370d:t|6ef2:t; z_pid=Dosg0M7oCvKlPMR0TlMk; z_ua=c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024; z_sid=SqDOl3xGD1N0fsMDx1Uy"},{"host","127.0.0.1:8000"},{"referer","http://127.0.0.1:8000/logon?p=%2Fmodels"},{"user-agent","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1"}],not_fetched_yet,false,{4,{"cache-control",{"Cache-Control","no-store, no-cache, must-revalidate, post-check=0, pre-check=0"},nil,{"expires",{"Expires","Wed, 10 Dec 2008 15:30:00 GMT"},{"content-type",{"Content-Type","text/html; charset=utf-8"},nil,nil},{"p3p",{"P3P","CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM""},nil,nil}}}},<<>>,[],none,[{last_modified,undefined},{generate_etag,undefined},{encodings_provided,[{"identity",#Fun<webmachine_resource.0.70390858>}]},{charsets_provided,[{"utf-8",#Fun<resource_rules.0.84592306>}]},{content_types_provided,[{"text/html",to_html}]}]},resource_rules,<0.414.0>,<0.5511.0>,"QxGE2tcyZsrKGPN4tJRi",undefined,'z_depcache$default','z_notifier$default','z_session_manager$default','z_dispatcher$default','z_template$default','z_scomp$default','z_dropbox$default','z_pivot_rsc$default','z_module_indexer$default',81967,undefined,en,mod_acl_adminonly,1,[],[],[],[],[],[],[],[{session_id,"SqDOl3xGD1N0fsMDx1Uy"},{q,[{"zotonic_host","default"},{"zotonic_dispatch","rules_models"}]},{id,1},{template,"models.tpl"},{zotonic_dispatch,rules_models}]}},30000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,188}]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,113}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:15:37 =ERROR REPORT====
+Supervisor received unexpected message: {'ETS-TRANSFER','observers$default',<0.156.0>,[]}
+2012-09-04 09:15:50 =ERROR REPORT====
+** Generic server 'z_template$default' terminating 
+** Last message in was {compile,"models.tpl","c:/zotonic-update/priv/sites/default/templates/models.tpl",template_default__desktopc__zotonic_update_priv_sites_default_templates_models_tpl,{context,default,{wm_reqdata,#Port<0.25771>,{dict,7,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[[ua_class|desktop],[ua_props,{is_user_select,true},{has_pointer,true}]],[[zotonic_host|default],['chosen-charset',117,116,102,45,56]],[[resource_module|resource_rules],['content-type',116,101,120,116,47,104,116,109,108]],[],[['content-encoding',105,100,101,110,116,105,116,121]],[],[],[],[],[],[],[],[]}}},undefined,"127.0.0.1",undefined,{wm_log_data,1001346746550064860,undefined,{1346,746550,64861},'GET',{9,{"host",{'Host',"127.0.0.1:8000"},{"connection",{'Connection',"keep-alive"},{"accept",{'Accept',"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},nil,{"accept-encoding",{'Accept-Encoding',"gzip,deflate,sdch"},{"accept-charset",{'Accept-Charset',"ISO-8859-1,utf-8;q=0.7,*;q=0.3"},nil,nil},{"accept-language",{'Accept-Language',"en-US,en;q=0.8"},nil,nil}}},{"cookie",{'Cookie',"m=34e2:|3c0d:t|370d:t|6ef2:t; z_pid=Dosg0M7oCvKlPMR0TlMk; z_ua=c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024; z_sid=MSDJrU9w8hjOkSnH8ELe"},nil,nil}},{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1"},{"referer",{'Referer',"http://127.0.0.1:8000/logon?p=%2Fmodels"},nil,nil},nil}}},"127.0.0.1","/models",{1,1},404,0,undefined,undefined},'GET',http,{1,1},[],"/models","/models",{dict,2,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[zotonic_host|default]],[],[],[],[[zotonic_dispatch|rules_models]],[],[],[],[],[],[],[]}}},[],".",500,1073741824,[{"m","34e2"},{"z_pid","Dosg0M7oCvKlPMR0TlMk"},{"z_ua","c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024"},{"z_sid","MSDJrU9w8hjOkSnH8ELe"}],[],[{"accept","text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},{"accept-charset","ISO-8859-1,utf-8;q=0.7,*;q=0.3"},{"accept-encoding","gzip,deflate,sdch"},{"accept-language","en-US,en;q=0.8"},{"connection","keep-alive"},{"cookie","m=34e2:|3c0d:t|370d:t|6ef2:t; z_pid=Dosg0M7oCvKlPMR0TlMk; z_ua=c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024; z_sid=MSDJrU9w8hjOkSnH8ELe"},{"host","127.0.0.1:8000"},{"referer","http://127.0.0.1:8000/logon?p=%2Fmodels"},{"user-agent","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1"}],not_fetched_yet,false,{4,{"cache-control",{"Cache-Control","no-store, no-cache, must-revalidate, post-check=0, pre-check=0"},nil,{"expires",{"Expires","Wed, 10 Dec 2008 15:30:00 GMT"},{"content-type",{"Content-Type","text/html; charset=utf-8"},nil,nil},{"p3p",{"P3P","CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM""},nil,nil}}}},<<>>,[],none,[{last_modified,undefined},{generate_etag,undefined},{encodings_provided,[{"identity",#Fun<webmachine_resource.0.70390858>}]},{charsets_provided,[{"utf-8",#Fun<resource_rules.0.84592306>}]},{content_types_provided,[{"text/html",to_html}]}]},resource_rules,<0.5687.0>,<0.5830.0>,"AafOffwZVFJZOH0KkxL1",undefined,'z_depcache$default','z_notifier$default','z_session_manager$default','z_dispatcher$default','z_template$default','z_scomp$default','z_dropbox$default','z_pivot_rsc$default','z_module_indexer$default',29949999,undefined,en,mod_acl_adminonly,1,[],[],[],[],[],[],[],[{session_id,"MSDJrU9w8hjOkSnH8ELe"},{q,[{"zotonic_host","default"},{"zotonic_dispatch","rules_models"}]},{id,1},{template,"models.tpl"},{zotonic_dispatch,rules_models}]}}
+** When Server state == {state,1346746537317,default}
+** Reason for termination == 
+** {{case_clause,{extends,{string_literal,{"c:/zotonic-update/priv/sites/default/templates/models.tpl",1,15},"admin_base.tpl"}}},[{erlydtl_compiler,value_ast,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,613}]},{erlydtl_compiler,'-body_ast/3-fun-1-',3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,476}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},{erlydtl_compiler,body_ast,3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,355}]},{erlydtl_compiler,compile_to_binary,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,131}]},{erlydtl_compiler,compile,5,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,110}]},{z_template,handle_call,3,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,266}]}]}
+2012-09-04 09:15:50 =CRASH REPORT====
+  crasher:
+    initial call: z_template:init/1
+    pid: <0.5528.0>
+    registered_name: 'z_template$default'
+    exception exit: {{{case_clause,{extends,{string_literal,{"c:/zotonic-update/priv/sites/default/templates/models.tpl",1,15},"admin_base.tpl"}}},[{erlydtl_compiler,value_ast,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,613}]},{erlydtl_compiler,'-body_ast/3-fun-1-',3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,476}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},{erlydtl_compiler,body_ast,3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,355}]},{erlydtl_compiler,compile_to_binary,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,131}]},{erlydtl_compiler,compile,5,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,110}]},{z_template,handle_call,3,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,266}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.148.0>,<0.145.0>,z_sites_manager,zotonic_sup,<0.91.0>]
+    messages: []
+    links: [<0.148.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 75025
+    stack_size: 24
+    reductions: 1876446
+  neighbours:
+2012-09-04 09:15:50 =SUPERVISOR REPORT====
+     Supervisor: {<0.148.0>,z_site_sup}
+     Context:    child_terminated
+     Reason:     {{case_clause,{extends,{string_literal,{"c:/zotonic-update/priv/sites/default/templates/models.tpl",1,15},"admin_base.tpl"}}},[{erlydtl_compiler,value_ast,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,613}]},{erlydtl_compiler,'-body_ast/3-fun-1-',3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,476}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},{erlydtl_compiler,body_ast,3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,355}]},{erlydtl_compiler,compile_to_binary,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,131}]},{erlydtl_compiler,compile,5,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,110}]},{z_template,handle_call,3,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,266}]}]}
+     Offender:   [{pid,<0.5528.0>},{name,z_template},{mfargs,{z_template,start_link,[[{enabled,true},{host,default},{hostname,"127.0.0.1:8000"},{dbhost,"127.0.0.1"},{dbport,5433},{dbuser,"zotonic"},{dbpassword,"zotonic"},{dbdatabase,"zotonic"},{dbschema,"public"},{depcache_memory_max,100},{admin_password,"sankar"},{skeleton,blog},{title,<<"Your first blog">>},{subtitle,<<"built with Zotonic, the Erlang CMS.">>},{pagelen,5}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-09-04 09:15:50 =ERROR REPORT====
+webmachine error: path="/models"
+{error,{exit,{{{case_clause,{extends,{string_literal,{"c:/zotonic-update/priv/sites/default/templates/models.tpl",1,15},"admin_base.tpl"}}},[{erlydtl_compiler,value_ast,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,613}]},{erlydtl_compiler,'-body_ast/3-fun-1-',3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,476}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},{erlydtl_compiler,body_ast,3,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,355}]},{erlydtl_compiler,compile_to_binary,4,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,131}]},{erlydtl_compiler,compile,5,[{file,"src/erlydtl/erlydtl_compiler.erl"},{line,110}]},{z_template,handle_call,3,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,266}]}]},{gen_server,call,['z_template$default',{compile,"models.tpl","c:/zotonic-update/priv/sites/default/templates/models.tpl",template_default__desktopc__zotonic_update_priv_sites_default_templates_models_tpl,{context,default,{wm_reqdata,#Port<0.25771>,{dict,7,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[[ua_class|desktop],[ua_props,{is_user_select,true},{has_pointer,true}]],[[zotonic_host|default],['chosen-charset',117,116,102,45,56]],[[resource_module|resource_rules],['content-type',116,101,120,116,47,104,116,109,108]],[],[['content-encoding',105,100,101,110,116,105,116,121]],[],[],[],[],[],[],[],[]}}},undefined,"127.0.0.1",undefined,{wm_log_data,1001346746550064860,undefined,{1346,746550,64861},'GET',{9,{"host",{'Host',"127.0.0.1:8000"},{"connection",{'Connection',"keep-alive"},{"accept",{'Accept',"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},nil,{"accept-encoding",{'Accept-Encoding',"gzip,deflate,sdch"},{"accept-charset",{'Accept-Charset',"ISO-8859-1,utf-8;q=0.7,*;q=0.3"},nil,nil},{"accept-language",{'Accept-Language',"en-US,en;q=0.8"},nil,nil}}},{"cookie",{'Cookie',"m=34e2:|3c0d:t|370d:t|6ef2:t; z_pid=Dosg0M7oCvKlPMR0TlMk; z_ua=c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024; z_sid=MSDJrU9w8hjOkSnH8ELe"},nil,nil}},{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1"},{"referer",{'Referer',"http://127.0.0.1:8000/logon?p=%2Fmodels"},nil,nil},nil}}},"127.0.0.1","/models",{1,1},404,0,undefined,undefined},'GET',http,{1,1},[],"/models","/models",{dict,2,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[[zotonic_host|default]],[],[],[],[[zotonic_dispatch|rules_models]],[],[],[],[],[],[],[]}}},[],".",500,1073741824,[{"m","34e2"},{"z_pid","Dosg0M7oCvKlPMR0TlMk"},{"z_ua","c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024"},{"z_sid","MSDJrU9w8hjOkSnH8ELe"}],[],[{"accept","text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},{"accept-charset","ISO-8859-1,utf-8;q=0.7,*;q=0.3"},{"accept-encoding","gzip,deflate,sdch"},{"accept-language","en-US,en;q=0.8"},{"connection","keep-alive"},{"cookie","m=34e2:|3c0d:t|370d:t|6ef2:t; z_pid=Dosg0M7oCvKlPMR0TlMk; z_ua=c%3Ddesktop%26u%3D1%26t%3D1%26w%3D1280%26h%3D1024; z_sid=MSDJrU9w8hjOkSnH8ELe"},{"host","127.0.0.1:8000"},{"referer","http://127.0.0.1:8000/logon?p=%2Fmodels"},{"user-agent","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1"}],not_fetched_yet,false,{4,{"cache-control",{"Cache-Control","no-store, no-cache, must-revalidate, post-check=0, pre-check=0"},nil,{"expires",{"Expires","Wed, 10 Dec 2008 15:30:00 GMT"},{"content-type",{"Content-Type","text/html; charset=utf-8"},nil,nil},{"p3p",{"P3P","CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM""},nil,nil}}}},<<>>,[],none,[{last_modified,undefined},{generate_etag,undefined},{encodings_provided,[{"identity",#Fun<webmachine_resource.0.70390858>}]},{charsets_provided,[{"utf-8",#Fun<resource_rules.0.84592306>}]},{content_types_provided,[{"text/html",to_html}]}]},resource_rules,<0.5687.0>,<0.5830.0>,"AafOffwZVFJZOH0KkxL1",undefined,'z_depcache$default','z_notifier$default','z_session_manager$default','z_dispatcher$default','z_template$default','z_scomp$default','z_dropbox$default','z_pivot_rsc$default','z_module_indexer$default',29949999,undefined,en,mod_acl_adminonly,1,[],[],[],[],[],[],[],[{session_id,"MSDJrU9w8hjOkSnH8ELe"},{q,[{"zotonic_host","default"},{"zotonic_dispatch","rules_models"}]},{id,1},{template,"models.tpl"},{zotonic_dispatch,rules_models}]}},30000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,188}]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,113}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:15:50 =ERROR REPORT====
+Supervisor received unexpected message: {'ETS-TRANSFER','observers$default',<0.5524.0>,[]}
+2012-09-04 09:16:33 =ERROR REPORT====
+webmachine error: path="/models"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/models.tpl",6,4,"syntax error before: "endblock""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:18:23 =ERROR REPORT====
+webmachine error: path="/models"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/models.tpl",6,4,"syntax error before: "endblock""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:18:26 =ERROR REPORT====
+webmachine error: path="/models"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/models.tpl",6,4,"syntax error before: "endblock""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:18:27 =ERROR REPORT====
+webmachine error: path="/models"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/models.tpl",6,4,"syntax error before: "endblock""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:18:40 =ERROR REPORT====
+webmachine error: path="/models"
+{error,{error,undef,[{lager,error,["Error compiling template: ~s:~p (~p) ~s~n",["c:/zotonic-update/priv/sites/default/templates/models.tpl",6,4,"syntax error before: "endblock""]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,131}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:20:45 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error compiling template: ~p (~p)~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl","Circular file inclusion: c:/zotonic-update/modules/mod_admin/templates/admin_base.tpl"]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,135}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:20:48 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error compiling template: ~p (~p)~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl","Circular file inclusion: c:/zotonic-update/modules/mod_admin/templates/admin_base.tpl"]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,135}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:20:58 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error compiling template: ~p (~p)~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl","Circular file inclusion: c:/zotonic-update/modules/mod_admin/templates/admin_base.tpl"]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,135}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:21:15 =ERROR REPORT====
+webmachine error: path="/rules"
+{error,{error,undef,[{lager,error,["Error compiling template: ~p (~p)~n",["c:/zotonic-update/priv/sites/default/templates/rules.tpl","Circular file inclusion: c:/zotonic-update/modules/mod_admin/templates/admin_base.tpl"]],[]},{z_template,render1,5,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,135}]},{resource_rules,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_rules.erl"},{line,51}]},{resource_rules,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 09:39:53 =SUPERVISOR REPORT====
+     Supervisor: {<0.21.0>,user_sup}
+     Context:    child_terminated
+     Reason:     killed
+     Offender:   [{pid,<0.23.0>},{mod,user_sup}]
+
+2012-09-04 12:42:56 =ERROR REPORT====
+** Generic server rules_compiler terminating 
+** Last message in was {compile_rules,"C:/ErlangTools/seresye/src/rules/test"}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {function_clause,[{code,purge,[<0.790.0>],[{file,"code.erl"},{line,184}]},{rules_compiler,handle_call,3,[{file,"c:/ErlangTools/seresye/src/rules_compiler.erl"},{line,71}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 12:42:56 =CRASH REPORT====
+  crasher:
+    initial call: rules_compiler:init/1
+    pid: <0.70.0>
+    registered_name: rules_compiler
+    exception exit: {{function_clause,[{code,purge,[<0.790.0>],[{file,"code.erl"},{line,184}]},{rules_compiler,handle_call,3,[{file,"c:/ErlangTools/seresye/src/rules_compiler.erl"},{line,71}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [seresye_sup,<0.68.0>]
+    messages: []
+    links: [<0.69.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 423
+  neighbours:
+2012-09-04 13:09:37 =SUPERVISOR REPORT====
+     Supervisor: {local,zotonic_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.70.0>}
+     Offender:   [{pid,undefined},{name,rules_compiler},{mfargs,{rules_compiler,start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-09-04 13:11:10 =SUPERVISOR REPORT====
+     Supervisor: {local,zotonic_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.70.0>}
+     Offender:   [{pid,undefined},{name,rules_compiler},{mfargs,{rules_compiler,start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-09-04 13:16:13 =SUPERVISOR REPORT====
+     Supervisor: {local,zotonic_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.70.0>}
+     Offender:   [{pid,undefined},{name,rules_compiler},{mfargs,{rules_compiler,start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-09-04 13:19:57 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.90.0>
+    registered_name: []
+    exception exit: {{bad_return,{{zotonic_app,start,[normal,[]]},ok}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.89.0>]
+    messages: [{'EXIT',<0.91.0>,normal}]
+    links: [<0.89.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 109
+  neighbours:
+2012-09-04 13:20:34 =SUPERVISOR REPORT====
+     Supervisor: {local,zotonic_sup}
+     Context:    start_error
+     Reason:     {already_started,<0.70.0>}
+     Offender:   [{pid,undefined},{name,rules_compiler},{mfargs,{rules_compiler,start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-09-04 13:29:50 =ERROR REPORT====
+webmachine error: path="/logon"
+{error,{error,undef,[{lager,info,["Could not find template: ~s (~p)",["logon.tpl",enoent]],[]},{z_template,render,3,[{file,"c:/zotonic-update/src/support/z_template.erl"},{line,98}]},{resource_logon,provide_content,2,[{file,"modules/mod_authentication/resources/resource_logon.erl"},{line,106}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]},{webmachine_mochiweb,loop,2,[{file,"src/webmachine_mochiweb.erl"},{line,107}]}]}}
+2012-09-04 13:41:30 =ERROR REPORT====
+webmachine error: path="/models"
+{error,{error,{badmatch,{error,{error,error,<<"42501">>,<<"permission denied for relation models">>,[]}}},[{z_db,'-assoc_props/4-fun-0-',4,[{file,"c:/zotonic-update/src/dbdrivers/postgresql/z_db.erl"},{line,258}]},{z_db,with_connection,3,[{file,"c:/zotonic-update/src/dbdrivers/postgresql/z_db.erl"},{line,195}]},{resource_models,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_models.erl"},{line,49}]},{resource_models,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 13:41:34 =ERROR REPORT====
+webmachine error: path="/models"
+{error,{error,{badmatch,{error,{error,error,<<"42501">>,<<"permission denied for relation models">>,[]}}},[{z_db,'-assoc_props/4-fun-0-',4,[{file,"c:/zotonic-update/src/dbdrivers/postgresql/z_db.erl"},{line,258}]},{z_db,with_connection,3,[{file,"c:/zotonic-update/src/dbdrivers/postgresql/z_db.erl"},{line,195}]},{resource_models,html,1,[{file,"c:/zotonic-update/priv/sites/default/resources/resource_models.erl"},{line,49}]},{resource_models,to_html,2,[{file,[]},{line,47}]},{webmachine_resource,resource_call,3,[{file,"src/webmachine_resource.erl"},{line,181}]},{webmachine_resource,do,3,[{file,"src/webmachine_resource.erl"},{line,161}]},{webmachine_decision_core,decision,3,[{file,"src/webmachine_decision_core.erl"},{line,561}]},{webmachine_decision_core,handle_request,2,[{file,"src/webmachine_decision_core.erl"},{line,31}]}]}}
+2012-09-04 14:09:59 =ERROR REPORT====
+** State machine <0.26963.0> terminating 
+** Last message in was {'$gen_sync_event',{<0.26312.0>,#Ref<0.0.3.101831>},{parse,[],[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],[]}}
+** When State == ready
+**      Data  == {state,undefined,<0.26964.0>,#Port<0.104045>,[{<<"application_name">>,<<>>},{<<"client_encoding">>,<<"UTF8">>},{<<"DateStyle">>,<<"ISO, MDY">>},{<<"integer_datetimes">>,<<"on">>},{<<"IntervalStyle">>,<<"postgres">>},{<<"is_superuser">>,<<"off">>},{<<"server_encoding">>,<<"UTF8">>},{<<"server_version">>,<<"9.1.3">>},{<<"session_authorization">>,<<"zotonic">>},{<<"standard_conforming_strings">>,<<"on">>},{<<"TimeZone">>,<<"Europe/London">>}],true,"zotonic",undefined,undefined,{3276,1680773922},{statement,[],[{column,<<"name">>,varchar,-1,84,1}],[]},73}
+** Reason for termination = 
+** {badarg,[{erlang,iolist_to_binary,[[[],0,[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],0,<<0,0>>]],[]},{pgsql_connection,send,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,687}]},{pgsql_connection,ready,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,298}]},{gen_fsm,handle_msg,7,[{file,"gen_fsm.erl"},{line,494}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 14:09:59 =CRASH REPORT====
+  crasher:
+    initial call: pgsql_connection:init/1
+    pid: <0.26963.0>
+    registered_name: []
+    exception exit: {{badarg,[{erlang,iolist_to_binary,[[[],0,[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],0,<<0,0>>]],[]},{pgsql_connection,send,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,687}]},{pgsql_connection,ready,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,298}]},{gen_fsm,handle_msg,7,[{file,"gen_fsm.erl"},{line,494}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_fsm,terminate,7,[{file,"gen_fsm.erl"},{line,611}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [default,<0.149.0>,<0.146.0>,z_sites_manager,zotonic_sup,<0.90.0>]
+    messages: []
+    links: [<0.151.0>,<0.26964.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 1452
+  neighbours:
+    neighbour: [{pid,<0.26964.0>},{registered_name,[]},{initial_call,{pgsql_connection,read,3}},{current_function,{prim_inet,recv0,3}},{ancestors,[]},{messages,[{inet_async,#Port<0.104045>,42894,{error,closed}}]},{links,[<0.26963.0>]},{dictionary,[]},{trap_exit,false},{status,runnable},{heap_size,377},{stack_size,7},{reductions,521}]
+2012-09-04 14:10:02 =ERROR REPORT====
+** State machine <0.26969.0> terminating 
+** Last message in was {'$gen_sync_event',{<0.26993.0>,#Ref<0.0.3.104089>},{parse,[],[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],[]}}
+** When State == ready
+**      Data  == {state,undefined,<0.26970.0>,#Port<0.104046>,[{<<"application_name">>,<<>>},{<<"client_encoding">>,<<"UTF8">>},{<<"DateStyle">>,<<"ISO, MDY">>},{<<"integer_datetimes">>,<<"on">>},{<<"IntervalStyle">>,<<"postgres">>},{<<"is_superuser">>,<<"off">>},{<<"server_encoding">>,<<"UTF8">>},{<<"server_version">>,<<"9.1.3">>},{<<"session_authorization">>,<<"zotonic">>},{<<"standard_conforming_strings">>,<<"on">>},{<<"TimeZone">>,<<"Europe/London">>}],true,"zotonic",undefined,undefined,{772,310202005},{statement,[],[{column,<<"name">>,varchar,-1,84,1}],[]},73}
+** Reason for termination = 
+** {badarg,[{erlang,iolist_to_binary,[[[],0,[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],0,<<0,0>>]],[]},{pgsql_connection,send,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,687}]},{pgsql_connection,ready,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,298}]},{gen_fsm,handle_msg,7,[{file,"gen_fsm.erl"},{line,494}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 14:10:02 =CRASH REPORT====
+  crasher:
+    initial call: pgsql_connection:init/1
+    pid: <0.26969.0>
+    registered_name: []
+    exception exit: {{badarg,[{erlang,iolist_to_binary,[[[],0,[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],0,<<0,0>>]],[]},{pgsql_connection,send,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,687}]},{pgsql_connection,ready,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,298}]},{gen_fsm,handle_msg,7,[{file,"gen_fsm.erl"},{line,494}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_fsm,terminate,7,[{file,"gen_fsm.erl"},{line,611}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [default,<0.149.0>,<0.146.0>,z_sites_manager,zotonic_sup,<0.90.0>]
+    messages: []
+    links: [<0.151.0>,<0.26970.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 3763
+  neighbours:
+    neighbour: [{pid,<0.26970.0>},{registered_name,[]},{initial_call,{pgsql_connection,read,3}},{current_function,{prim_inet,recv0,3}},{ancestors,[]},{messages,[{inet_async,#Port<0.104046>,42941,{error,closed}}]},{links,[<0.26969.0>]},{dictionary,[]},{trap_exit,false},{status,runnable},{heap_size,610},{stack_size,7},{reductions,1011}]
+2012-09-04 14:10:26 =ERROR REPORT====
+** State machine <0.25612.0> terminating 
+** Last message in was {'$gen_sync_event',{<0.27024.0>,#Ref<0.0.3.111489>},{parse,[],[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],[]}}
+** When State == ready
+**      Data  == {state,undefined,<0.25613.0>,#Port<0.99395>,[{<<"application_name">>,<<>>},{<<"client_encoding">>,<<"UTF8">>},{<<"DateStyle">>,<<"ISO, MDY">>},{<<"integer_datetimes">>,<<"on">>},{<<"IntervalStyle">>,<<"postgres">>},{<<"is_superuser">>,<<"off">>},{<<"server_encoding">>,<<"UTF8">>},{<<"server_version">>,<<"9.1.3">>},{<<"session_authorization">>,<<"zotonic">>},{<<"standard_conforming_strings">>,<<"on">>},{<<"TimeZone">>,<<"Europe/London">>}],true,"zotonic",undefined,undefined,{2436,732227599},{statement,[],[{column,<<"name">>,varchar,-1,84,1}],[]},73}
+** Reason for termination = 
+** {badarg,[{erlang,iolist_to_binary,[[[],0,[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],0,<<0,0>>]],[]},{pgsql_connection,send,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,687}]},{pgsql_connection,ready,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,298}]},{gen_fsm,handle_msg,7,[{file,"gen_fsm.erl"},{line,494}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 14:10:26 =CRASH REPORT====
+  crasher:
+    initial call: pgsql_connection:init/1
+    pid: <0.25612.0>
+    registered_name: []
+    exception exit: {{badarg,[{erlang,iolist_to_binary,[[[],0,[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],0,<<0,0>>]],[]},{pgsql_connection,send,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,687}]},{pgsql_connection,ready,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,298}]},{gen_fsm,handle_msg,7,[{file,"gen_fsm.erl"},{line,494}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_fsm,terminate,7,[{file,"gen_fsm.erl"},{line,611}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [default,<0.149.0>,<0.146.0>,z_sites_manager,zotonic_sup,<0.90.0>]
+    messages: []
+    links: [<0.151.0>,<0.25613.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 56752
+  neighbours:
+    neighbour: [{pid,<0.25613.0>},{registered_name,[]},{initial_call,{pgsql_connection,read,3}},{current_function,{prim_inet,recv0,3}},{ancestors,[]},{messages,[{inet_async,#Port<0.99395>,43265,{error,closed}}]},{links,[<0.25612.0>]},{dictionary,[]},{trap_exit,false},{status,runnable},{heap_size,2584},{stack_size,7},{reductions,11821}]
+2012-09-04 14:10:27 =ERROR REPORT====
+** State machine <0.27293.0> terminating 
+** Last message in was {'$gen_sync_event',{<0.27276.0>,#Ref<0.0.3.111568>},{parse,[],[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],[]}}
+** When State == ready
+**      Data  == {state,undefined,<0.27294.0>,#Port<0.104833>,[{<<"application_name">>,<<>>},{<<"client_encoding">>,<<"UTF8">>},{<<"DateStyle">>,<<"ISO, MDY">>},{<<"integer_datetimes">>,<<"on">>},{<<"IntervalStyle">>,<<"postgres">>},{<<"is_superuser">>,<<"off">>},{<<"server_encoding">>,<<"UTF8">>},{<<"server_version">>,<<"9.1.3">>},{<<"session_authorization">>,<<"zotonic">>},{<<"standard_conforming_strings">>,<<"on">>},{<<"TimeZone">>,<<"Europe/London">>}],true,"zotonic",undefined,undefined,{3456,721521935},{statement,undefined,undefined,undefined},73}
+** Reason for termination = 
+** {badarg,[{erlang,iolist_to_binary,[[[],0,[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],0,<<0,0>>]],[]},{pgsql_connection,send,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,687}]},{pgsql_connection,ready,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,298}]},{gen_fsm,handle_msg,7,[{file,"gen_fsm.erl"},{line,494}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 14:10:27 =CRASH REPORT====
+  crasher:
+    initial call: pgsql_connection:init/1
+    pid: <0.27293.0>
+    registered_name: []
+    exception exit: {{badarg,[{erlang,iolist_to_binary,[[[],0,[115,101,108,101,99,116,32,42,32,102,114,111,109,32|models],0,<<0,0>>]],[]},{pgsql_connection,send,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,687}]},{pgsql_connection,ready,3,[{file,"src/dbdrivers/postgresql/epgsql/pgsql_connection.erl"},{line,298}]},{gen_fsm,handle_msg,7,[{file,"gen_fsm.erl"},{line,494}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_fsm,terminate,7,[{file,"gen_fsm.erl"},{line,611}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [default,<0.149.0>,<0.146.0>,z_sites_manager,zotonic_sup,<0.90.0>]
+    messages: []
+    links: [<0.151.0>,<0.27294.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 961
+  neighbours:
+    neighbour: [{pid,<0.27294.0>},{registered_name,[]},{initial_call,{pgsql_connection,read,3}},{current_function,{prim_inet,recv0,3}},{ancestors,[]},{messages,[{inet_async,#Port<0.104833>,43399,{error,closed}}]},{links,[<0.27293.0>]},{dictionary,[]},{trap_exit,false},{status,runnable},{heap_size,233},{stack_size,7},{reductions,422}]
+2012-09-04 14:29:14 =ERROR REPORT====
+** Generic server proto_service terminating 
+** Last message in was {generate_model,<<"message Person {\n\trequired string name = 1;\n\trequired string address = 2;\n\trequired string phone_number = 3;\n\trequired int32 age = 4;\n}">>,<<"person">>}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {badarg,[{erlang,'++',[<<"person">>,".proto"],[]},{proto_service,handle_call,3,[{file,"c:/ErlangTools/seresye/src/proto_service.erl"},{line,64}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 14:29:14 =CRASH REPORT====
+  crasher:
+    initial call: proto_service:init/1
+    pid: <0.137.0>
+    registered_name: proto_service
+    exception exit: {{badarg,[{erlang,'++',[<<"person">>,".proto"],[]},{proto_service,handle_call,3,[{file,"c:/ErlangTools/seresye/src/proto_service.erl"},{line,64}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [zotonic_sup,<0.90.0>]
+    messages: []
+    links: [<0.111.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 28657
+    stack_size: 24
+    reductions: 40983
+  neighbours:
+2012-09-04 14:29:14 =SUPERVISOR REPORT====
+     Supervisor: {local,zotonic_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,'++',[<<"person">>,".proto"],[]},{proto_service,handle_call,3,[{file,"c:/ErlangTools/seresye/src/proto_service.erl"},{line,64}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.137.0>},{name,proto_service},{mfargs,{proto_service,start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-09-04 15:02:21 =ERROR REPORT====
+** Generic server proto_service terminating 
+** Last message in was {generate_model,<<"message Person {\n\trequired string name = 1;\n\trequired string address = 2;\n\trequired string phone_number = 3;\n\trequired int32 age = 4;\n}">>,<<"person">>}
+** When Server state == {state,[]}
+** Reason for termination == 
+** {badarg,[{erlang,'++',[<<"person">>,".proto"],[]},{proto_service,handle_call,3,[{file,"c:/ErlangTools/seresye/src/proto_service.erl"},{line,64}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-09-04 15:02:21 =CRASH REPORT====
+  crasher:
+    initial call: proto_service:init/1
+    pid: <0.6728.1>
+    registered_name: proto_service
+    exception exit: {{badarg,[{erlang,'++',[<<"person">>,".proto"],[]},{proto_service,handle_call,3,[{file,"c:/ErlangTools/seresye/src/proto_service.erl"},{line,64}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [zotonic_sup,<0.90.0>]
+    messages: []
+    links: [<0.111.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 143
+  neighbours:
+2012-09-04 15:02:21 =SUPERVISOR REPORT====
+     Supervisor: {local,zotonic_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,'++',[<<"person">>,".proto"],[]},{proto_service,handle_call,3,[{file,"c:/ErlangTools/seresye/src/proto_service.erl"},{line,64}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.6728.1>},{name,proto_service},{mfargs,{proto_service,start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2012-09-04 15:03:13 =SUPERVISOR REPORT====
+     Supervisor: {<0.21.0>,user_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{unicode,characters_to_binary,[[[[],[{model_def,"message Person {\n\trequired string name = 1;\n\trequired string address = 2;\n\trequired string phone_number = 3;\n\trequired int32 age = 4;\n}"},{model_name,"person"}]],[{model_def,"message Node{string node_name=1;int32 heap=2;string ipaddr=3;}"},{model_name,"node"}]],unicode,latin1],[]},{user,wrap_characters_to_binary,3,[{file,"user.erl"},{line,765}]},{user,io_request,3,[{file,"user.erl"},{line,202}]},{user,do_io_request,5,[{file,"user.erl"},{line,182}]},{user,server_loop,2,[{file,"user.erl"},{line,132}]},{user,catch_loop,3,[{file,"user.erl"},{line,99}]}]}
+     Offender:   [{pid,<0.23.0>},{mod,user_sup}]
+
+2012-09-04 15:03:36 =SUPERVISOR REPORT====
+     Supervisor: {<0.21.0>,user_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{unicode,characters_to_binary,[[[[],[{model_def,"message Person {\n\trequired string name = 1;\n\trequired string address = 2;\n\trequired string phone_number = 3;\n\trequired int32 age = 4;\n}"},{model_name,"person"}]],[{model_def,"message Node{string node_name=1;int32 heap=2;string ipaddr=3;}"},{model_name,"node"}]],unicode,latin1],[]},{user,wrap_characters_to_binary,3,[{file,"user.erl"},{line,765}]},{user,io_request,3,[{file,"user.erl"},{line,202}]},{user,do_io_request,5,[{file,"user.erl"},{line,182}]},{user,server_loop,2,[{file,"user.erl"},{line,132}]},{user,catch_loop,3,[{file,"user.erl"},{line,99}]}]}
+     Offender:   [{pid,<0.23.0>},{mod,user_sup}]
+
+2012-09-04 15:05:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.21.0>,user_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{unicode,characters_to_binary,[[[[],[{model_def,"message Person {\n\trequired string name = 1;\n\trequired string address = 2;\n\trequired string phone_number = 3;\n\trequired int32 age = 4;\n}"},{model_name,"person"}]],[{model_def,"message Node{string node_name=1;int32 heap=2;string ipaddr=3;}"},{model_name,"node"}]],unicode,latin1],[]},{user,wrap_characters_to_binary,3,[{file,"user.erl"},{line,765}]},{user,io_request,3,[{file,"user.erl"},{line,202}]},{user,do_io_request,5,[{file,"user.erl"},{line,182}]},{user,server_loop,2,[{file,"user.erl"},{line,132}]},{user,catch_loop,3,[{file,"user.erl"},{line,99}]}]}
+     Offender:   [{pid,<0.23.0>},{mod,user_sup}]
+
