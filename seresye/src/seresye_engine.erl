@@ -20,7 +20,6 @@
 %%====================================================================
 -include("internal.hrl").
 
-
 %%====================================================================
 %% External exports
 %%====================================================================
@@ -29,7 +28,7 @@
          set_hooks/2, get_fired_rule/1,
          add_rules/2, add_rule/2, add_rule/3, assert/2, get_kb/1,
          get_rules_fired/1, get_client_state/1, set_client_state/2,
-         query_kb/2, remove_rule/2, retract/2]).
+         query_kb/2, remove_rule/2, retract/2,reset_kb/2]).
 
 %%====================================================================
 %% External functions
@@ -43,11 +42,16 @@ new(ClientState) ->
                               pending_actions=[],
                               client_state=ClientState}).
 
+
+
 set_hooks(EngineState, Hooks) when is_list(Hooks) ->
     EngineState#seresye{ hooks = Hooks }.
 
 set_client_state(EngineState, NewState) ->
-    EngineState#seresye{kb=[],client_state=NewState}.
+    EngineState#seresye{client_state=NewState}.
+
+reset_kb(EngineState, NewState) ->
+    EngineState#seresye{kb=NewState}.
 
 get_client_state(#seresye{client_state=State}) ->
     State.
@@ -145,7 +149,6 @@ add_rules(EngineState0, RulesList) when is_list(RulesList) ->
                         add_rule(EngineState1, Rule)
                 end, EngineState0, RulesList);
 add_rules(EngineState0, Module) when is_atom(Module) ->
-	
     AST = get_abstract_code(Module),
     case get_rules(Module, AST) of
         [] ->
@@ -157,26 +160,20 @@ add_rules(EngineState0, Module) when is_atom(Module) ->
     end.
 
 add_rule(EngineState, {Module, Fun, ClauseID, Salience}) ->
-	
     add_rule(EngineState, {Module, Fun}, ClauseID, Salience);
 add_rule(EngineState, Fun) ->
-	%io:format("add rule ~p",[Fun]),
     add_rule(EngineState, Fun, 0).
 
 add_rule(EngineState, {Module, Fun, ClauseID}, Salience) ->
-	
     add_rule(EngineState, {Module, Fun}, ClauseID, Salience);
 add_rule(EngineState, {Module, Fun}, Salience) ->
-	
     add_rule(EngineState, {Module, Fun}, 0, Salience).
 
 add_rule(EngineState0, {Module, Fun}, ClauseID, Salience) ->
-	
     AST = get_abstract_code(Module),
     case get_conds(Fun, ClauseID, AST) of
         error -> erlang:throw({seresye, {error_extracting_conditions, Fun}});
         CondsList ->
-			%io:format("CondsLisr ~p",[CondsList]),
             execute_pending(
               lists:foldl(fun (X, EngineState1) ->
                                   case X of
@@ -291,19 +288,16 @@ get_abstract_code(Module) ->
     end.
 
 get_conds(FunName, ClauseID, AST) ->
-	%io:format("ClauseID ~p",[ClauseID]),
     Records = get_records(AST, []),
     case search_fun(FunName, AST) of
         {error, Reason} ->
             erlang:throw({seresye, {error_parsing_forms,
                                    FunName, Reason}});
         {ok, CL} ->
-			%io:format("CLAUSE ~p",[CL]),
             if ClauseID > 0 ->
                     [read_clause(FunName, ClauseID,
                                  lists:nth(ClauseID, CL), Records, AST)];
                true ->
-				   %io:format("CL ~p",[Test||Test <- CL]),
                     [read_clause(FunName, ClauseID, Clause, Records, AST) ||
                         Clause <- CL]
             end
@@ -782,8 +776,14 @@ check_cond(EngineState0, [{_C1, Tab, Alfa_fun} | T],
     case catch Alfa_fun(Fact) of
         true ->
             case Sign of
-                plus -> ets:insert(Tab, Fact);
+				
+                plus -> try ets:insert(Tab, Fact) of 
+						true -> true	
+						catch
+							error:_R -> {error,"bad term"}
+	    				end;
                 minus -> ets:delete_object(Tab, Fact)
+				
             end,
             EngineState1 = pass_fact(EngineState0, Tab, {Fact, Sign}),
             check_cond(EngineState1, T, {Fact, Sign});

@@ -1,11 +1,12 @@
-%% -*- mode: Erlang; fill-column: 75; comment-column: 50; -*-
-
-{application, seresye,
- [{description, "SERESYE means Swarm oriented ERlang Expert SYstem Engine. It is a library "
-   "to write expert systems and rule processing engines using the Erlang "
-   "programming language"},
-  {vsn, "0.0.4"},
-  {modules, [seresye,seresye_app,seresye_sup]},
-  {registered, []},
-  {applications, [kernel, stdlib]},
-  {mod, {seresye_app, []}}]}.
+{application,seresye,
+             [{description,"SERESYE means Swarm oriented ERlang Expert SYstem Engine. It is a library to write expert systems and rule processing engines using the Erlang programming language"},
+              {vsn,"0.0.4"},
+              {modules,[make_ms_util,ms_util,node,node_usecase,node_usecase2,
+                        node_usecase3,record_info,rule1,seresye,
+                        seresye_agenda,seresye_app,seresye_autoneg,
+                        seresye_engine,seresye_speedtest,seresye_sup,
+                        seresye_transform,seresye_tree_list,t7,test,test2,
+                        test3,test4,test5,test6,xczx]},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {mod,{seresye_app,[]}}]}.

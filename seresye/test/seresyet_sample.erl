@@ -14,7 +14,6 @@
 
 -include_lib("eunit/include/eunit.hrl").
 
--rules([rule, rule1, rule2, rule3]).
 
 rule (Engine, {hello, world}, {ciao, X}, {X, 10}) ->
     seresye_engine:set_client_state(Engine,
@@ -31,7 +30,6 @@ rule1 (Engine, {hello, world}, {test}) ->
 
 
 rule2 (Engine, {hello, world}, #sample_record { a = Z }, {mondo, Z}) ->
-	io:format("~p", [rule2]),
     seresye_engine:set_client_state(Engine,
                                     [rule2 | seresye_engine:get_client_state(Engine)]).
 
@@ -40,11 +38,24 @@ rule3 (Engine, {hello, [_H|T]}, {test, T}) ->
                                     [rule3 | seresye_engine:get_client_state(Engine)]).
 
 start () ->
-io:format("mod name ~p",[?MODULE]),
-    Engine0 = seresye_engine:add_rules (seresye_engine:new([]), ?MODULE),
+
+    Engine0 = seresye_engine:add_rule (seresye_engine:new([]), {?MODULE, rule2}),
     Engine1 = seresye_engine:assert (Engine0, [[{ciao, mondo}, {mondo, 20}],
                                                {hello, world},
-                                               {ok, world},{ssda},
+                                               {ok, world},
                                                #sample_record { a = 10, b = 50}]),
-State = seresye_engine:get_client_state(Engine1),
-	io:format("Result ~n~p",[Engine1]).
+    Engine2 = seresye_engine:add_rule (Engine1, {?MODULE, rule3}),
+    Engine3 = seresye_engine:assert (Engine2, [{hello, [ciao, mondo]},
+                                               {test, ciao},
+                                               {test, [ciao]},
+                                               {test, [mondo]},
+                                               {hello, [ciao, mondo, world]},
+                                               {test, [mondo, world]}]),
+
+    Engine4 = seresye_engine:add_rules (Engine3, [{?MODULE, rule},
+                                                  {?MODULE, rule1}]),
+
+    Engine5 = seresye_engine:retract (Engine4, {test}),
+    State = seresye_engine:get_client_state(seresye_engine:assert (Engine5, {test})),
+    ?assertMatch([rule1b,rule1b,rule1a,rule3,rule3],
+                 State).

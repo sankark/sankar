@@ -1,8 +1,9 @@
 -module(t7).
+-export([get_record_info/1]).
+-compile({parse_transform, exprecs}). 
 -include("../records/node.hrl").
--include("../records/ontology.hrl").
--include("../records/wine.hrl").
--export([t7/2]).
--rules([t7]).
-t7(Engine0,#node{node_id=Node_id,heap=Heap,memory=Memory,ipaddr=Ipaddr})  ->
-seresye_engine:set_client_state(Engine0,[seresye_engine:get_client_state(Engine0)]).
+-export_records([node]).
+get_record_info(Rec)->
+ Flds = '#set-'([{heap,1},{node_id,1}],'#new-'(Rec)),
+Flds .
+

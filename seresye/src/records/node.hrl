@@ -1,1 +1,7 @@
--record (node, {node_id,heap,memory,ipaddr}).
+-ifndef(NODE_PB_H).
+-define(NODE_PB_H, true).
+-record(node, {
+    
+}).
+-endif.
+

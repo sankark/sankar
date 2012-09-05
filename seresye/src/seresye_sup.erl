@@ -12,7 +12,7 @@
 -behaviour(supervisor).
 
 %% API
--export([start_link/0, start_engine/0, start_engine/1, start_engine/2,start_compiler/1]).
+-export([start_link/0, start_engine/0, start_engine/1, start_engine/2]).
 
 %% Supervisor callbacks
 -export([init/1]).
@@ -29,9 +29,6 @@ start_link() ->
 start_engine() ->
     supervisor:start_child(?SERVER, []).
 
-start_compiler(Name) ->
-    supervisor:start_child(?SERVER, [Name]).
-
 start_engine(Name) ->
     supervisor:start_child(?SERVER, [Name]).
 
@@ -42,6 +39,7 @@ start_engine(Name, ClientState) ->
 %%% Supervisor callbacks
 %%%===================================================================
 init([]) ->
+
     RestartStrategy = simple_one_for_one,
     MaxRestarts = 1000,
     MaxSecondsBetweenRestarts = 3600,

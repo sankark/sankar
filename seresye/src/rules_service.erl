@@ -10,13 +10,13 @@
 %%
 %% Exported Functions
 %%
--export([test/0,parse_test/1,parse_cons/2,test2/1,add_rule/5,test_data/1,parse_term/1 ]).
+-export([test/0,parse_test/1,parse_cons/2,test2/1,add_rule/6,test_data/1,parse_term/1 ]).
 
 %%
 %% API Functions
 %%
 -define(line(Tup), element(2, Tup)).
-add_rule(RuleName,Pattern,Arity,Cond,Action,State)->
+add_rule(RuleName,Pattern,Arity,Cond,Action,State,Salience)->
 	Dest="C:/ErlangTools/seresye/src/rules/",
 	Header=lists:flatten(io_lib:format("-module(~s).\n~s-export([~s/~w]).\n-rules([~s]).\n",
                                     [RuleName,model_service:get_includes(),
@@ -51,7 +51,7 @@ add_rule(RuleName,Pattern,Arity,Cond,Action,State)->
 	io:format(RulesFile,"~s~s~s~s",[Header,FunctionLine,ActionLine,StateLine]),
 	file:close(RulesFile),
 	rules_compiler:compile_rules(Module),
-    seresye:add_rules(defaultengine,list_to_atom(filename:basename(Module))).
+    seresye:add_rule(defaultengine,{list_to_atom(filename:basename(Module)),list_to_atom(filename:basename(Module))},list_to_integer(Salience)).
 	
 
 %%
@@ -62,11 +62,11 @@ add_rule(RuleName,Pattern,Arity,Cond,Action,State)->
  %   {ok,AbsForm} = erl_parse:parse_term(Tokens),
 %	AbsForm.
 
-add_rule(RuleName,Pattern,Cond,Action,State)->
+add_rule(RuleName,Pattern,Cond,Action,State,Salience)->
 	{ok,Tokens,_EndLine} = erl_scan:string(Pattern ++ "."),
     {ok,AbsForm} = erl_parse:parse_exprs(Tokens),
 	Arity=length(AbsForm),
-	add_rule(RuleName,Pattern,Arity+1,Cond,Action,State).
+	add_rule(RuleName,Pattern,Arity+1,Cond,Action,State,Salience).
 
 
 parse_cons({cons,1,Tuple1,Rest},Acc)->
@@ -173,13 +173,13 @@ test2({test,Daa})->
 test_data(Data)->
 	{ok,Tokens,_}=erl_scan:string(Data++"."),
 	Engine0=seresye:get_engine(defaultengine),
+		io:format("~n Engine ~p",[Engine0]),
 	{ok,Res}=rules_service:parse_term(Tokens),
-	 seresye:set_client_state(defaultengine,[]),
-	ok=seresye:assert(defaultengine,Res),
-	{ok,Result}=seresye:get_client_state(defaultengine),
+	Engine1=seresye_engine:assert(Engine0,Res),
+	Result=seresye_engine:get_client_state(Engine1),
 	io:format("~n Client State ~p",[Result]),
 	[lists:flatten(io_lib:format("~s", [Name])) || Name <- Result].
 test()->
 	%Lines=parse_action("[{assert,{a,b}},{retract,X}]"),
 %io:format("~p",[Lines]).
-	add_rule("test5","{test,test},{test2,X}=F","X>10","[{assert,{ok}},{assert,{ok}},{retract,F}]","").
+	add_rule("test5","{test,test},{test2,X}=F","X>10","[{assert,{ok}},{assert,{ok}},{retract,F}]","","0").

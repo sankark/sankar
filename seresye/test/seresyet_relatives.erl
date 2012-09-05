@@ -8,20 +8,14 @@
 %%% license distributed with this project or
 %%% http://www.opensource.org/licenses/bsd-license.php
 -module (seresyet_relatives).
--behavior(gen_server).
+
 -export([father/3, grandfather/3, grandmother/3,
          mother/3, brother/4, sister/4]).
--export([start_link/0]).
--export([init/1, handle_call/3, handle_cast/2, 
-         handle_info/2, terminate/2, code_change/3]).
+
 -include_lib("eunit/include/eunit.hrl").
 
 -rules([mother, father, brother, sister, grandfather,
         grandmother]).
-
-
-start_link() -> 
-    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
 %%
 %% if (X is female) and (X is Y's parent) then (X is Y's mother)
@@ -81,67 +75,149 @@ grandmother (Engine, {mother, X, Y}, {parent, Y, Z}) ->
                                     [{grandmother, X, Z}
                                      | seresye_engine:get_client_state(Engine)]).
 
-init([]) -> 
-    {ok, []}.
-
-handle_call(_Call, _From, State) -> 
-    {noreply, State}.
-handle_cast(_Cast, State) -> 
-    {noreply, State}.
-handle_info(_Info, State) -> 
-    {noreply, State}.
-terminate(_Reason, _State) -> ok.
-code_change(_OldVsn, State, _Extra) -> 
-    {ok, State}.
 
 rules_test() ->
     Engine0 = seresye_engine:new([]),
     Engine2 =  seresye_engine:add_rules(Engine0, ?MODULE),
 
     Engine3 = seresye_engine:assert (Engine2,
-                                     [[{male, kanagu}],
-                                      {male, sankar},
-                                      {female, valar},
-                                      {female, rupa},
-                                      {female, deepa},
-                                      {parent, kanagu, sankar},
-                                      {parent, kanagu, rupa},
-                                      {parent, kanagu, deepa},
-									   {parent, valar, sankar},
-                                      {parent, valar, rupa},
-                                      {parent, valar, deepa}]),
-                                     
+                                     [{male, bob},
+                                      {male, corrado},
+                                      {male, mark},
+                                      {male, caesar},
+                                      {female, alice},
+                                      {female, sara},
+                                      {female, jane},
+                                      {female, anna},
+                                      {parent, jane, bob},
+                                      {parent, corrado, bob},
+                                      {parent, jane, mark},
+                                      {parent, corrado, mark},
+                                      {parent, jane, alice},
+                                      {parent, corrado, alice},
+                                      {parent, bob, caesar},
+                                      {parent, bob, anna},
+                                      {parent, sara, casear},
+                                      {parent, sara, anna}]),
 
     InternalState = seresye_engine:get_client_state(Engine3),
-	io:format("~p",[InternalState]),
 
     ?assertMatch(true,
-                 lists:member({mother,valar,sankar}, InternalState)),
+                 lists:member({mother,sara,anna}, InternalState)),
 
     ?assertMatch(true,
-                 lists:member({sister,rupa,sankar},
-                              InternalState)),
-
-      ?assertMatch(true,
-                 lists:member({sister,deepa,sankar},
+                 lists:member({sister,anna,casear},
                               InternalState)),
 
     ?assertMatch(true,
-                 lists:member({brother,sankar,rupa},
+                 lists:member({mother,sara,casear},
                               InternalState)),
 
     ?assertMatch(true,
-                 lists:member({father,kanagu,sankar},
+                 lists:member({grandfather,corrado,anna},
                               InternalState)),
+
     ?assertMatch(true,
-                 lists:member({father,kanagu,rupa},
+                 lists:member({sister,anna,caesar},
                               InternalState)),
-   
 
+    ?assertMatch(true,
+                 lists:member({brother,caesar,anna},
+                              InternalState)),
 
-    
-    %?assertMatch(29, erlang:length(InternalState)),
-	io:format("~p",[InternalState]).
+    ?assertMatch(true,
+                 lists:member({father,bob,anna},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({grandmother,jane,anna},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({grandfather,corrado,caesar},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({father,bob,caesar},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({grandmother,jane,caesar},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({sister,alice,mark},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({brother,bob,alice},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({brother,mark,alice},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({father,corrado,alice},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({sister,alice,bob},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({sister,alice,mark},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({brother,bob,alice},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({brother,mark,alice},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({mother,jane,alice},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({sister,alice,bob},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({brother,bob,mark},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({father,corrado,mark},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({brother,mark,bob},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({brother,bob,mark},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({mother,jane,mark},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({brother,mark,bob},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({father,corrado,bob},
+                              InternalState)),
+
+    ?assertMatch(true,
+                 lists:member({mother,jane,bob},
+                              InternalState)),
+
+    ?assertMatch(29, erlang:length(InternalState)).
 
 
 

@@ -7,7 +7,7 @@
 %%% license distributed with this project or
 %%% http://www.opensource.org/licenses/bsd-license.php
 -module(seresye).
--behavior(gen_server).
+
 %%====================================================================
 %% External exports
 %%====================================================================
@@ -40,6 +40,9 @@ set_hooks(Name, Hooks) when is_list(Hooks) ->
 
 set_client_state(Name, NewState) ->
     gen_server:cast(Name, {set_client_state, NewState}).
+
+reset_kb(Name, NewState) ->
+    gen_server:cast(Name, {reset_kb, NewState}).
 
 get_client_state(Name) ->
     gen_server:call(Name, get_client_state).
@@ -94,7 +97,7 @@ serialize(Name) ->
 %%% gen_server callbacks
 %%%===================================================================
 start_link() ->
-    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
+    gen_server:start_link(?MODULE, [], []).
 
 start_link(Name) when is_atom(Name) ->
     gen_server:start_link({local, Name}, ?MODULE, [], []);
@@ -226,7 +229,10 @@ handle_cast({set_hooks, Hooks}, State) ->
     {noreply, seresye_engine:set_hooks(State, Hooks)};
 
 handle_cast({set_client_state, CS}, State) ->
-    {noreply, seresye_engine:set_client_state(State, CS)}.
+    {noreply, seresye_engine:set_client_state(State, CS)};
+
+handle_cast({reset_kb, CS}, State) ->
+    {noreply, seresye_engine:reset_kb(State, CS)}.
 
 handle_info(_Info, State) ->
     {noreply, State}.

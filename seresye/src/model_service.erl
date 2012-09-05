@@ -10,7 +10,7 @@
 %%
 %% Exported Functions
 %%
--export([test/0,get_includes/0,get_record/1]).
+-export([test/0,get_includes/0,get_record/1,compile_getrecord_template/0]).
 
 %%
 %% API Functions
@@ -56,17 +56,19 @@ get_fields(RecordName)->
 	try 
 		record_info:get_record_info(RecordName) 
 	catch
-		error:Reason -> {'EXIT',{Reason,erlang:get_stacktrace()}}
+		error:Reason -> {'EXIT',{Reason,"No Record Found"}}
 	end.
 capfirst([Head | Tail]) when Head >= $a, Head =< $z ->
     [Head + ($A - $a) | Tail];
 capfirst(Other) ->
     Other.
 get_record(RecordName) ->
-	case get_fields(RecordName) of 
-		Result -> R1=lists:foldl(fun(Field,Acc)-> Acc++lists:flatten(io_lib:format("~s=~s,",[Field,capfirst(atom_to_list(Field))])) end,"",Result),
-			       ["#"++atom_to_list(RecordName)++"{"++string:sub_string(R1,1,string:len(R1)-1)++"}"];
-		{'EXIT',Reason} -> "no record found"
+	try 
+		Result=get_fields(RecordName) ,
+		R1=lists:foldl(fun(Field,Acc)-> Acc++lists:flatten(io_lib:format("~s=~s,",[Field,capfirst(atom_to_list(Field))])) end,"",Result),
+		["#"++atom_to_list(RecordName)++"{"++string:sub_string(R1,1,string:len(R1)-1)++"}"]
+	catch
+		error:Reason -> "No Record Found"
 	end.
 
 compile_getrecord_template()->

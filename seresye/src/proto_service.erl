@@ -1,10 +1,10 @@
 %% Author: Administrator
 %% Created: Aug 3, 2012
 %% Description: TODO: Add description to rules_compiler
--module(rules_compiler).
+-module(proto_service).
 -behavior(gen_server).
 
--export([start_link/0, compile_rules/1]).
+-export([start_link/0, generate_model/2]).
 
 -export([init/1, handle_call/3, handle_cast/2, 
          handle_info/2, terminate/2, code_change/3,start/1]).
@@ -32,8 +32,8 @@ start(Name) ->
 %% Function: print_state() -> ok
 %% Description: Prints the current state to std output
 %%--------------------------------------------------------------------
-compile_rules(Module) -> 
-    gen_server:call(?MODULE, {compile_rules,Module}).
+generate_model(ProtoString,Model_Name) -> 
+    gen_server:call(?MODULE, {generate_model,ProtoString,Model_Name}).
 
 %%====================================================================
 %% gen_server callbacks
@@ -58,16 +58,15 @@ init([]) ->
 %%                                      {stop, Reason, State}
 %% Description: Handling call messages
 %%--------------------------------------------------------------------
-handle_call({compile_rules,Module}, _From, State) -> 
-	Dest="C:/ErlangTools/seresye/ebin/",
-	  FileName = filename:basename(Module),
-    DirName = filename:dirname(Module),
-    %io:format("state: ~p~n", [code:get_path()]),
-	{ok,ModName,Binary}=compile:file(Module,[binary,debug_info]),
-	{ok, File}=file:open(Dest ++ FileName ++ ".beam",[write]),
-	file:write(File,Binary),
-	%io:format(File, "~p", [Binary]),
-    file:close(File),
+handle_call({generate_model,ProtoString,Model_Name}, _From, State) -> 
+	Dest="C:/ErlangTools/seresye/src/records/proto/",
+	Records_Dir="C:/ErlangTools/seresye/src/records/",
+	Proto=Dest ++ Model_Name ++ ".proto",
+	{ok, ProtoFile} = file:open(Proto,[write]),
+	io:format(ProtoFile,"~s",[ProtoString]),
+	file:close(ProtoFile),
+    protobuffs_compile:scan_file(Proto,[{output_ebin_dir,Dest++"beam"},{output_include_dir,Records_Dir}]),
+    model_service:compile_getrecord_template(),
 	{reply, ok,State};
 
 handle_call(_Call, _From, State) -> 
