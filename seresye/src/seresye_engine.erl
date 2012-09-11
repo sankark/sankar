@@ -51,7 +51,7 @@ set_client_state(EngineState, NewState) ->
     EngineState#seresye{client_state=NewState}.
 
 reset_kb(EngineState, NewState) ->
-    EngineState#seresye{kb=NewState}.
+    EngineState#seresye{kb=[],client_state=[]}.
 
 get_client_state(#seresye{client_state=State}) ->
     State.
@@ -777,13 +777,10 @@ check_cond(EngineState0, [{_C1, Tab, Alfa_fun} | T],
         true ->
             case Sign of
 				
-                plus -> try ets:insert(Tab, Fact) of 
-						true -> true	
-						catch
-							error:_R -> {error,"bad term"}
-	    				end;
-                minus -> ets:delete_object(Tab, Fact)
-				
+                plus -> ets:insert(Tab, Fact) ;
+						
+                minus ->  ets:delete_object(Tab, Fact) 
+							 
             end,
             EngineState1 = pass_fact(EngineState0, Tab, {Fact, Sign}),
             check_cond(EngineState1, T, {Fact, Sign});

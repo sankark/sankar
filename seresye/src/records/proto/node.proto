@@ -1,1 +1,5 @@
-message Node{string node_name=1;int32 heap=2;string ipaddr=3;}
+message Node
+{
+ optional string node_name=1;
+ optional int32 heap=2;
+} 

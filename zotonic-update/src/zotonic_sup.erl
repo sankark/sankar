@@ -55,6 +55,7 @@ upgrade() ->
 %% @spec init([]) -> SupervisorTree
 %% @doc supervisor callback.
 init([]) ->
+	
     {A1,A2,A3} = erlang:now(),
     random:seed(A1, A2, A3),
 
@@ -113,6 +114,8 @@ init([]) ->
 	RulesCompiler = {rules_compiler,
                 {rules_compiler, start_link, []},
                 permanent, 5000, worker, dynamic},
+	
+	
 		ProtoService = {proto_service,
                 {proto_service, start_link, []},
                 permanent, 5000, worker, dynamic},
@@ -123,7 +126,7 @@ init([]) ->
         SmtpServer, SmtpBounceServer,
         SitesSup, Dispatcher | get_extensions()
     ],
-
+X=[{heap60,0},{records,[{record,node,[{node_name,"Test"},{heap,70}]},{record,node,[{node_name,"Test2"},{heap,70}]},{record,node,[{node_name,"Test3"},{heap,70}]},{record,node,[{node_name,"Test4"},{heap,70}]}]}],
     % Listen to IP address and Port
     WebIp = case os:getenv("ZOTONIC_IP") of
                 false -> z_config:get_dirty(listen_ip);

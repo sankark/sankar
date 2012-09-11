@@ -54,6 +54,9 @@ stop(EngineName) ->
 get_engine(EngineName) ->
     gen_server:call(EngineName, get_engine).
 
+
+
+
 %% @doc Insert a fact in the KB.
 %% It also checks if the fact verifies any condition,
 %% if this is the case the fact is also inserted in the alpha-memory

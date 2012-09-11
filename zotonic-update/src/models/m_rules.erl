@@ -50,7 +50,7 @@ test() ->
 %% @doc Insert a new resource. Crashes when insertion is not allowed.
 %% @spec insert(Props, Context) -> {ok, Id} | {error, Reason}
 insert(Props, Context) ->
-    insert(Props, true, Context).
+    insert(Props, false, Context).
 
 getAll(Table,Context)->
 	 Result = z_db:assoc_props("select * from rules",Context),

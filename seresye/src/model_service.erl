@@ -48,7 +48,7 @@ get_includes()->
 	
 get_records()->
 	Hrl=scan(".hrl",src,"records"),
-	Includes=lists:foldl(fun({File,_},Acc)-> Acc++lists:flatten(io_lib:format("-include(\"../records/~s.hrl\").\n",[File])) end,"",Hrl),
+	Includes=lists:foldl(fun({File,_},Acc)-> Acc++lists:flatten(io_lib:format("-include(\"records/~s.hrl\").\n",[File])) end,"",Hrl),
 	Export_Records=lists:foldl(fun({File,_},Acc)-> Acc++lists:flatten(io_lib:format("-export_records([~s]).\n",[File])) end,"",Hrl),
 	{Export_Records,Includes}.
 
@@ -72,11 +72,11 @@ get_record(RecordName) ->
 	end.
 
 compile_getrecord_template()->
-	Record_Info_File   = filename:join([lib_dir(src),"rules","record_info.erl"]),
-	Module   = filename:join([lib_dir(src),"rules","record_info"]),
+	Record_Info_File   = filename:join([lib_dir(src),"record_info.erl"]),
+	Module   = filename:join([lib_dir(src),"record_info"]),
 	{ok, RulesFile} = file:open(Record_Info_File,[write]),
 	{Export_Records,Includes}=get_records(),
-	File_Content=lists:flatten(io_lib:format("-module(record_info).\n-export([get_record_info/1]).\n-compile({parse_transform, exprecs}). \n~s~sget_record_info(Rec)->\n Flds = '#info-'(Rec),\nFlds .",[Includes,Export_Records])),
+	File_Content=lists:flatten(io_lib:format("-module(record_info).\n-export([get_record_info/1,new/1,set_record/2,is_recorde/1]).\n-compile({parse_transform, exprecs}). \n~s~sget_record_info(Rec)->\n Flds = '#info-'(Rec),\nFlds .\nnew(Rec)->\n'#new-'(Rec).\nset_record(Vals,Rec)->\n  '#set-'(Vals, Rec).\nis_recorde(Rec)->\n'#is_record-'(Rec).",[Includes,Export_Records])),
 	io:format(RulesFile,"~s",[File_Content]),
 	file:close(RulesFile),
 	rules_compiler:compile_rules(Module).

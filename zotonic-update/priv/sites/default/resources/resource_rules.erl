@@ -123,6 +123,7 @@ event(#postback{message={test_data, Opts}}, Context) ->
    Context;
 
 event(#submit{message=add_rule}, Context) ->
+	
 	    Post = z_context:get_q_all_noz(Context),
     Props = filter_props(Post),
 		Props2=proplists:delete(is_authoritative, Props) ,
@@ -143,10 +144,10 @@ event(#submit{message=add_rule}, Context) ->
 						true ->Test_Data=proplists:get_value("test_rule", Props2),
 							    Res=[X || X <- Test_Data, X =/= $\"],
 							   io:format("Test Rule Found ~p",[Res]),
-							   Result=rules_service:test_data(Res),
+							   {Kb,Result}=rules_service:test_data(Res),
 							   Context1 = z_context:set("test_result",Result,Context),
 							   io:format("new contex~p",[Context1]),
-							   {Html, Context2} = z_template:render_to_iolist("test_result.tpl", [{test_result,Result}], Context1),
+							   {Html, Context2} = z_template:render_to_iolist("test_result.tpl", [{test_result,Result},{kb,Kb}], Context1),
         					   z_render:update("querypreview", Html, Context2)
 					end
 		end;

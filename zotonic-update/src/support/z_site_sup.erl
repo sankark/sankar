@@ -49,10 +49,15 @@ init(Host) ->
                 {z_trans_server, start_link, [SiteProps]},
                 permanent, 5000, worker, dynamic},
 
+
     % The installer needs the database pool, depcache and translation.
     Installer = {z_installer,
                 {z_installer, start_link, [SiteProps]},
                 permanent, 1, worker, dynamic},
+
+  	Rules_Installer = {rules_installer,
+                {rules_installer, start_link, [SiteProps]},
+                permanent, 10, worker, dynamic},
 
     % Continue with the normal per-site servers
     Notifier = {z_notifier,
@@ -94,12 +99,15 @@ init(Host) ->
     PostStartup = {z_site_startup,
                     {z_site_startup, start_link, [SiteProps]},
                     permanent, 5000, worker, dynamic},
+		Base_Engine = {base_engine,
+                {base_engine, start_link, []},
+                permanent, 2000, worker, dynamic},
 
     Processes = [
-            Depcache, Translation, Installer, Notifier, Session, 
+            Base_Engine,Depcache, Translation, Installer, Notifier, Session, 
             Dispatcher, Template, MediaClass, DropBox, Pivot,
             ModuleIndexer, Modules,
-            PostStartup
+            PostStartup,Rules_Installer
     ],
     {ok, {{one_for_all, 2, 1}, add_db_pool(Host, Processes, SiteProps)}}.
 

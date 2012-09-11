@@ -124,6 +124,7 @@
                 <td>{{ p.condition|default:"&nbsp;" }}</td>
                 <td>{{ p.action|default:"&nbsp;" }}</td>
                 <td>{{ p.client_state|default:"&nbsp;" }}</td>
+                 <td>{{ p.salience|default:"&nbsp;" }}</td>
                 <td>
                     <div class="pull-right">
                         {% button class="btn btn-mini" disabled=p.is_protected text="delete" action={delete id=p.id on_success={slide_fade_out target=#li.name}} %}

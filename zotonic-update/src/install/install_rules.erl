@@ -33,28 +33,29 @@
 
 install()->
 	ok = install_models(),
-	ok = install_rules().
+	ok = install_rules(),
+ok.
 
 
 install_models()->
 	Result=m_models:getAll(models,z_context:new(default)),
-	[proto_service:generate_model(Y, X)||[{model_name,X},{model_def,Y}]<-convert_bin_to_list(Result)],
+	R2=convert_bin_to_list(Result,[]),
+	[proto_service:generate_model(Y, X)||[{model_name,X},{model_def,Y}]<-R2],
 	ok.
 install_rules()->
 	Result=m_rules:getAll(rules,z_context:new(default)),
+	R2=convert_bin_to_list(Result,[]),
 	[rules_service:add_rule(RuleName,Pattern,Condition,Action,State,Salience)||[{rule_name,RuleName},
-{pattern,Pattern},{condition,Condition},{action,Action},{client_state,State},{salience,Salience}]<-convert_bin_to_list(Result)],
+																				
+{pattern,Pattern},{condition,Condition},{action,Action},{client_state,State},{salience,Salience}]<-R2],
 ok.
 
 
-convert_bin_to_list(Result)->
-convert_bin_to_list(Result,[]).
-
+convert_bin_to_list([],Acc)->
+io:format("~p",[Acc]),
+Acc;
 convert_bin_to_list([H|T],Acc)->
 Result=lists:foldl(fun({Key,Value},Acc)->[{Key,binary_to_list(Value)}|Acc] end,  [], H),
-convert_bin_to_list(T,[Acc,Result]);
+convert_bin_to_list(T,[lists:reverse(Result)|Acc]).
 
 
-convert_bin_to_list([],Acc)->
-io:format(Acc),
-Acc.
