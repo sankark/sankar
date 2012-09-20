@@ -59,7 +59,7 @@ init([]) ->
 %% Description: Handling call messages
 %%--------------------------------------------------------------------
 handle_call({compile_rules,Module}, _From, State) -> 
-	Dest="C:/ErlangTools/seresye/ebin/",
+	Dest="C:/tmp/sankar/zotonic-update/deps/seresye/ebin/",
 	  FileName = filename:basename(Module),
     DirName = filename:dirname(Module),
     %io:format("state: ~p~n", [code:get_path()]),

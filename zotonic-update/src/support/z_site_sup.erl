@@ -57,7 +57,7 @@ init(Host) ->
 
   	Rules_Installer = {rules_installer,
                 {rules_installer, start_link, [SiteProps]},
-                permanent, 10, worker, dynamic},
+                permanent, 5000, worker, dynamic},
 
     % Continue with the normal per-site servers
     Notifier = {z_notifier,
@@ -101,7 +101,7 @@ init(Host) ->
                     permanent, 5000, worker, dynamic},
 		Base_Engine = {base_engine,
                 {base_engine, start_link, []},
-                permanent, 2000, worker, dynamic},
+                permanent, 5000, worker, dynamic},
 
     Processes = [
             Base_Engine,Depcache, Translation, Installer, Notifier, Session, 

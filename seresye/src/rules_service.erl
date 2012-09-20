@@ -9,11 +9,13 @@
 %%
 %% Include files
 %%
-
+-record(request,{req_type,req_data}).
+-record(result,{kb,client_state}).
+-record(response,{resp_type,resp_data}).
 %%
 %% Exported Functions
 %%
--export([test/0,parse_test/1,parse_cons/2,parse_facts/1,test2/1,add_rule/6,test_data/1,parse_term/1 ]).
+-export([test/0,parse_test/1,parse_cons/2,parse_facts/1,test2/1,add_rule/6,test_data/1,process_test_data/1,parse_term/1,pterm/1 ]).
 
 %%
 %% API Functions
@@ -205,33 +207,40 @@ test2({test,Daa})->
 	ok.
 test_data(Data)->
 	
-		{A1,A2,A3} = erlang:now(),
-	Name=list_to_atom(integer_to_list(A1)++integer_to_list(A2)++integer_to_list(A3)),
-%Data="[{heap60,nodes,[]},{records,[{record,node,[{node_name,test},{heap,90}]},{record,node,[{node_name,test3},{heap,50}]},{record,node,[{node_name,test4},{heap,70}]}]}]",
-	Facts = parse_facts(Data),
+		{Kb, Result} = process_test_data(Data),
 
- %io:format("Facts~p",[Facts]),
-	{ok,Pid}=worker_engine:start_link(Name),
-	 	%Engine=base_engine:get_engine(),
-	%io:format("~n New Engine ~p",[Engine]),
-	%Join=Engine#seresye.join,
-	%Engine2=lists:foldl(fun (Node,Engine1) -> seresye_engine:add_rule (Engine1,Node) end, Engine ,scan()),
-	  worker_engine:assert (Name,[{init},Facts]),
-Engine10=worker_engine:get_engine(Name),
-	%Engine1=seresye_engine:assert(Engine0,Facts),
-	  %io:format("~n after assert ~p",[Engine10]),
-	Result=seresye_engine:get_client_state(Engine10),
+  %base_engine:reset_kb([]),
+	 %io:format("~n Knowledge Base ~p",[Kb]),
+	 %io:format("~n fired_rule ~p",[Engine10#seresye.fired_rule]),
+	 %io:format("~n hooks ~p",[Engine10#seresye.hooks]),
+	 %io:format("~n join ~p",[Engine10#seresye.join]),
+	 %io:format("~n join ~p",[Engine10#seresye.pending_actions]),
 	
-	%io:format("~n Client State ~p",[Result]),
-	Kb=seresye_engine:get_kb(Engine10),
-%base_engine:reset_kb([]),
-	%io:format("~n Knowledge Base ~p",[Kb]),
-%io:format("~n fired_rule ~p",[Engine10#seresye.fired_rule]),
-%io:format("~n hooks ~p",[Engine10#seresye.hooks]),
-%io:format("~n join ~p",[Engine10#seresye.join]),
-%io:format("~n join ~p",[Engine10#seresye.pending_actions]),
-worker_engine:stop(Name),
-	{[lists:flatten(io_lib:format("~p", [Name])) || Name <- lists:usort(lists:flatten(Kb))],[lists:flatten(io_lib:format("~p", [Name])) || Name <- lists:usort(lists:flatten(Result))]}.
+	 {[lists:flatten(io_lib:format("~p", [Name])) || Name <- lists:usort(lists:flatten(Kb))],[lists:flatten(io_lib:format("~p", [Name])) || Name <- lists:usort(lists:flatten(Result))]}.
+
+process_test_data(Data) ->
+	   {A1,A2,A3} = erlang:now(),
+    Name=list_to_atom(integer_to_list(A1) ++ integer_to_list(A2) ++ integer_to_list(A3)),
+	   %Data="[{heap60,nodes,[]},{records,[{record,node,[{node_name,test},{heap,90}]},{record,node,[{node_name,test3},{heap,50}]},{record,node,[{node_name,test4},{heap,70}]}]}]",
+    Facts = parse_facts(Data),
+
+    %io:format("Facts~p",[Facts]),
+	   {ok,Pid}=worker_engine:start_link(Name),
+	   %Engine=base_engine:get_engine(),
+	   %io:format("~n New Engine ~p",[Engine]),
+	   %Join=Engine#seresye.join,
+	   %Engine2=lists:foldl(fun (Node,Engine1) -> seresye_engine:add_rule (Engine1,Node) end, Engine ,scan()),
+	   worker_engine:assert (Name,[Facts]),
+    Engine10=worker_engine:get_engine(Name),
+		  worker_engine:stop(Name),
+	   %Engine1=seresye_engine:assert(Engine0,Facts),
+	   %io:format("~n after assert ~p",[Engine10]),
+	   Result=seresye_engine:get_client_state(Engine10),
+	
+	   %io:format("~n Client State ~p",[Result]),
+	   Kb=seresye_engine:get_kb(Engine10),
+    {Kb, Result}.
+
 
 parse_facts(Data) ->
 	   Res = pterm(Data),
@@ -250,6 +259,24 @@ pterm(Data) ->
 
 	   {ok,Res}=rules_service:parse_term(Tokens),
     Res.
+
+data_service(Data)->
+	Request=#request{req_type=Type,req_data=Req_Data}=request_pb:decode_request(Data),
+ {ok,Response}=case Type of
+		proto -> protobuffs_compile:scan_string(Req_Data,"",[]),
+				 {ok,success};
+		kb -> Decoded_Kb=kb_pb:decode_kb(Req_Data),
+			  {Kb,CS}=rules_service:test_data(Decoded_Kb),
+			  Result=compose_response(Kb,CS),
+			  Resp=response_pb:encode_response(Result),
+			  {ok,Resp}
+	end,	 
+	{ok,Response}.
+
+compose_response(Kb,CS)->
+	proplists:get_value("result", Kb),
+    Res=#response{resp_data=#result{kb=Kb,client_state=CS},resp_type=object},
+	Res.
 test()->
 	parse_action("[{assert,{a,\"X+2\"}},{retract,X}]").
 %io:format("~p",[Lines]).

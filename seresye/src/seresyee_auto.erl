@@ -33,8 +33,7 @@
 -neg_rule({determine_engine_state, [{'working-state', engine, '__IGNORE_UNDERSCORE__'},
                                     {repair, '__IGNORE_UNDERSCORE__'}]}).
 
--include_lib("seresye/include/seresye.hrl").
-
+-include_lib("../include/seresye.hrl").
 %% **********************
 %% * ENGINE STATE RULES *
 %% **********************
@@ -207,7 +206,6 @@ ask_yn(Prompt) ->
     end.
 
 ask_question(Prompt) -> io:get_line(Prompt).
-
 
 start() ->
     Engine0 = seresye_engine:new(),
