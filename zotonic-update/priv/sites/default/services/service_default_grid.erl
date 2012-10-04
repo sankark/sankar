@@ -23,7 +23,7 @@
 -svc_title("Basic information about the system.").
 -svc_needauth(false).
 
--export([process_get/2]).
+-export([process_get/2,process_post/2]).
 
 -include_lib("zotonic.hrl").
 
@@ -54,7 +54,16 @@ Cols={array, [user_id,user_name]},
 
 R={struct, [{total, 3},{records , 2},{page , 1},{rows,Records},{cols,Cols}]},
 R.
-              
+           
+process_post(_ReqData, Context) ->
+	io:format("Request~n~pContext~n~p",[_ReqData,Context]),
+	Request=case proplists:lookup(q, Context#context.props) of
+        {q, Qs} -> proplists:get_value("request", Qs);
+        none -> undefined
+    end,
+    io:format("Request~p",[Request]),
+	{result,Result}=rules_service:process_json(Request),
+	mochijson2:decode(Result).
        
 
 cfg(Key, Value, Context) ->

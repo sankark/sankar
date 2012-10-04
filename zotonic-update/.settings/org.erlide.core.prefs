@@ -2,4 +2,4 @@ backend_version=R15B
 eclipse.preferences.version=1
 include_dirs=include
 nukeOutputOnClean=true
-source_dirs=priv/sites/default/services;deps/seresye/src;deps/ErlangTcpServer/src;src/install;priv/sites/default/actions;priv/sites/default/resources;priv/sites/default;src/dbdrivers/postgresql;deps;src;src/models;src/support;modules
+source_dirs=modules/mod_base/resources;deps/erlang_protobuffs/src;priv/sites/default/services;deps/seresye/src;deps/ErlangTcpServer/src;src/install;priv/sites/default/actions;priv/sites/default/resources;priv/sites/default;src/dbdrivers/postgresql;deps;src;src/models;src/support;modules

@@ -9,3 +9,6 @@
     id,
     email
 }).
+
+
+-record (sample_record, { a = nil, b}).

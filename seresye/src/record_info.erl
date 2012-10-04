@@ -18,3 +18,4 @@ set_record(Vals,Rec)->
   '#set-'(Vals, Rec).
 is_recorde(Rec)->
 '#is_record-'(Rec).
+

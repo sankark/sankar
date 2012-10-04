@@ -183,7 +183,7 @@ api_result(ReqData, Context, Result) ->
 
     result_to_json(B) when is_binary(B) -> B;
     result_to_json({binary_json, R}) -> iolist_to_binary(mochijson:binary_encode(R));
-    result_to_json(R) -> iolist_to_binary(mochijson:encode(R)).
+    result_to_json(R) -> iolist_to_binary(mochijson2:encode(R)).
     
 
 to_json(ReqData, Context) ->

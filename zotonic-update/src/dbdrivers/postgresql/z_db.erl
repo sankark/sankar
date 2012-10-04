@@ -23,6 +23,7 @@
 
 %% interface functions
 -export([
+		 delete/2,
     has_connection/1,
     transaction/2,
     transaction/3,
@@ -425,6 +426,17 @@ delete(Table, Id, Context) ->
     F = fun(C) ->
         Sql = "delete from \""++Table++"\" where id = $1", 
         {ok, RowsDeleted} = pgsql:equery1(C, Sql, [Id]),
+        {ok, RowsDeleted}
+	end,
+    with_connection(F, Context).
+
+delete(Table,Context) when is_atom(Table) ->
+	delete(atom_to_list(Table),Context);
+delete(Table,Context) ->
+    assert_table_name(Table),
+    F = fun(C) ->
+        Sql = "delete from "++Table, 
+        {ok, RowsDeleted} = pgsql:equery1(C, Sql),
         {ok, RowsDeleted}
 	end,
     with_connection(F, Context).
