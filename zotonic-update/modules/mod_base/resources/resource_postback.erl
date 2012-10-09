@@ -32,7 +32,7 @@
 ]).
 
 -include_lib("webmachine_resource.hrl").
--include_lib("include/zotonic.hrl").
+-include_lib("../include/zotonic.hrl").
 
 init(DispatchArgs) -> {ok, DispatchArgs}.
 

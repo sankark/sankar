@@ -29,7 +29,7 @@
     ]).
 
 -include_lib("webmachine_resource.hrl").
--include_lib("include/zotonic.hrl").
+-include_lib("../include/zotonic.hrl").
 
 
 %% Timeout for comet flush when there is no data, webmachine 0.x had a timeout of 60 seconds, so leave after 55

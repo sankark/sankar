@@ -194,6 +194,7 @@ handle_call({add_rules, Rules}, _From, State0) ->
 handle_call({add_rule, Rule}, _From, State0) ->
     {Reply, State1} =
         try
+			io:format("**************#AddingRukle"),
             {ok, seresye_engine:add_rule(State0, Rule)}
         catch
             Type:Reason ->

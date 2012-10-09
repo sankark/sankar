@@ -35,26 +35,28 @@ add_rule(RuleName,Pattern,Arity,Cond,Action,State,Salience)->
 	FunctionLine=lists:flatten(io_lib:format("~s(Engine0,~s) ~s ->\n",[RuleName,
                                      Pattern,
                                      ConditionLine])),
-
-	case length(Action) of
-		Y when Y>0 -> {Act,Count}=parse_action(Action),
-			ActionLine=lists:flatten(Act);
-					_-> ActionLine="",
-						Count=0
-		end,
 	
-	case length(State) of
-		Z when Z>0 -> StateLine=lists:flatten(io_lib:format("seresye_engine:set_client_state(Engine~p,"
-                                     ++ "[~s|seresye_engine:get_client_state(Engine~p)]).",
-                                    [Count,State,Count]));
-					_-> StateLine=lists:flatten(io_lib:format("seresye_engine:set_client_state(Engine~p,"
-                                     ++ "[seresye_engine:get_client_state(Engine~p)]).",
-                                    [Count,Count]))
-		end,
+	ActionLine=lists:flatten(io_lib:format("~s",[Action])),
+
+%% 	case length(Action) of
+%% 		Y when Y>0 -> {Act,Count}=parse_action(Action),
+%% 			ActionLine=lists:flatten(Act);
+%% 					_-> ActionLine="",
+%% 						Count=0
+%% 		end,
+%% 	
+%% 	case length(State) of
+%% 		Z when Z>0 -> StateLine=lists:flatten(io_lib:format("seresye_engine:set_client_state(Engine~p,"
+%%                                      ++ "[~s|seresye_engine:get_client_state(Engine~p)]).",
+%%                                     [Count,State,Count]));
+%% 					_-> StateLine=lists:flatten(io_lib:format("seresye_engine:set_client_state(Engine~p,"
+%%                                      ++ "[seresye_engine:get_client_state(Engine~p)]).",
+%%                                     [Count,Count]))
+%% 		end,
 					
 	Module=Dest++RuleName ,
 	{ok, RulesFile} = file:open(Module++".erl",[write]),
-	io:format(RulesFile,"~s~s~s~s",[Header,FunctionLine,ActionLine,StateLine]),
+	io:format(RulesFile,"~s~s~s",[Header,FunctionLine,ActionLine]),
 	file:close(RulesFile),
 	rules_compiler:compile_rules(Module),
     base_engine:add_rule({list_to_atom(filename:basename(Module)),list_to_atom(filename:basename(Module))},99999-list_to_integer(Salience)).
@@ -72,7 +74,7 @@ add_rule(RuleName,Pattern,Cond,Action,State,Salience)->
 	{ok,Tokens,_EndLine} = erl_scan:string(Pattern ++ "."),
     {ok,AbsForm} = erl_parse:parse_exprs(Tokens),
 	Arity=length(AbsForm),
-	add_rule(RuleName,Pattern,Arity+1,Cond,Action,State,Salience).
+	add_rule(RuleName,Pattern,Arity,Cond,Action,State,Salience).
 
 
 parse_cons({cons,1,Tuple1,Rest},Acc)->

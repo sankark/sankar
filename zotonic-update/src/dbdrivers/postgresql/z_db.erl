@@ -23,6 +23,9 @@
 
 %% interface functions
 -export([
+		 execute/3,
+		 with_connection/2,
+		 get_connection/1,
 		 delete/2,
     has_connection/1,
     transaction/2,
@@ -429,6 +432,10 @@ delete(Table, Id, Context) ->
         {ok, RowsDeleted}
 	end,
     with_connection(F, Context).
+
+execute(Table,Fun, Context) ->
+	  assert_table_name(Table),
+	   with_connection(Fun, Context).
 
 delete(Table,Context) when is_atom(Table) ->
 	delete(atom_to_list(Table),Context);

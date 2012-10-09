@@ -23,6 +23,7 @@
 
 %% interface functions
 -export([
+		 get/3,
     insert/2,
     insert/3,
     delete/2,
@@ -52,6 +53,11 @@ test() ->
 insert(Props, Context) ->
     insert(Props, false, Context).
 
+get(Table,Id,Context)->
+	Sql = "select * from  \""++Table++"\" where rule_name = $1",
+	Result = z_db:assoc_props(Sql,[Id],Context),
+	Result.
+	
 getAll(Table,Context)->
 	 Result = z_db:assoc_props("select * from rules",Context),
 	Result.
@@ -62,18 +68,15 @@ insert(Props, EscapeTexts, Context) ->
 
 %% @doc Delete a resource
 %% @spec delete(Props, Context) -> ok | {error, Reason}
-delete(Id, Context) when is_integer(Id), Id /= 1 ->
-    case z_acl:rsc_deletable(Id, Context) of
-        true ->
-            case m_rsc:is_a(Id, category, Context) of
-                true ->
-                    m_category:delete(Id, undefined, Context);
-                false ->
-                    delete_nocheck(Id, Context)
-            end;
-        false ->
-            throw({error, eacces})
-    end.
+delete(Id, Context)->
+	Table="rules",
+    F = fun(C) ->
+        Sql = "delete from \""++Table++"\" where rule_name = $1", 
+        {ok, RowsDeleted} = pgsql:equery1(C, Sql, [Id]),
+        {ok, RowsDeleted}
+	end,
+	{ok, RowsDeleted}=z_db:execute(Table,F,Context),
+	ok.
 
 
 %% @doc Delete a resource, no check on rights etc is made. This is called by m_category:delete/3

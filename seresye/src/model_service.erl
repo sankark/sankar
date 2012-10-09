@@ -54,7 +54,7 @@ get_records()->
 
 get_fields(RecordName)->
 	try 
-		record_info:get_record_info(RecordName) 
+		template:get_record_info(RecordName) 
 	catch
 		error:Reason -> {'EXIT',{Reason,"No Record Found"}}
 	end.

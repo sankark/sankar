@@ -1,0 +1,30 @@
+-file("c:/tmp/sankar/zotonic-update/deps/seresye/src/template1.erl", 1).
+-module(template1).
+-export([get_record_info/1,
+         new/1,
+         set_record/2,
+         is_recorde/1,
+         is_recorde/2,
+         get_value/2]).
+-compile({parse_transform,exprecs}).
+-record(node,{node_id,cpu,heap}).
+-record(clientstate,{action}).
+-record(knowledgebase,{nodes}).
+-record(response,{kb,cs}).
+-record(request,{req_name,kb}).
+-export_records([node,clientstate,knowledgebase,response,request]).
+get_record_info(Rec) ->
+    Flds = template:'#info-'(Rec),
+    Flds.
+new(Rec) ->
+    template:'#new-'(Rec).
+set_record(Vals, Rec) ->
+    template:'#set-'(Vals, Rec).
+is_recorde(Rec) ->
+    template:'#is_record-'(Rec).
+is_recorde(Name, Rec) ->
+    template:'#is_record-'(Name, Rec).
+get_value(Attr, Record) ->
+    template:'#get-'(Attr, Record).
+
+

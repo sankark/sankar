@@ -48,6 +48,7 @@ render_action(TriggerId, TargetId, Args, Context) ->
 event(#postback{message={search, Cats, Template, Actions, ActionsWithId, OtherArgs}, target=TargetId}, Context) ->
     Text = z_context:get_q("triggervalue", Context),
     Props = [{cat,Cats}, {text, Text}],
+	io:format("##############Text~s",[Text]),
 	[Result2]=model_service:get_record(list_to_atom(string:to_lower(Text))),
 	io:format("record~p",[Result2]),
     Vars = [

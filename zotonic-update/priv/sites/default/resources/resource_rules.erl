@@ -137,6 +137,7 @@ event(#submit{message=add_rule}, Context) ->
 		R2=case proplists:is_defined("pattern", Post) of
                 true ->
 					rules_service:add_rule(RuleName,Pattern,Cond,Action,State,Salience),
+					m_rules:delete(RuleName, Context),
 					m_rules:insert(Props2,Context),
 			    z_render:wire({reload, []}, Context);
 				false -> 
