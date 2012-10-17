@@ -44,10 +44,6 @@ start () ->
                                                {hello, world},
                                                {ok, world},
                                                #sample_record { a = 10, b = 50}]),
-	F=fun(X)->
-			  X == #sample_record{} end,
-	
-	io:format("sample record=~p",[seresye_engine:query_kb(Engine1,F)]),
     Engine2 = seresye_engine:add_rule (Engine1, {?MODULE, rule3}),
     Engine3 = seresye_engine:assert (Engine2, [{hello, [ciao, mondo]},
                                                {test, ciao},

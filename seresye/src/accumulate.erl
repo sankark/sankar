@@ -10,7 +10,7 @@
 %%
 %% Exported Functions
 %%
--export([accum/2,sum/2]).
+-export([accum/2,accum/3,sum/2]).
 
 %%
 %% API Functions
@@ -25,13 +25,15 @@
 
 sum(FieldName,Records)->
 	lists:foldl(fun(Record,Acc) -> seresye_exprecs:get_value(FieldName,Record)+Acc end, 0, Records).
-accum(RecName,[])->
-	accumulate(RecName);
+accum(RecName,Engine)->
+	Fun=accumulate(RecName),
+	seresye_engine:query_kb(Engine,Fun).
 
-accum(RecName,Input) ->
+accum(RecName,Engine,Input) ->
 		  Res=accumulate(RecName,Input,[]),
 	      Funs=process_funs(Res,[]),
-         accumulate(RecName,Funs).
+         Fun=accumulate(RecName,Funs),
+		  seresye_engine:query_kb(Engine,Fun).
 			   
 process_funs([],[Acc]) ->
 	io:format("~p",[Acc]),
@@ -59,11 +61,11 @@ accumulate(Y,[Oper|[H|T]],Acc)->
 
 accumulate(_Y,{Attr,gt,Value})->
 	F=fun(X)->
-			  seresye_exprecs:get_value(Attr,X) > Value end,
+			  template:get_value(Attr,X) > Value end,
 	F;
 accumulate(_Y,{Attr,lt,Value})->
 	F=fun(X)->
-			  seresye_exprecs:get_value(Attr,X) < Value end,
+			  template:get_value(Attr,X) < Value end,
 	F;
 
 accumulate(RecordName,Funtion)->

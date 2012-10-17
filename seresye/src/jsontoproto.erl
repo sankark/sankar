@@ -7,16 +7,16 @@ start() ->
 loop() -> 
 	
 	receive {toProto, JsonString,From} -> 
-				io:format("inside to proto"),
+				%io:format("inside to proto"),
 				{ok,HostName}=inet:gethostname(),
 				ServerNode=list_to_atom("servernode@"++HostName),
 				{asdas,ServerNode} ! {toProto,JsonString,self()} end,
 	receive {result, Reply} -> 
-				io:format("Res~p",[Reply]),
+				%io:format("Res~p",[Reply]),
 				From ! {proto, {result, Reply}}, 
 				loop() end. 
 
 to_proto(JsonString)->
 	proto ! {toProto,JsonString,self()}, 
 	receive {proto, {result,Reply}} -> 
-				nodes:decode_request(Reply) end.
+				proto_template_pb:decode_request(Reply) end.

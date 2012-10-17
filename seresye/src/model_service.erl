@@ -10,7 +10,7 @@
 %%
 %% Exported Functions
 %%
--export([test/0,get_includes/0,get_record/1,compile_getrecord_template/0]).
+-export([test/0,get_includes/0,get_record/1,compile_getrecord_template/0,get_exported_records/0]).
 
 %%
 %% API Functions
@@ -62,6 +62,8 @@ capfirst([Head | Tail]) when Head >= $a, Head =< $z ->
     [Head + ($A - $a) | Tail];
 capfirst(Other) ->
     Other.
+get_exported_records()->
+		 template:'#exported_records-'().
 get_record(RecordName) ->
 	try 
 		Result=get_fields(RecordName) ,
@@ -82,5 +84,5 @@ compile_getrecord_template()->
 	rules_compiler:compile_rules(Module).
 
 test()->
-	application:set_env(seresye,"lib_dir","C:/ErlangTools/seresye"),
+	application:set_env(seresye,"lib_dir","C:/tmp/sankar/zotonic-update/deps/seresye"),
 	get_record(wine).

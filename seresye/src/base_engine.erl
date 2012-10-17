@@ -8,7 +8,7 @@
 %% External exports
 %%====================================================================
 
--export([start/0, start/1, start/2, stop/1,stop/0, get_engine/1,get_engine/0,
+-export([start/0, start/1, start/2, stop/1, get_engine/1,get_engine/0,
          add_rules/2, add_rule/2, add_rule/3, assert/1,set_join/1, get_kb/1,
          get_rules_fired/1, get_client_state/1,
          set_hooks/2, get_fired_rule/1,
@@ -25,9 +25,7 @@
 start() ->
     seresye_sup:start_engine().
 
-stop() ->
-    (catch gen_server:call(?MODULE, stop)),
-    ok.
+
 	
 start(Name) ->
     seresye_sup:start_engine(Name).
@@ -49,6 +47,10 @@ get_client_state(Name) ->
 
 stop(EngineName) ->
     (catch gen_server:call(EngineName, stop)),
+    ok.
+
+stop() ->
+    (catch gen_server:call(?MODULE, stop)),
     ok.
 
 get_engine(EngineName) ->
@@ -105,7 +107,8 @@ get_engine() ->
 %%% gen_server callbacks
 %%%===================================================================
 start_link() ->
-   gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
+  gen_server:start_link({local, ?MODULE}, ?MODULE, [], []),
+  ignore.
 
 start_link(Name) when is_atom(Name) ->
     gen_server:start_link({local, Name}, ?MODULE, [], []);
@@ -134,7 +137,7 @@ start_link(ClientState, Name) when is_atom(Name) ->
 %%                         {stop, Reason}
 %% Description: Initiates the server
 %%--------------------------------------------------------------------
-init([]) -> 
+init(_Args) -> 
 	
   {ok, seresye_engine:new()}.
 

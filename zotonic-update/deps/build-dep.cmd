@@ -20,7 +20,7 @@ if exist .\rebar (
 ) else if exist .\Emakefile (
   %erl% -make
 ) else (
-  for %%g in (.\src\*.erl) do cmd /c "%erlc%" -o %EBIN_DIR% %%g
+  for %%g in (.\src\*.erl) do cmd /c "%erlc%" +debug_info -o %EBIN_DIR% %%g
 )
 
 if exist .\src\*.app (

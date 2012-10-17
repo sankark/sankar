@@ -79,33 +79,7 @@ init([]) ->
                   {z_sites_dispatcher, start_link, []},
                   permanent, 5000, worker, dynamic},
               
-    % SMTP gen_servers: one for encoding and sending mails, the other for bounces
-    SmtpServer = {z_email_server,
-                  {z_email_server, start_link, []},
-                  permanent, 5000, worker, dynamic},
-
-    % Smtp listen to IP address, Domain and Port
-    SmtpListenDomain = case os:getenv("ZOTONIC_SMTP_LISTEN_DOMAIN") of
-                false -> z_config:get_dirty(smtp_listen_domain);
-                SmtpListenDomain_ -> SmtpListenDomain_
-            end,
-    SmtpListenIp = case os:getenv("ZOTONIC_SMTP_LISTEN_IP") of
-                false -> z_config:get_dirty(smtp_listen_ip);
-                SmtpListenAny when SmtpListenAny == []; SmtpListenAny == "*"; SmtpListenAny == "any" -> any;
-                SmtpListenIp_-> SmtpListenIp_
-            end,   
-    SmtpListenPort = case os:getenv("ZOTONIC_SMTP_LISTEN_PORT") of
-                     false -> z_config:get_dirty(smtp_listen_port);
-                     SmtpListenPort_ -> list_to_integer(SmtpListenPort_)
-                 end,
-    z_config:set_dirty(smtp_listen_domain, SmtpListenDomain),
-    z_config:set_dirty(smtp_listen_ip, SmtpListenIp),
-    z_config:set_dirty(smtp_listen_port, SmtpListenPort),
-
-    SmtpBounceServer = {z_email_receive_server,
-                        {z_email_receive_server, start_link, []},
-                        permanent, 5000, worker, dynamic},
-
+   
     % Sites supervisor, starts all enabled sites
     SitesSup = {z_sites_manager,
                 {z_sites_manager, start_link, []},
@@ -113,18 +87,21 @@ init([]) ->
 	
 	RulesCompiler = {rules_compiler,
                 {rules_compiler, start_link, []},
-                permanent, 5000, worker, dynamic},
+                permanent, 1000, worker, dynamic},
 	
 	
 		ProtoService = {proto_service,
                 {proto_service, start_link, []},
                 permanent, 5000, worker, dynamic},
+	
+	WorkerPool = {worker_pool,
+                {worker_pool, start_link, [[{size, 5}, {max_overflow,2}]]},
+                permanent, 5000, worker, dynamic},
                 
     Processes = [
-				 RulesCompiler,ProtoService,
+				RulesCompiler,ProtoService,
         Ids, Config, PreviewServer,
-        SmtpServer, SmtpBounceServer,
-        SitesSup, Dispatcher | get_extensions()
+        SitesSup,  Dispatcher,WorkerPool | get_extensions()
     ],
 X=[{heap60,0},{records,[{record,node,[{node_name,"Test"},{heap,70}]},{record,node,[{node_name,"Test2"},{heap,70}]},{record,node,[{node_name,"Test3"},{heap,70}]},{record,node,[{node_name,"Test4"},{heap,70}]}]}],
     % Listen to IP address and Port

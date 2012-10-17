@@ -8,6 +8,15 @@
 
             <div class="nav-collapse">
                 <ul class="nav">
+		  <li>
+                        <a href="/models">Models</a>
+                    </li>
+		    <li>
+                        <a href="/rules">Rules</a>
+                    </li>
+		    <li>
+                        <a href="/master">Flow</a>
+                    </li>
                     {% for id, item in m.admin_menu %}
                         {% if item.items %}
                         <li class="dropdown" id="nav-{{ id }}">
@@ -35,6 +44,7 @@
                         </li>
                         {% endif %}
                     {% endfor %}
+		  
                     <li>
                         <a href="#" id="{{ #logoff }}" title="{_ Log Off _}"><i class="icon-off icon-white"></i></a>
                         {% wire id=#logoff action={confirm title=_"Confirm logoff" text=_"Are you sure you want to exit the admin interface?"

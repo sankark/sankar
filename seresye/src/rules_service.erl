@@ -2,41 +2,36 @@
 %% Created: Aug 9, 2012
 %% Description: TODO: Add description to rules_service
 -module(rules_service).
--include("records/node.hrl").
--include("records/person.hrl").
--include("records/sample.hrl").
+-include("proto_template_pb.hrl").
 -include("internal.hrl").
 %%
 %% Include files
 %%
--record(request,{req_type,req_data}).
--record(result,{kb,client_state}).
--record(response,{resp_type,resp_data}).
+
 %%
 %% Exported Functions
 %%
--export([test/0,parse_test/1,parse_cons/2,parse_facts/1,test2/1,add_rule/6,test_data/1,process_test_data/1,parse_term/1,pterm/1 ]).
+-export([remove_rule/1,test/0,parse_test/1,parse_cons/2,parse_facts/1,test2/1,add_rule/6,test_data/1,process_test_data/1,parse_term/1,pterm/1,generate_master/1,process_json/1]).
+
 
 %%
 %% API Functions
 %%
 -define(line(Tup), element(2, Tup)).
 add_rule(RuleName,Pattern,Arity,Cond,Action,State,Salience)->
-	io:format("inside Add rule"),
-	Dest="C:/ErlangTools/seresye/src/rules/",
-	Header=lists:flatten(io_lib:format("-module(~s).\n~s-export([~s/~w]).\n-rules([~s]).\n",
-                                    [RuleName,model_service:get_includes(),
-									 RuleName,Arity,
-									 RuleName])),
+	%io:format("inside Add rule"),
+	Dest="C:/tmp/zotonic-update/deps/seresye/src/rules/",
+	Header = get_header(RuleName, Arity),
 	case length(Cond) of
 		X when X>0 -> ConditionLine=lists:flatten(io_lib:format("when ~s",[Cond]));
 					_-> ConditionLine=""
 		end,
-	FunctionLine=lists:flatten(io_lib:format("~s(Engine0,~s) ~s ->\n",[RuleName,
+	FunctionLine=lists:flatten(io_lib:format("~s(~s) ~s ->\n",[RuleName,
                                      Pattern,
                                      ConditionLine])),
-	
-	ActionLine=lists:flatten(io_lib:format("~s",[Action])),
+	io:format("Action ~s",[Action]),
+
+		ActionLine=lists:flatten(io_lib:format("~s",[Action])),
 
 %% 	case length(Action) of
 %% 		Y when Y>0 -> {Act,Count}=parse_action(Action),
@@ -53,14 +48,86 @@ add_rule(RuleName,Pattern,Arity,Cond,Action,State,Salience)->
 %%                                      ++ "[seresye_engine:get_client_state(Engine~p)]).",
 %%                                     [Count,Count]))
 %% 		end,
-					
+	
 	Module=Dest++RuleName ,
 	{ok, RulesFile} = file:open(Module++".erl",[write]),
 	io:format(RulesFile,"~s~s~s",[Header,FunctionLine,ActionLine]),
 	file:close(RulesFile),
 	rules_compiler:compile_rules(Module),
-    base_engine:add_rule({list_to_atom(filename:basename(Module)),list_to_atom(filename:basename(Module))},99999-list_to_integer(Salience)).
+	io:format("**************#AddingRukle"),
+	try remove_rule(filename:basename(Module)) of
+	      ok -> ok
+	catch
+		_:_-> ok
+    end,
+    base_engine:add_rule({list_to_atom(filename:basename(Module)),list_to_atom(filename:basename(Module))},99999-list_to_integer(Salience)),
+	try worker_pool:stop() of
+	      ok -> ok
+	catch
+		_:_-> ok
+    end.
 	
+
+
+get_header(ModName, Arity) ->
+    lists:flatten(io_lib:format("-module(~s).\n~s-export([~s/~w]).\n-rules([~s]).\n",
+									                       [ModName, model_service:get_includes(),
+						ModName, Arity,
+      ModName])).
+
+remove_rule(Rule)->
+	base_engine:remove_rule({list_to_atom(Rule),list_to_atom(Rule)}),
+	ok.
+
+generate_master(Code)->
+	
+	Fun=lists:flatten(io_lib:format("~n~s",[Code])),
+	io:format("~s",[Fun]),
+{ok, MTs, _} = erl_scan:string("-module(rule_flow)."),
+{ok, ETs, _} = erl_scan:string("-export([start/1])."),
+{ok, INs, _} = erl_scan:string("-include_lib(\"records/common.hrl\")."),
+{ok, FTs, _} = erl_scan:string("start(Engine) ->"++Fun),
+{ok,MF} = erl_parse:parse_form(MTs),
+{ok,EF} = erl_parse:parse_form(ETs),
+{ok,IN} = parse_file("c:/tmp/zotonic-update/deps/seresye/src/records/proto_template_pb.hrl",[]),
+	io:format("~n Mf #####~p",[MF]),
+	io:format("~n In #####~p",[IN]),
+{ok,FF} = erl_parse:parse_form(FTs),
+{ok, Module, Bin} = compile:forms(lists:flatten([MF,EF,IN,FF]),[binary]),
+	FileName=lib_dir(ebin)++"/"++atom_to_list(Module)++".beam",
+	{ok, File}=file:open(FileName,[write]),
+	file:write(File,Bin),
+	%io:format(File, "~p", [Binary]),
+    file:close(File),
+	io:format("FileName #####~s",[FileName]),
+code:load_binary(Module, FileName, Bin).
+
+
+
+parse_file(File, Opts) ->
+    Cwd = ".",
+    Dir = filename:dirname(File),
+    IncludePath = [Cwd,Dir|inc_paths(Opts)],
+    case epp:parse_file(File, IncludePath, pre_defs(Opts)) of
+        {ok,Forms} ->
+            {ok,record_attrs(Forms)};
+        Error ->
+            Error
+    end.
+pre_defs([{d,M,V}|Opts]) ->
+    [{M,V}|pre_defs(Opts)];
+pre_defs([{d,M}|Opts]) ->
+    [M|pre_defs(Opts)];
+pre_defs([_|Opts]) ->
+    pre_defs(Opts);
+pre_defs([]) -> [].
+
+inc_paths(Opts) ->
+    [P || {i,P} <- Opts, is_list(P)].
+
+record_attrs(Forms) ->
+    [A || A = {attribute,_,record,_D} <- Forms].
+
 
 %%
 %% Local Functions
@@ -221,27 +288,57 @@ test_data(Data)->
 	 {[lists:flatten(io_lib:format("~p", [Name])) || Name <- lists:usort(lists:flatten(Kb))],[lists:flatten(io_lib:format("~p", [Name])) || Name <- lists:usort(lists:flatten(Result))]}.
 
 process_test_data(Data) ->
-	   {A1,A2,A3} = erlang:now(),
-    Name=list_to_atom(integer_to_list(A1) ++ integer_to_list(A2) ++ integer_to_list(A3)),
-	   %Data="[{heap60,nodes,[]},{records,[{record,node,[{node_name,test},{heap,90}]},{record,node,[{node_name,test3},{heap,50}]},{record,node,[{node_name,test4},{heap,70}]}]}]",
-    Facts = parse_facts(Data),
+	  
+	   Facts = parse_facts(Data),
+	   
+	   {Cs,Kb,_}=assert_initial_facts(Facts),
+	   {Cs,Kb}.
+
+assert_initial_facts(Facts) ->
+%%     {A1,A2,A3} = erlang:now(),
+%%     Name=list_to_atom(integer_to_list(A1) ++ integer_to_list(A2) ++ integer_to_list(A3)),
+%% 	   %Data="[{heap60,nodes,[]},{records,[{record,node,[{node_name,test},{heap,90}]},{record,node,[{node_name,test3},{heap,50}]},{record,node,[{node_name,test4},{heap,70}]}]}]",
+    
 
     %io:format("Facts~p",[Facts]),
-	   {ok,Pid}=worker_engine:start_link(Name),
+	   Pid=worker_pool:get_worker(),
 	   %Engine=base_engine:get_engine(),
 	   %io:format("~n New Engine ~p",[Engine]),
 	   %Join=Engine#seresye.join,
 	   %Engine2=lists:foldl(fun (Node,Engine1) -> seresye_engine:add_rule (Engine1,Node) end, Engine ,scan()),
-	   worker_engine:assert (Name,[Facts]),
-    Engine10=worker_engine:get_engine(Name),
-		  worker_engine:stop(Name),
+	   worker_engine:assert (Pid,[Facts]),
+    Engine=worker_engine:get_engine(Pid),
+	   Engine2=rule_flow:start(Pid),
+		  worker_pool:kill_worker(Pid),
 	   %Engine1=seresye_engine:assert(Engine0,Facts),
-	   %io:format("~n after assert ~p",[Engine10]),
-	   Result=seresye_engine:get_client_state(Engine10),
+	   %io:format("~n #############after assert ~p",[Engine2]),
+	   Result=seresye_engine:get_client_state(Engine2),
+	   %io:format("~n ####Client State ~p",[Result]),
+	   Kb=seresye_engine:get_kb(Engine2),
+    {Kb, Result,Engine2}.
+
+process_json(JsonString)->
+	Request=jsontoproto:to_proto(JsonString),
+	Kb=template:get_value(kb,Request),
+	Kb2=parse_kb(Kb),
+	 {Kb3, ClientState,Engine}=assert_initial_facts(Kb2),
 	
-	   %io:format("~n Client State ~p",[Result]),
-	   Kb=seresye_engine:get_kb(Engine10),
-    {Kb, Result}.
+	Bytes=compose_response(Kb3,ClientState,Engine).
+
+compose_response(Kb,ClientState,Engine)->
+	F=fun(X) ->
+	       template:is_recorde(response, X) end,
+	[Resp]=seresye_engine:query_kb(Engine,F),
+	%io:format("@@@@@~p",[Resp]),
+	R=proto_template_pb:encode_response(Resp),
+	prototojson:to_json(R).
+	
+
+parse_kb(Kb)->
+	[_RecName|KBList]=tuple_to_list(Kb),
+	lists:foldl(fun(Field,Acc)-> [Field|Acc] end, [], KBList).
+	
+	
 
 
 parse_facts(Data) ->
@@ -261,25 +358,9 @@ pterm(Data) ->
 
 	   {ok,Res}=rules_service:parse_term(Tokens),
     Res.
-
-data_service(Data)->
-	Request=#request{req_type=Type,req_data=Req_Data}=request_pb:decode_request(Data),
- {ok,Response}=case Type of
-		proto -> protobuffs_compile:scan_string(Req_Data,"",[]),
-				 {ok,success};
-		kb -> Decoded_Kb=kb_pb:decode_kb(Req_Data),
-			  {Kb,CS}=rules_service:test_data(Decoded_Kb),
-			  Result=compose_response(Kb,CS),
-			  Resp=response_pb:encode_response(Result),
-			  {ok,Resp}
-	end,	 
-	{ok,Response}.
-
-compose_response(Kb,CS)->
-	proplists:get_value("result", Kb),
-    Res=#response{resp_data=#result{kb=Kb,client_state=CS},resp_type=object},
-	Res.
 test()->
 	parse_action("[{assert,{a,\"X+2\"}},{retract,X}]").
+
+
 %io:format("~p",[Lines]).
 	%add_rule("test5","{test,test},{test2,X}=F","X>10","[{assert,{ok}},{assert,{ok}},{retract,F}]","","0").

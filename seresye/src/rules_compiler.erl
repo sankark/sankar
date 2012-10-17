@@ -68,7 +68,7 @@ handle_call({compile_rules,Module}, _From, State) ->
 	file:write(File,Binary),
 	%io:format(File, "~p", [Binary]),
     file:close(File),
-	code:load_binary(ModName,Dest ++ FileName ++ ".beam" , Binary),
+	code:load_binary(ModName, Dest ++ FileName ++ ".beam", Binary),
 	{reply, ok,State};
 
 handle_call(_Call, _From, State) -> 

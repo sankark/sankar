@@ -9,14 +9,14 @@
 %%% http://www.opensource.org/licenses/bsd-license.php
 -module(seresye_agenda).
 
--export([new/1, add_activation/3, add_activation/4,add_activation2/4,
+-export([new/1, add_activation/3, add_activation/4,
          breadth_order/2, clear_agenda/1, delete_activation/2,
          delete_rule/2, depth_order/2, fifo_order/2,
          get_activation/2, get_activation_from_name/2,
          get_activation_salience/2, get_first_activation/1,
          get_number_of_activations/1, get_rules_fired/1,
          get_strategy/1, pop_rule/1,
-         set_activation_salience/3, set_rule_salience/3,execute_pending/1,
+         set_activation_salience/3, set_rule_salience/3,
          set_strategy/2]).
 
 -include("internal.hrl").
@@ -53,24 +53,7 @@ add_activation(EngineState0 = #seresye{agenda=
                   end,
     Agenda1 = Agenda0#agenda{rule_list=RuleList1, id=Id + 1},
 
-   execute_pending(after_activation_schedule(EngineState0#seresye{agenda=Agenda1})).
-
-add_activation2(EngineState0 = #seresye{agenda=
-                                          Agenda0 = #agenda{strategy=Strategy,
-                                                            rule_list=RuleList0,
-                                                            id=Id}},
-               Rule, Args, Salience) ->
-    RuleList1 = case Strategy of
-                    depth ->
-                        depth_add(RuleList0, Rule, Args, Salience, Id);
-                    breadth ->
-                        breadth_add(RuleList0, Rule, Args, Salience, Id);
-                    fifo ->
-                        fifo_add(RuleList0, Rule, Args, Salience, Id)
-                  end,
-    Agenda1 = Agenda0#agenda{rule_list=RuleList1, id=Id + 1},
-
-    EngineState0#seresye{agenda=Agenda1}.
+    execute_pending(after_activation_schedule(EngineState0#seresye{agenda=Agenda1})).
 
 
 %% @doc Remove all activation from Agenda,
@@ -330,7 +313,6 @@ exec(EngineState0, R) ->
 %% Fun = fun (...)
 execute_rule(EngineState, {{M,F}, Args, X1, X2}) ->
     L = length(Args) + 1,
-	
     execute_rule(EngineState, {fun M:F/L, Args, X1, X2});
 execute_rule(EngineState, {Fun, Args, _, _}) when is_function(Fun) ->
     case proplists:get_value(before_rule, EngineState#seresye.hooks) of

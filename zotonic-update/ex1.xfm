@@ -1,4 +1,4 @@
--file("c:/tmp/sankar/zotonic-update/deps/seresye/src/template1.erl", 1).
+-file("c:/tmp/ZOTONI~1/deps/seresye/src/template1.erl", 1).
 -module(template1).
 -export([get_record_info/1,
          new/1,
@@ -7,12 +7,13 @@
          is_recorde/2,
          get_value/2]).
 -compile({parse_transform,exprecs}).
--record(node,{node_id,cpu,heap}).
--record(clientstate,{action}).
--record(knowledgebase,{nodes}).
+-record(request,{req_name = "nodes",kb}).
 -record(response,{kb,cs}).
--record(request,{req_name,kb}).
--export_records([node,clientstate,knowledgebase,response,request]).
+-record(knowledgebase,{nodes = []}).
+-record(clientstate,{action = []}).
+-record(node,{node_id,cpu,heap}).
+-record(test,{cpu}).
+-export_records([request,response,knowledgebase,clientstate,node,test]).
 get_record_info(Rec) ->
     Flds = template:'#info-'(Rec),
     Flds.

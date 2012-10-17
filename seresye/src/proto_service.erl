@@ -47,6 +47,8 @@ generate_model(ProtoString,Model_Name) ->
 %% Description: Initiates the server
 %%--------------------------------------------------------------------
 init([]) -> 
+	jsontoproto:start(),
+	prototojson:start(),
     {ok, #state{sup=[]}}.
 
 %%--------------------------------------------------------------------
@@ -59,14 +61,16 @@ init([]) ->
 %% Description: Handling call messages
 %%--------------------------------------------------------------------
 handle_call({generate_model,ProtoString,Model_Name}, _From, State) -> 
-	Dest="C:/ErlangTools/seresye/src/records/proto/",
-	Records_Dir="C:/ErlangTools/seresye/src/records/",
+	Dest="C:/tmp/zotonic-update/deps/proto_beam/ebin/",
+	Records_Dir="C:/tmp/zotonic-update/deps/seresye/src/records/",
 	Proto=Dest ++ Model_Name ++ ".proto",
 	{ok, ProtoFile} = file:open(Proto,[write]),
 	io:format(ProtoFile,"~s",[ProtoString]),
 	file:close(ProtoFile),
-    protobuffs_compile:scan_file(Proto,[{output_ebin_dir,Dest++"beam"},{output_include_dir,Records_Dir}]),
-    model_service:compile_getrecord_template(),
+	code:purge(list_to_atom(Model_Name++"_pb")),
+    protobuffs_compile:scan_file(Proto,[{output_ebin_dir,Dest},{output_include_dir,Records_Dir}]),
+	code:load_file(list_to_atom(Model_Name++"_pb")),
+	template_generator:ex1(),
 	{reply, ok,State};
 
 handle_call(_Call, _From, State) -> 

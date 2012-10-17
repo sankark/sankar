@@ -101,12 +101,13 @@ init(Host) ->
                     permanent, 5000, worker, dynamic},
 		Base_Engine = {base_engine,
                 {base_engine, start_link, []},
-                permanent, 5000, worker, dynamic},
-
+                permanent, 1, worker, dynamic},
+	
+	
     Processes = [
-            Base_Engine,Depcache, Translation, Installer, Notifier, Session, 
+            Depcache, Translation, Installer, Notifier, Session, 
             Dispatcher, Template, MediaClass, DropBox, Pivot,
-            ModuleIndexer, Modules,
+            ModuleIndexer, Modules,Base_Engine,
             PostStartup,Rules_Installer
     ],
     {ok, {{one_for_all, 2, 1}, add_db_pool(Host, Processes, SiteProps)}}.

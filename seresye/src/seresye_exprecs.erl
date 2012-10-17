@@ -3,7 +3,8 @@
 %% Description: TODO: Add description to rfc4627_exprecs
 -module(seresye_exprecs).
 -compile({parse_transform, exprecs}). 
--include("addressbook_pb.hrl").
+-include("proto_template_pb.hrl").
+-export_records([request,response,knowledgebase,node,clientstate]).
 
 %%
 %% Include files

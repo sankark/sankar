@@ -5,7 +5,8 @@
 %%====================================================================
 %% External exports
 %%====================================================================
-
+-behaviour(gen_server).
+-behaviour(poolboy_worker).
 -export([start/0, start/1, start/2, stop/1, get_engine/1,
          add_rules/2, add_rule/2, add_rule/3, assert/2, get_kb/1,
          get_rules_fired/1, get_client_state/1,
@@ -14,7 +15,7 @@
          remove_rule/2, retract/2]).
 
 %% gen_server callbacks
--export([start_link/0, start_link/1, start_link/2, init/1, handle_call/3,
+-export([start_link/1, start_link/2, init/1, handle_call/3,
          handle_cast/2, handle_info/2, terminate/2, code_change/3]).
 
 %%====================================================================
@@ -93,8 +94,9 @@ serialize(Name) ->
 %%%===================================================================
 %%% gen_server callbacks
 %%%===================================================================
-start_link() ->
-    gen_server:start_link(?MODULE, [], []).
+start_link(_Args) ->
+	%io:format("@@@@@@@@@@@new worker~n"),
+    gen_server:start_link(?MODULE, [], []);
 
 start_link(Name) when is_atom(Name) ->
     gen_server:start_link({local, Name}, ?MODULE, [], []);
@@ -107,6 +109,7 @@ start_link(ClientState, Name) when is_atom(Name) ->
 
 
 init([]) -> 
+	%io:format("@@@@@@@@@@@new worker~n"),
 	New_Engine=seresye_engine:restore(seresye_engine:serialize(base_engine:get_engine())),
   {ok, New_Engine};
 init([Engine]) when element(1, Engine) == seresye ->
@@ -114,7 +117,8 @@ init([Engine]) when element(1, Engine) == seresye ->
 init([ClientState]) ->
     {ok, seresye_engine:new(ClientState)}.
 
-
+handle_call(die, _From, State) ->
+    {stop, {info, died}, dead, State};
 handle_call(get_client_state, _From, State) ->
     Reply =
         try

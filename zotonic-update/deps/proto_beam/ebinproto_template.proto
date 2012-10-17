@@ -1,0 +1,25 @@
+message Request{
+	optional string req_name = 1;
+	required KnowledgeBase kb = 2;
+	
+	}
+
+message Response{
+	required KnowledgeBase kb = 1;
+	required ClientState cs = 2;
+	
+	}
+	
+message KnowledgeBase{
+repeated Node nodes = 1;
+}
+
+message ClientState{
+repeated string action = 1;
+}
+
+message Node{
+	required string node_id = 1;
+	optional int32 cpu = 2;
+	optional int32 heap = 3;
+	}
