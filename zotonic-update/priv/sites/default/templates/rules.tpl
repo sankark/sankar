@@ -18,7 +18,7 @@
            </div>
 
             {% wire id="input"
-                type="click" 
+                type="keyup" 
                 action={search
                 target=#suggestions 
                 action_with_id={with_args action={link subject_id=subject_id predicate="depiction" element_id=element_id} arg={object_id select_id}

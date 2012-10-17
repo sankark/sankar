@@ -30,7 +30,7 @@
     update/4,
 	getAll/2,
     duplicate/3,
-
+	get/3,
     flush/2,
     
     delete_nocheck/2,
@@ -51,6 +51,11 @@ test() ->
 %% @spec insert(Props, Context) -> {ok, Id} | {error, Reason}
 insert(Props, Context) ->
     insert(Props, true, Context).
+
+get(Table,Id,Context)->
+	Sql = "select * from  \""++Table++"\" where model_name = $1",
+	Result = z_db:assoc_props(Sql,[Id],Context),
+	Result.
 
 getAll(Table,Context)->
 	 Result = z_db:assoc_props("select * from models",Context),
@@ -191,6 +196,7 @@ update(Id, Props, Options, Context) when is_integer(Id) orelse Id == insert_rule
             TransactionF = fun(Ctx) ->
             	case Id of
                     insert_rules ->
+						{ok,RowsDeletes} = z_db:delete(models, Ctx),
                             {ok, InsId} = z_db:insert(models, SafeProps, Ctx)
             	end
 				end,

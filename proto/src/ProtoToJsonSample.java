@@ -55,10 +55,14 @@ public static void main(String[] args) throws IOException {
 	Request.Builder request = Request.newBuilder();
 
     
-	Node node=Node.newBuilder().setNodeId("node1").setCpu(50).setHeap(10).build();
+	Node node=Node.newBuilder().setNodeId("node1").setCpu(50).setHeap(70).build();
+	Node node2=Node.newBuilder().setNodeId("node2").setCpu(50).setHeap(70).build();
+	Node node3=Node.newBuilder().setNodeId("node3").setCpu(50).setHeap(60).build();
     		   
 	KnowledgeBase.Builder kb=KnowledgeBase.newBuilder();
 	kb.addNodes(node);
+	kb.addNodes(node2);
+	kb.addNodes(node3);
 	
 	
 	request.setKb(kb);

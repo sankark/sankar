@@ -42,6 +42,7 @@ event(#postback{message={predicate_delete, Id, OnSuccess}}, Context) ->
     case z_acl:is_allowed(delete, Id, Context) of
         true ->
             ok = m_rules:delete(Id, Context),
+			rules_service:remove_rule(binary_to_list(Id)),
              Result=m_rules:getAll(rules,Context),
 			io:format("After delete ~n~p",[Result]),
     		  {Html, Context1} = z_template:render_to_iolist("rules_list.tpl", [{result,Result}], Context),

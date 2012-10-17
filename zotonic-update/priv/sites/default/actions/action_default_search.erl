@@ -48,11 +48,33 @@ render_action(TriggerId, TargetId, Args, Context) ->
 event(#postback{message={search, Cats, Template, Actions, ActionsWithId, OtherArgs}, target=TargetId}, Context) ->
     Text = z_context:get_q("triggervalue", Context),
     Props = [{cat,Cats}, {text, Text}],
-	io:format("##############Text~s",[Text]),
-	[Result2]=model_service:get_record(list_to_atom(string:to_lower(Text))),
-	io:format("record~p",[Result2]),
+	%io:format("##############Text~s",[Text]),
+	Exp_Records=model_service:get_exported_records(),
+	Length=length(Text),
+	S_Text= string:sub_string(Text, 1,Length),
+	%io:format("Exp_Records~p",[Exp_Records]),
+	Matched=lists:foldl(fun(H,A)-> 
+						M=case S_Text =:= string:sub_string(atom_to_list(H),1,Length) of
+							true -> H;
+							false -> []
+						end,
+						[M|A]
+				end,
+											   [], Exp_Records),
+	%io:format("Matched ~p",[Matched]),
+	Result2=lists:foldl(fun(H,A)-> 
+						R=case model_service:get_record(H) of
+							"No Record Found" -> [];
+							Record -> Record
+						end,
+					[R|A]	
+				end,
+											   [], Matched),
+	
+	%[Result2]=model_service:get_record(list_to_atom(string:to_lower(Text))),
+	%io:format("record~p",[Result2]),
     Vars = [
-        {result, [Result2]}
+        {result, Result2}
     ],
     Html = z_template:render(Template, Vars, Context),
     z_render:update(TargetId, Html, Context).

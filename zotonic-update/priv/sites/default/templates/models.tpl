@@ -1,16 +1,10 @@
 {% extends "admin_base.tpl" %}
 
-{% block title %} Rules {% endblock %}
+{% block title %} Model {% endblock %}
 {% block content %}
-
-  {% wire id="model_form" type="submit" postback="add_model"%}
-<form id="model_form" method="post" action="postback" class="row">
- <label for="message">{_ Model Name _}</label>
-<input type="text" id="model_name" name="model_name" value=""/>
- <label for="message">{_ Model Definition _}</label>
-	    <textarea name="model_def" id="model_def" cols="60" rows="8" ></textarea><br>
-	   {% button type="submit" class="btn btn-primary" text=_"Add Model" title=_"Test" %}
-</form>		
+<div id="model_div">  
+  {% include "_model_form.tpl" %}
+</div>
  <table class="table table-striped do_adminLinkedTable">
         <thead>
             <tr>
@@ -29,8 +23,7 @@
                 <td>{{ p.model_def|default:"&nbsp;" }}</td>
                 <td>
                     <div class="pull-right">
-                        {% button class="btn btn-mini" disabled=p.is_protected text="delete" action={delete id=p.id on_success={slide_fade_out target=#li.name}} %}
-                        <a href="{% url admin_edit_rsc id=p.id %}" class="btn btn-mini">{_ edit _}</a>
+                          {% button class="btn btn-mini" disabled=p.is_protected text="edit" action={proto_edit id=p.model_name on_success={slide_fade_out target=#li.name}} %}
                     </div>                        
                     {{ p.reversed|yesno:"reversed,&nbsp;" }}
                 </td>

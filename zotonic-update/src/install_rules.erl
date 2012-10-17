@@ -35,7 +35,6 @@ install()->
 	ok = install_models(),
 	ok = install_rules().
 
-
 install_models()->
 	Result=m_models:getAll(models,z_context:new(default)),
 	R2=convert_bin_to_list(Result,[]),
@@ -43,10 +42,13 @@ install_models()->
 	ok.
 install_rules()->
 	Result=m_rules:getAll(rules,z_context:new(default)),
-	[rules_service:add_rule(RuleName,Pattern,Condition,Action,State,Salience)||[{rule_name,RuleName},
-{pattern,Pattern},{condition,Condition},{action,Action},{client_state,State},{salience,Salience}]<-convert_bin_to_list(Result,[])],
+	[rules_service:add_rule(RuleName,Pattern,Condition,Action,State,Salience)||
+	   [{salience,Salience},{client_state,State},{action,Action},{condition,Condition},{pattern,Pattern},{rule_name,RuleName}]
+	<-convert_bin_to_list(Result,[])],
+	io:format("convert_bin_to_list $$$$$$~p",[convert_bin_to_list(Result,[])]),
 	MasterCode=m_master:getAll(master,z_context:new(default)),
 	io:format("~p",[MasterCode]),
+	
 	[rules_service:generate_master(binary_to_list(Code))||[{master_code,Code}]<-MasterCode],
 ok.
 

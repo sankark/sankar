@@ -53,7 +53,7 @@ add_activation(EngineState0 = #seresye{agenda=
                   end,
     Agenda1 = Agenda0#agenda{rule_list=RuleList1, id=Id + 1},
 
-    after_activation_schedule(EngineState0#seresye{agenda=Agenda1}).
+   execute_pending(after_activation_schedule(EngineState0#seresye{agenda=Agenda1})).
 
 add_activation2(EngineState0 = #seresye{agenda=
                                           Agenda0 = #agenda{strategy=Strategy,

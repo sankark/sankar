@@ -8,12 +8,12 @@
 %% External exports
 %%====================================================================
 
--export([start/0, start/1, start/2, stop/1, get_engine/1,get_engine/0,
+-export([start/0, start/1, start/2, stop/1,stop/0, get_engine/1,get_engine/0,
          add_rules/2, add_rule/2, add_rule/3, assert/1,set_join/1, get_kb/1,
          get_rules_fired/1, get_client_state/1,
          set_hooks/2, get_fired_rule/1,
          set_client_state/2, query_kb/2, serialize/1, 
-         remove_rule/2, retract/2]).
+         remove_rule/1, retract/2]).
 
 %% gen_server callbacks
 -export([start_link/0, start_link/1, start_link/2, init/1, handle_call/3,
@@ -25,7 +25,9 @@
 start() ->
     seresye_sup:start_engine().
 
-
+stop() ->
+    (catch gen_server:call(?MODULE, stop)),
+    ok.
 	
 start(Name) ->
     seresye_sup:start_engine(Name).
@@ -78,8 +80,8 @@ set_join(Join)->
 add_rule(Name, Rule, Salience) ->
     gen_server:call(Name, {add_rule, Rule, Salience}).
 
-remove_rule(Name, Rule) ->
-    gen_server:call(Name, {remove_rule, Rule}).
+remove_rule(Rule) ->
+    gen_server:call(?MODULE, {remove_rule, Rule}).
 
 get_rules_fired(Name) ->
     gen_server:call(Name, get_rules_fired).
@@ -194,7 +196,6 @@ handle_call({add_rules, Rules}, _From, State0) ->
 handle_call({add_rule, Rule}, _From, State0) ->
     {Reply, State1} =
         try
-			io:format("**************#AddingRukle"),
             {ok, seresye_engine:add_rule(State0, Rule)}
         catch
             Type:Reason ->
